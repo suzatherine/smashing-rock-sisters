@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B55-C312A3FDC8C2// --><tw-storydata name="Smashing Rock Sisters" startnode="6" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B55-C312A3FDC8C2" zoom="0.3" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B55-C312A3FDC8C2// --><tw-storydata name="Smashing Rock Sisters" startnode="30" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B55-C312A3FDC8C2" zoom="0.3" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
 /* GENERICS */
 html {
@@ -508,6 +508,7 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 &lt;&lt;cacheaudio &quot;SRS_20A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;SRS_20A_DisneyMovie&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_DisneyMovie.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;SRS_20A_Explorer&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Explorer.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20A_JohnSmith&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_JohnSmith.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;SRS_20A_Jesus&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Jesus.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;SRS_20A_Kanye&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Kanye.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;SRS_20A_Pocahontas&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Pocahontas.mp3&quot;&gt;&gt;
@@ -901,34 +902,38 @@ Shall we? Perhaps there’s more monuments we can find to prove my point...
 &lt;&lt;timed 15s&gt;&gt;&lt;&lt;button &quot;At the Statue&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="SRS-20A" tags="" position="1000,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-20A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-20.5a&quot;&gt;&gt;
-
 &lt;main&gt;
-MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in 1908. Can you read the plinth for me? Who is it?
+&lt;div id=&quot;feedback&quot;&gt;&lt;/div&gt;&lt;div id=&quot;feedback2&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;
+MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in 1908. Can you read the plinth for me? Who is it?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 
-&lt;div class=&quot;menu-wrapper&quot; id=&quot;mount&quot;&gt;
-&lt;&lt;button &quot;Jesus&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;Don’t be silly! Try again!&lt;&lt;/replace&gt;&gt;
+&lt;&lt;timed 14s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;div class=&quot;menu-wrapper&quot;&gt;
+&lt;&lt;button &quot;Jesus&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20A_Jesus&quot; play&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;Don’t be silly! Try again!&lt;&lt;/replace&gt;&gt;
   &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-&lt;&lt;button &quot;Captain John Smith&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;CAPTAIN JOHN SMITH
-    
-    MADELEINE: Ohhh, the legendary captain! What is he famous for in your time? 
+&lt;&lt;button &quot;Captain John Smith&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20A_JohnSmith&quot; play&gt;&gt;&lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;
+    MADELEINE: Ohhh, the legendary captain! What is he famous for in your time?  &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;
+    &lt;&lt;button &quot;Being in a Disney movie&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20A_DisneyMovie&quot; play&gt;&gt;I don’t know what you’re talking about. What is a Disney Movie?&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-  &lt;&lt;button &quot;Being in a Disney movie&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;I don’t know what you’re talking about. What is a Disney Movie?&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
-  &lt;&lt;button &quot;He was Pocahontas’s lover&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;Ah, well I have spoken with Pocahontas, and her account is different...&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
-  &lt;&lt;button &quot;He was an explorer &quot;&gt;&gt;&lt;&lt;timed 1s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20.5A&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
-  &lt;div id=&quot;feedback2&quot;&gt;&lt;/div&gt;
-      &lt;&lt;button &quot;Kanye West&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;Who is that? Are you sure? Try reading again.&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;&lt;div id=&quot;feedback&quot;&gt;&lt;/div&gt;&lt;div id=&quot;feedback2&quot;&gt;&lt;/div&gt;
-/* TODO NEED TO FIX */
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+    &lt;&lt;button &quot;He was Pocahontas’s lover&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20A_Pocahontas&quot; play&gt;&gt;Ah, well I have spoken with Pocahontas, and her account is different...&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 5s&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
+    
+    &lt;&lt;button &quot;He was an explorer &quot;&gt;&gt;&lt;&lt;timed 1s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20.5A&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
+  &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+    &lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+
+      &lt;&lt;button &quot;Kanye West&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20A_Kanye&quot; play&gt;&gt;Who is that? Are you sure? Try reading again.&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
+ &lt;/div&gt;
+ &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;     
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SRS-20.5A" tags="" position="1100,1100" size="100,100">&lt;&lt;set $passage to &quot;SRS-20.5A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20.5A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-21A&quot;&gt;&gt;
-/* TODO MISSING AUDIO */
-&lt;main&gt;
-And more! 
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SRS-20.5A" tags="" position="1100,1100" size="100,100">&lt;&lt;set $passage to &quot;SRS-20.5A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20A_Explorer&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-21A&quot;&gt;&gt;
 
-  MADELEINE: I’ll share what I know. John Smith led a rather colourful life, fighting bravely in wars across the world before landing the job of ‘president’ of the Jamestown colony in newly ‘discovered’ Virginia. The story goes that while out exploring, John Smith was captured by the ruling Powhatan tribe. He testifies that they were about to kill him when the Chief’s daughter Pocahontas pleaded for his life. She was 11. So stories of their love are hopefully fabrications!
+&lt;main&gt;
+  MADELEINE: And more! 
+
+I’ll share what I know. John Smith led a rather colourful life, fighting bravely in wars across the world before landing the job of ‘president’ of the Jamestown colony in newly ‘discovered’ Virginia. The story goes that while out exploring, John Smith was captured by the ruling Powhatan tribe. He testifies that they were about to kill him when the Chief’s daughter Pocahontas pleaded for his life. She was 11. So stories of their love are hopefully fabrications!
   John Smith was instrumental in mapping out the region and helping the settlers survive their new environment. He was generally considered better than other colonists, trading with the local Powhatan community. Some accounts state good relations with the tribe. But others talk of him waging attacks on natives for refusing to give up their limited winter food stock without at least some payment. Captain John Smith ordered the burning of their villages, imprisoned and beat native people, and forced them into labour. He was considered a national hero in his time - but how do you see him now? Hero or villain?
 
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
@@ -942,8 +947,8 @@ And more!
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="SRS-21A" tags="" position="1300,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-21A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_21A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-22A&quot;&gt;&gt;
 &lt;main&gt;
-&lt;div id=&quot;mount&quot;&gt;
-  MADELEINE: Interesting...
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+  &lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;MADELEINE: Interesting...
   
   See, despite what my sister says, I believe making leaders into heroes is dangerous. It gives them the freedom to hurt people ‘for the greater good’ and never be challenged. Then we’re left with monuments like this, obscuring the full history from view.
   
@@ -951,12 +956,13 @@ And more!
   If you had a say, what would you do with this statue? Let your imagination run free. Discuss it together and share your answer - I’d love to hear!
   
   &lt;&lt;textarea &quot;$ideas&quot;&quot; Write your answer here&quot;&gt;&gt;
-&lt;/div&gt;
-&lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;MADELEINE: Ha, I knew you had some imagination - we’ll make suffragettes of you yet!
+
+&lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_21.5A&quot; play&gt;&gt;MADELEINE: Ha, I knew you had some imagination - we’ll make suffragettes of you yet!
 But I do believe our time together is nearing an end. Before we say goodbye - could you help me find my sister? Trouble has a way of finding her - I’d like to get there first! Any ideas of where we could look?
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 &lt;&lt;timed 15s&gt;&gt;&lt;&lt;button &quot;We have an idea!&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-22A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="SRS-22A" tags="" position="1500,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-22A&quot;&gt;&gt;&lt;&lt;set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_22A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-25&quot;&gt;&gt;
@@ -999,13 +1005,15 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 &lt;&lt;timed 5s&gt;&gt;&lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="SRS-20B" tags="" position="1000,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-20B&quot;&gt;&gt;&lt;main&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-20.5B&quot;&gt;&gt;
-&lt;div id=&quot;mount&quot;&gt;DOROTHEA: Ah, I see. What do you know about it?
-
+&lt;div id=&quot;feedback&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;DOROTHEA: Ah, I see. What do you know about it?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 6s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms&gt;&gt;
 &lt;div class=&quot;menu-wrapper&quot;&gt;
-&lt;&lt;button &quot;It was in the movie Closer&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;I don’t know what you’re talking about. Closer to what?&lt;&lt;/replace&gt;&gt;
+&lt;&lt;button &quot;It was in the movie Closer&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20B_Closer&quot; play&gt;&gt;I don’t know what you’re talking about. Closer to what?&lt;&lt;/replace&gt;&gt;
   &lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-&lt;&lt;button &quot;It’s called Postman’s Park&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;POSTMAN&#39;S PARK
+&lt;&lt;button &quot;It’s called Postman’s Park&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20B_PostmansPark&quot; play&gt;&gt;
     
    Correct, do you know anything else?
 
@@ -1015,13 +1023,10 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
   &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/button&gt;&gt;  
-  &lt;div id=&quot;feedback2&quot;&gt;&lt;/div&gt;
-  &lt;&lt;button &quot;Never noticed it&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;Many haven’t&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+  &lt;&lt;button &quot;Never noticed it&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20B_NeverNoticed&quot; play&gt;&gt;Many haven’t&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
 
-&lt;div id=&quot;feedback&quot;&gt;&lt;/div&gt;
-
+&lt;/div&gt;
+&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;     
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="SRS-20.5B" tags="" position="1100,1300" size="100,100">&lt;&lt;set $passage to &quot;SRS-20.5B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20.5B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-21B&quot;&gt;&gt;
@@ -1031,16 +1036,16 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 
     &lt;&lt;textarea &quot;$park&quot;&quot; Write your answer here&quot;&gt;&gt;
     &lt;&lt;button &quot;Done&quot;&gt;&gt;
-      &lt;&lt;replace &quot;#mount&quot;&gt;&gt;DOROTHEA: I see. What examples are there in your time of ordinary people being applauded as heroes?
+      &lt;&lt;replace &quot;#mount&quot;&gt;&gt; &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20.6B&quot; play&gt;&gt; DOROTHEA: I see. What examples are there in your time of ordinary people being applauded as heroes?
 
         &lt;&lt;textarea &quot;$heros&quot;&quot; Write your answer here&quot;&gt;&gt;
         &lt;&lt;button &quot;Done&quot;&gt;&gt;
-            &lt;&lt;replace &quot;#mount&quot;&gt;&gt;
+            &lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20.7B&quot; play&gt;&gt; 
             DOROTHEA: Did things change for the better for those people as a result?
 
                 &lt;div class=&quot;menu-wrapper&quot;&gt;
-                  &lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;That’s good to hear. Here in 1912, that is less common.&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
-                  &lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Yes. It’s the same here in 1912&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
+                  &lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20.7B_Yes&quot; play&gt;&gt; That’s good to hear. Here in 1912, that is less common.&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
+                  &lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20.7B_No&quot; play&gt;&gt; Yes. It’s the same here in 1912.&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
                 &lt;/div&gt;
             &lt;&lt;/replace&gt;&gt;
         &lt;&lt;/button&gt;&gt;
@@ -1050,7 +1055,7 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="SRS-21B" tags="" position="1300,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_21B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-22B&quot;&gt;&gt;
 &lt;main&gt; &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
-&lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt; DOROTHEA: Celebrating the deeds of ordinary people is a great gesture. But how often does it spark a lasting change in their lives?
+&lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt; DOROTHEA: Celebrating the deeds of ordinary people is a great gesture. But how often does it spark a lasting change in their lives?
 
 This park was built in 1900. Class divides in this country were (and still are) enormous. There are women in our movement who are expected to work dangerous, exhausting jobs in factories, care for their children and keep their husbands happy by being impeccable housewives. If they are arrested, they risk losing everything. But still they come. To every march.
 
@@ -1061,7 +1066,9 @@ So I ask, should we commemorate ordinary acts of sacrifice with monuments like t
   &lt;&lt;textarea &quot;$monuments&quot;&quot; Write your answer here&quot;&gt;&gt;
 
 
-&lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Thank-you so much for your ideas. Perhaps we can discuss them as we continue. Now where on Earth is my sister? Have you seen her?
+&lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_21.5B&quot; play&gt;&gt;Thank-you so much for your ideas. Perhaps we can discuss them as we continue. 
+
+Now where on Earth is my sister? Have you seen her?
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 &lt;&lt;timed 5s&gt;&gt;&lt;&lt;button &quot;Not recently&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-22B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
@@ -1239,9 +1246,7 @@ Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for
 
 &lt;/main&gt;
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="end" tags="" position="100,700" size="100,100">&lt;&lt;set $passage to &quot;19&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;&lt;&lt;set $endMap = setup.generateDirectionsMap( {lat:51.51422339174107, long:-0.09555485421956555}, {lat:51.51422339174107, long:-0.09555485421956555})&gt;&gt;
-&lt;main&gt;
-
-End location
+&lt;main&gt;End location
 
 $endMap
   

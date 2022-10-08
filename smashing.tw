@@ -7,7 +7,7 @@ Smashing Rock Sisters
 	"ifid": "F9E39354-F641-4070-8B55-C312A3FDC8C2",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "landing",
+	"start": "SRS-19B",
 	"zoom": 0.3
 }
 
@@ -433,6 +433,7 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 <<cacheaudio "SRS_20A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A.mp3">>
 <<cacheaudio "SRS_20A_DisneyMovie" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_DisneyMovie.mp3">>
 <<cacheaudio "SRS_20A_Explorer" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Explorer.mp3">>
+<<cacheaudio "SRS_20A_JohnSmith" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_JohnSmith.mp3">>
 <<cacheaudio "SRS_20A_Jesus" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Jesus.mp3">>
 <<cacheaudio "SRS_20A_Kanye" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Kanye.mp3">>
 <<cacheaudio "SRS_20A_Pocahontas" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Pocahontas.mp3">>
@@ -920,38 +921,42 @@ Shall we? Perhaps there’s more monuments we can find to prove my point...
 
 :: SRS-20A {"position":"1000,1000","size":"100,100"}
 <<set $passage to "SRS-20A">><<audio ":all" stop>><<audio "SRS_20A" play>><<set $nextpassage to "SRS-20.5a">>
-
 <main>
-MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in 1908. Can you read the plinth for me? Who is it?
+<div id="feedback"></div><div id="feedback2"></div>
+<div id="mount"></div>
+<<timed 0.5s>><<replace "#mount">><<type 50ms>>
+MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in 1908. Can you read the plinth for me? Who is it?<</type>><</replace>><</timed>>
 
-<div class="menu-wrapper" id="mount">
-<<button "Jesus">><<replace "#feedback">>Don’t be silly! Try again!<</replace>>
+<<timed 14s>><<replace "#mount">><div class="menu-wrapper">
+<<button "Jesus">><<audio ":all" stop>><<audio "SRS_20A_Jesus" play>><<replace "#feedback">>Don’t be silly! Try again!<</replace>>
   <<timed 3s>><<replace "#feedback">><</replace>><</timed>><</button>>
 
-<<button "Captain John Smith">><<replace "#mount">>CAPTAIN JOHN SMITH
-    
-    MADELEINE: Ohhh, the legendary captain! What is he famous for in your time? 
+<<button "Captain John Smith">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20A_JohnSmith" play>><<timed 0.5s>><<replace "#mount">><<type 50ms>>
+    MADELEINE: Ohhh, the legendary captain! What is he famous for in your time?  <</type>><</replace>><</timed>>
+<<timed 5s>><<replace "#mount">><<type 50ms>>
+    <<button "Being in a Disney movie">><<replace "#feedback2">><<audio ":all" stop>><<audio "SRS_20A_DisneyMovie" play>>I don’t know what you’re talking about. What is a Disney Movie?<</replace>><<timed 5s>><<replace "#feedback2">><</replace>><</timed>><</button>>
 
-  <<button "Being in a Disney movie">><<replace "#feedback2">>I don’t know what you’re talking about. What is a Disney Movie?<</replace>><<timed 3s>><<replace "#feedback2">><</replace>><</timed>><</button>>
-  <<button "He was Pocahontas’s lover">><<replace "#feedback2">>Ah, well I have spoken with Pocahontas, and her account is different...<</replace>><<timed 3s>><<replace "#feedback2">><</replace>><</timed>><</button>>
-  <<button "He was an explorer ">><<timed 1s>><<set $prevpass to $passage>><<goto "SRS-20.5A">><</timed>><</button>><</replace>><</button>>
-  <div id="feedback2"></div>
-      <<button "Kanye West">><<replace "#feedback">>Who is that? Are you sure? Try reading again.<</replace>><<timed 3s>><<replace "#feedback">><</replace>><</timed>><</button>>
-</div><div id="feedback"></div><div id="feedback2"></div>
-/* TODO NEED TO FIX */
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+    <<button "He was Pocahontas’s lover">><<replace "#feedback2">><<audio ":all" stop>><<audio "SRS_20A_Pocahontas" play>>Ah, well I have spoken with Pocahontas, and her account is different...<</replace>><<timed 5s>><<replace "#feedback2">><</replace>><</timed>><</button>>
+    
+    <<button "He was an explorer ">><<timed 1s>><<set $prevpass to $passage>><<goto "SRS-20.5A">><</timed>><</button>>
+  <</type>><</replace>><</timed>>
+    <</replace>><</button>>
+
+      <<button "Kanye West">><<replace "#feedback">><<audio ":all" stop>><<audio "SRS_20A_Kanye" play>>Who is that? Are you sure? Try reading again.<</replace>><<timed 6s>><<replace "#feedback">><</replace>><</timed>><</button>>
+ </div>
+ <</replace>><</timed>>     
 
 </main>
 <<include "footer">>
 
 
 :: SRS-20.5A {"position":"1100,1100","size":"100,100"}
-<<set $passage to "SRS-20.5A">><<audio ":all" stop>><<audio "SRS_20.5A" play>><<set $nextpassage to "SRS-21A">>
-/* TODO MISSING AUDIO */
-<main>
-And more! 
+<<set $passage to "SRS-20.5A">><<audio ":all" stop>><<audio "SRS_20A_Explorer" play>><<set $nextpassage to "SRS-21A">>
 
-  MADELEINE: I’ll share what I know. John Smith led a rather colourful life, fighting bravely in wars across the world before landing the job of ‘president’ of the Jamestown colony in newly ‘discovered’ Virginia. The story goes that while out exploring, John Smith was captured by the ruling Powhatan tribe. He testifies that they were about to kill him when the Chief’s daughter Pocahontas pleaded for his life. She was 11. So stories of their love are hopefully fabrications!
+<main>
+  MADELEINE: And more! 
+
+I’ll share what I know. John Smith led a rather colourful life, fighting bravely in wars across the world before landing the job of ‘president’ of the Jamestown colony in newly ‘discovered’ Virginia. The story goes that while out exploring, John Smith was captured by the ruling Powhatan tribe. He testifies that they were about to kill him when the Chief’s daughter Pocahontas pleaded for his life. She was 11. So stories of their love are hopefully fabrications!
   John Smith was instrumental in mapping out the region and helping the settlers survive their new environment. He was generally considered better than other colonists, trading with the local Powhatan community. Some accounts state good relations with the tribe. But others talk of him waging attacks on natives for refusing to give up their limited winter food stock without at least some payment. Captain John Smith ordered the burning of their villages, imprisoned and beat native people, and forced them into labour. He was considered a national hero in his time - but how do you see him now? Hero or villain?
 
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
@@ -969,8 +974,8 @@ And more!
 :: SRS-21A {"position":"1300,1000","size":"100,100"}
 <<set $passage to "SRS-21A">><<audio ":all" stop>><<audio "SRS_21A" play>><<set $nextpassage to "SRS-22A">>
 <main>
-<div id="mount">
-  MADELEINE: Interesting...
+<div id="mount"></div>
+  <<timed 0.5s>><<replace "#mount">>MADELEINE: Interesting...
   
   See, despite what my sister says, I believe making leaders into heroes is dangerous. It gives them the freedom to hurt people ‘for the greater good’ and never be challenged. Then we’re left with monuments like this, obscuring the full history from view.
   
@@ -978,12 +983,13 @@ And more!
   If you had a say, what would you do with this statue? Let your imagination run free. Discuss it together and share your answer - I’d love to hear!
   
   <<textarea "$ideas"" Write your answer here">>
-</div>
-<<button "Done">><<replace "#mount">>MADELEINE: Ha, I knew you had some imagination - we’ll make suffragettes of you yet!
+
+<<button "Done">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_21.5A" play>>MADELEINE: Ha, I knew you had some imagination - we’ll make suffragettes of you yet!
 But I do believe our time together is nearing an end. Before we say goodbye - could you help me find my sister? Trouble has a way of finding her - I’d like to get there first! Any ideas of where we could look?
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 <<timed 15s>><<button "We have an idea!">><<set $prevpass to $passage>><<goto "SRS-22A">><</button>><</timed>>
 <</replace>><</button>>
+<</replace>><</timed>>
   
 </main>
 <<include "footer">>
@@ -1042,13 +1048,15 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 
 :: SRS-20B {"position":"1000,1200","size":"100,100"}
 <<set $passage to "SRS-20B">><main><<audio ":all" stop>><<audio "SRS_20B" play>><<set $nextpassage to "SRS-20.5B">>
-<div id="mount">DOROTHEA: Ah, I see. What do you know about it?
-
+<div id="feedback"></div>
+<div id="mount"></div>
+<<timed 0.5s>><<replace "#mount">><<type 50ms>>DOROTHEA: Ah, I see. What do you know about it?<</type>><</replace>><</timed>>
+<<timed 6s>><<replace "#mount">><<type 50ms>>
 <div class="menu-wrapper">
-<<button "It was in the movie Closer">><<replace "#feedback">>I don’t know what you’re talking about. Closer to what?<</replace>>
+<<button "It was in the movie Closer">><<replace "#feedback">><<audio ":all" stop>><<audio "SRS_20B_Closer" play>>I don’t know what you’re talking about. Closer to what?<</replace>>
   <<timed 3s>><<replace "#feedback">><</replace>><</timed>><</button>>
 
-<<button "It’s called Postman’s Park">><<replace "#mount">>POSTMAN'S PARK
+<<button "It’s called Postman’s Park">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20B_PostmansPark" play>>
     
    Correct, do you know anything else?
 
@@ -1058,13 +1066,10 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
   </div>
    <</replace>>
 <</button>>  
-  <div id="feedback2"></div>
-  <<button "Never noticed it">><<replace "#feedback">>Many haven’t<</replace>><<timed 3s>><<replace "#feedback">><</replace>><</timed>><</button>>
-</div>
-</div>
+  <<button "Never noticed it">><<replace "#feedback">><<audio ":all" stop>><<audio "SRS_20B_NeverNoticed" play>>Many haven’t<</replace>><<timed 3s>><<replace "#feedback">><</replace>><</timed>><</button>>
 
-<div id="feedback"></div>
-
+</div>
+<</type>><</replace>><</timed>>     
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 </main>
 <<include "footer">>
@@ -1078,16 +1083,16 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 
     <<textarea "$park"" Write your answer here">>
     <<button "Done">>
-      <<replace "#mount">>DOROTHEA: I see. What examples are there in your time of ordinary people being applauded as heroes?
+      <<replace "#mount">> <<audio ":all" stop>><<audio "SRS_20.6B" play>> DOROTHEA: I see. What examples are there in your time of ordinary people being applauded as heroes?
 
         <<textarea "$heros"" Write your answer here">>
         <<button "Done">>
-            <<replace "#mount">>
+            <<replace "#mount">><<audio ":all" stop>><<audio "SRS_20.7B" play>> 
             DOROTHEA: Did things change for the better for those people as a result?
 
                 <div class="menu-wrapper">
-                  <<button "Yes">><<replace "#mount">>That’s good to hear. Here in 1912, that is less common.<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
-                  <<button "No">><<replace "#mount">>Yes. It’s the same here in 1912<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
+                  <<button "Yes">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20.7B_Yes" play>> That’s good to hear. Here in 1912, that is less common.<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
+                  <<button "No">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20.7B_No" play>> Yes. It’s the same here in 1912.<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
                 </div>
             <</replace>>
         <</button>>
@@ -1101,7 +1106,7 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 :: SRS-21B {"position":"1300,1200","size":"100,100"}
 <<set $passage to "SRS-21B">><<audio ":all" stop>><<audio "SRS_21B" play>><<set $nextpassage to "SRS-22B">>
 <main> <div id="mount"></div>
-<<timed 1s>><<replace "#mount">> DOROTHEA: Celebrating the deeds of ordinary people is a great gesture. But how often does it spark a lasting change in their lives?
+<<timed 0.5s>><<replace "#mount">> DOROTHEA: Celebrating the deeds of ordinary people is a great gesture. But how often does it spark a lasting change in their lives?
 
 This park was built in 1900. Class divides in this country were (and still are) enormous. There are women in our movement who are expected to work dangerous, exhausting jobs in factories, care for their children and keep their husbands happy by being impeccable housewives. If they are arrested, they risk losing everything. But still they come. To every march.
 
@@ -1112,7 +1117,9 @@ So I ask, should we commemorate ordinary acts of sacrifice with monuments like t
   <<textarea "$monuments"" Write your answer here">>
 
 
-<<button "Done">><<replace "#mount">>Thank-you so much for your ideas. Perhaps we can discuss them as we continue. Now where on Earth is my sister? Have you seen her?
+<<button "Done">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_21.5B" play>>Thank-you so much for your ideas. Perhaps we can discuss them as we continue. 
+
+Now where on Earth is my sister? Have you seen her?
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 <<timed 5s>><<button "Not recently">><<set $prevpass to $passage>><<goto "SRS-22B">><</button>><</timed>>
 <</replace>><</button>>
@@ -1322,9 +1329,7 @@ Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for
 
 :: end {"position":"100,700","size":"100,100"}
 <<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap( {lat:51.51422339174107, long:-0.09555485421956555}, {lat:51.51422339174107, long:-0.09555485421956555})>>
-<main>
-
-End location
+<main>End location
 
 $endMap
   
