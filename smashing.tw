@@ -160,17 +160,17 @@ button{
 }
 
 button:hover{
-	background-color:#cf1b98;
+	background-color:#ea9e25;
 	border: #fff 1px solid;
 	color: #fff;
 }
 
 a {
-  color: #f2647d;
+  color:#ea9e25;;
 }
 
 a:active {
-  background-color: #f2647d;
+  background-color: #ea9e25;;
 }
 
 a:hover {
@@ -187,17 +187,20 @@ a:hover {
 
 /*---- GENERAL STYLES ----*/
 body{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   font-family: "Space Grotesk";
+  color:#fff;
+  /* color:#000; */
   overflow:scroll;
-  background:#000;
+  background:#188081;
   /* padding: 1.5rem */
   display:flex;
   flex-direction: column
 }
 main{
    padding: 2rem;
-   margin-block-end: 8rem
+   margin-block-end: 10rem
 }
 
 /* Header */
@@ -209,16 +212,18 @@ header{
 }
 
 
-/* Footer */
+
+/* FOOTER  */
+
 footer{
    display:flex;
   justify-content: space-between;
-  align-items: flex-end; 
+align-items: end;
   position:fixed;
   bottom: 0;
   padding: 2rem;
   width: 100%;
-  background-color: #000
+background: #188081;
 }
 
 nav{
@@ -237,20 +242,32 @@ align-items: flex-end
 }
 
 .nav-item{
-  margin-block-end: 0.5rem
+  margin-block-end: 0.5rem;
+  width:100%;
+  display:flex
 }
 
-.nav-item:last-child{
-  margin-block-end: 0
+.nav-item.replay, .nav-item.end{
+justify-content: center
+}
+.nav-item.replay, .nav-item.forward{
+justify-content: end
 }
 
-.nav-wrapper:last-child{
-display:flex;
-align-items: flex-end
+.nav-item.replay, .nav-item.back{
+justify-content: start
+}
+
+.nav-item.forward > button, 
+.nav-item.back > button{
+  font-size:2rem
+}
+footer > button:first-child,  {
+  font-size:2rem
 }
 
 .nav-item > button{
-  font-size:1rem
+ font-size: 1.3rem
 }
 
 .menu-wrapper{
@@ -288,6 +305,13 @@ width: 100%;
 }
 
 /* SPECIFICS */
+input[type=text], textarea{
+  border: 1px solid #fff;
+min-width: 80vw;
+    max-width: 90vw;
+}
+
+
 
 
 :: Story JavaScript [script]
@@ -382,7 +406,51 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "badjoke" "https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3">>
+<<cacheaudio "SRS_05" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_05.mp3">>
+<<cacheaudio "SRS_06" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_06.mp3">>
+<<cacheaudio "SRS_07" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_07.mp3">>
+<<cacheaudio "SRS_08" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_08.mp3">>
+<<cacheaudio "SRS_09" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_09.mp3">>
+<<cacheaudio "SRS_10" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_10.mp3">>
+<<cacheaudio "SRS_11A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11A.mp3">>
+<<cacheaudio "SRS_11B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11B.mp3">>
+<<cacheaudio "SRS_12" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_12.mp3">>
+<<cacheaudio "SRS_13" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_13.mp3">>
+<<cacheaudio "SRS_14" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_14.mp3">>
+<<cacheaudio "SRS_15.5" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_15.5.mp3">>
+<<cacheaudio "SRS_15" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_15.mp3">>
+<<cacheaudio "SRS_16" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_16.mp3">>
+<<cacheaudio "SRS_17" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_17.mp3">>
+<<cacheaudio "SRS_18A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_18A.mp3">>
+<<cacheaudio "SRS_18B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_18B.mp3">>
+<<cacheaudio "SRS_19A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_19A.mp3">>
+<<cacheaudio "SRS_19B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_19B.mp3">>
+<<cacheaudio "SRS_20.5B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.5B.mp3">>
+<<cacheaudio "SRS_20.6B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.6B.mp3">>
+<<cacheaudio "SRS_20.7B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B.mp3">>
+<<cacheaudio "SRS_20.7B_No" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B_No.mp3">>
+<<cacheaudio "SRS_20.7B_Yes" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B_Yes.mp3">>
+<<cacheaudio "SRS_20A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A.mp3">>
+<<cacheaudio "SRS_20A_DisneyMovie" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_DisneyMovie.mp3">>
+<<cacheaudio "SRS_20A_Explorer" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Explorer.mp3">>
+<<cacheaudio "SRS_20A_Jesus" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Jesus.mp3">>
+<<cacheaudio "SRS_20A_Kanye" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Kanye.mp3">>
+<<cacheaudio "SRS_20A_Pocahontas" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Pocahontas.mp3">>
+<<cacheaudio "SRS_20B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B.mp3">>
+<<cacheaudio "SRS_20B_Closer" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_Closer.mp3">>
+<<cacheaudio "SRS_20B_NeverNoticed" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_NeverNoticed.mp3">>
+<<cacheaudio "SRS_20B_PostmansPark" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_PostmansPark.mp3">>
+<<cacheaudio "SRS_21.5A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21.5A.mp3">>
+<<cacheaudio "SRS_21.5B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21.5B.mp3">>
+<<cacheaudio "SRS_21A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21A.mp3">>
+<<cacheaudio "SRS_21B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21B.mp3">>
+<<cacheaudio "SRS_22A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_22A.mp3">>
+<<cacheaudio "SRS_22B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_22B.mp3">>
+<<cacheaudio "SRS_23B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_23B.mp3">>
+<<cacheaudio "SRS_24B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_24B.mp3">>
+<<cacheaudio "SRS_25" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_25.mp3">>
+<<cacheaudio "SRS_29" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_29.mp3">>
+<<cacheaudio "SRS_30" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_30.mp3">>
 <<waitforaudio>>
 
 
@@ -390,26 +458,37 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 <header>The Smashing Rock Sisters </header>
 
 
-:: footer {"position":"100,350","size":"100,100"}
-<footer><div class="nav-wrapper "><div class="nav-item"><<button "REPLAY">><<goto $passage>><</button>> </div><div class="nav-item"><<button "BACK">><<goto $prevpass>><</button>></div></div><div class="nav-wrapper"><div class="nav-item"><<button "I'M LOST">><<goto "lost">><</button>></div></div></footer>
+:: footer {"position":"100,475","size":"100,100"}
+<footer>
+<div class="nav-item back"><<button "<">><<goto $prevpass>><</button>></div>
+<div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div>
+<div class="nav-item"><<button "Take me to the end">><<goto "lost">><</button>></div>
+<div class="nav-item forward"><<button ">">><<set $prevpass to $passage>><<goto $nextpassage>><</button>></div>
+</footer>
 
+:: footersimple {"position":"100,353","size":"100,100"}
+<footer><div class="nav-item replay"><<button "Replay">><<goto $passage>><</button>> </div>
+<div class="nav-item end"><<button "Take me to the end">><<set $prevpass to $passage>><<goto "lost">><</button>></div></footer>
+
+
+:: footerend {"position":"99,485","size":"100,100"}
+<footer>
+<div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
+</footer>
 
 :: landing {"position":"375,150","size":"100,100"}
 <<set $passage to "landing">>
-<<include "header">>
+
 <main>
-landing page
 
 <<button "begin">><<set $prevpass to $passage>><<goto "SRS-05">><</button>>
 </main>
-<<include "footer">>
 
 
 :: lost {"position":"100,500","size":"100,100"}
 <<set $passage to "lost">>
-<<include "header">>
+
 <main>
-Sorry to hear that you're lost! 
 You have two options:
 
 <<button "Begin the adventure again">><<goto "landing">><</button>>
@@ -420,31 +499,28 @@ You have two options:
 
 
 :: SRS-05 {"position":"600,400","size":"100,100"}
-<<set $passage to "SRS-05">><<include "header">><main>
-/* Audience step through the doorway and hear the sound/see text of someone loudly singing: */
+<<set $passage to "SRS-05">><main><<set $nextpassage to "SRS-06">><<audio ":all" stop>><<audio "SRS_05" play>>
 
-<div id="captions"><<type 50ms >>MADELEINE: And the words, the words she said... Wandered lightly o'er my soul!!
- <</type>></div>
- /* And now another voice - closer: */
-<<timed 10s>><<replace "#captions">><<type 50ms >>DOROTHEA: Would you stop that infernal racket!<</type>>
+<div id="mount"></div>
+<<timed 0.5s>><<replace "#mount">><<type 50ms >>MADELEINE: And the words, the words she said... Wandered lightly o'er my soul!!
+ <</type>><</replace>><</timed>> 
+<<timed 10s>><<replace "#mount">><<type 50ms >>DOROTHEA: Would you stop that infernal racket!<</type>>
 <</replace>><</timed>> 
-<<timed 16s>><<replace "#captions">><<type 50ms >>MADELEINE: No! Art is the highest form of protest. In my new collection-<</type>>
+<<timed 16s>><<replace "#mount">><<type 50ms >>MADELEINE: No! Art is the highest form of protest. In my new collection-<</type>>
 <</replace>><</timed>> 
-<<timed 22s>><<replace "#captions">><<type 50ms >>DOROTHEA: Sod your collection! I think we’ve made another connection.<</type>><</replace>><</timed>> 
-<<timed 30s>><<replace "#captions">><<type 50ms >>MADELEINE: (excited, coming closer) Really? With who?<</type>><</replace>><</timed>> 
-<<timed 36s>>DOROTHEA: I’m not entirely sure. It looks like the future, but I’m not sure when. (To audience, as if they are far away) Greetings, comrades! We are speaking to you from the year 1912. What year is it where you are?<</timed>>
+<<timed 22s>><<replace "#mount">><<type 50ms >>DOROTHEA: Sod your collection! I think we’ve made another connection.<</type>><</replace>><</timed>> 
+<<timed 30s>><<replace "#mount">><<type 50ms >>MADELEINE: (excited, coming closer) Really? With who?<</type>><</replace>><</timed>> 
+<<timed 36s>><<replace "#mount">><<type 50ms >>DOROTHEA: I’m not entirely sure. It looks like the future, but I’m not sure when. (To audience, as if they are far away) Greetings, comrades! We are speaking to you from the year 1912. What year is it where you are?
 
-/* TODO NEEDS TO APPEAR AFTER THE TEXT */
-<<timed 20s>>
-  <<button "2022">><<set $prevpass to $passage>><<goto "SRS-06">><</button>>
-<</timed>>
+<<button "2022">><<set $prevpass to $passage>><<goto "SRS-06">><</button>><</type>><</replace>><</timed>>
+
 </main>
 <<include "footer">>
 
 
 :: SRS-06 {"position":"800,400","size":"100,100"}
-<<set $passage to "SRS-06">>
-<<include "header">>
+<<set $passage to "SRS-06">><<set $nextpassage to "SRS-07">><<audio ":all" stop>><<audio "SRS_06" play>>
+
 <main>DOROTHEA: Oh my. We’ve never reached that far!
 
 MADELEINE: You must tell us everything! Do women have equal rights everywhere now? Are we fixing the world’s problems with double the speed and efficiency of men? Who is leading the country?
@@ -457,8 +533,7 @@ MADELEINE: You must tell us everything! Do women have equal rights everywhere no
 
 
 :: SRS-07 {"position":"1000,400","size":"100,100"}
-<<set $passage to "SRS-07">>
-<<include "header">>
+<<set $passage to "SRS-07">><<set $nextpassage to "SRS-08">><<audio ":all" stop>><<audio "SRS_07" play>>
 <main>
 MADELEINE: A woman? This country voted for a woman in a general election?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
@@ -470,10 +545,13 @@ MADELEINE: A woman? This country voted for a woman in a general election?
 
 
 :: SRS-08 {"position":"1200,400","size":"100,100"}
-<<set $passage to "SRS-08">><<include "header">>
+<<set $passage to "SRS-08">><<set $nextpassage to "SRS-09">><<audio ":all" stop>>
+<<audio "SRS_08" play>>
+/* TODO COULD SRS_08 & SRS_09 be the same file? */
+<<audio ":all" stop>><<audio "SRS_09" play>>
 <main>
 MADELEINE: Then how did - oh it doesn’t matter! What’s she like? Is she respected and trusted? Has she created a nurturing, fair society?
-/* An awkward beat while Madeleine waits for an answer. Realising she won't get the one she wants, she begins to quietly groan. Dorothea steps in. */
+
 DOROTHEA: Come now, you’ve seen enough timelines to know progress rarely goes to plan. 
 Don't worry, my sister is just of the naive belief that the future is utopian.
 
@@ -485,7 +563,6 @@ MADELEINE: Then perhaps we should tell them our real ones, sister.
 
 DOROTHEA: I was about to, sister. 
 We are-
-/* Madeleine starts stamping in time, as if at a rally. */
 MADELEINE: Not afraid to break things to make our points heard! 
 
 DOROTHEA: We are-
@@ -518,11 +595,8 @@ Oh dear, you’d better come along too.
 
 
 :: SRS-09 {"position":"1400,400","size":"100,100"}
-<<set $passage to "ADA-09">><<set $myMap = setup.generateDirectionsMap({lat:51.519627714715114, long:-0.09689844770539591},{lat:51.51933470153766, long:-0.09711499026339707})>>
-<<include "header">>
-<main>
-$myMap
-<<timed 6s>>
+<<set $passage to "ADA-09">><<set $myMap = setup.generateDirectionsMap({lat:51.519627714715114, long:-0.09689844770539591},{lat:51.51933470153766, long:-0.09711499026339707})>><<set $nextpassage to "SRS-10">><main>
+$myMap<<timed 6s>>
   <<button "We're here">><<set $prevpass to $passage>><<goto "SRS-10">><</button>>
 <</timed>>
 </main>
@@ -530,8 +604,7 @@ $myMap
 
 
 :: SRS-10 {"position":"1600,400","size":"100,100"}
-<<set $passage to "SRS-10">>
-<<include "header">>
+<<set $passage to "SRS-10">><<audio ":all" stop>><<audio "SRS_10" play>>
 <main>
 MADELEINE: Welcome to the crossroads - where timelines meet and merge. It doesn’t look like much - not in 1912 at least... but in this very spot we’ve been lucky enough to make contact with agitators from the past, present and future. People who’ve made their mark on the world-
 
@@ -554,12 +627,11 @@ DOROTHEA: Do you know what the women’s suffrage movement is?
 </div>
 <</timed>>
 </main>
-<<include "footer">>
+<<include "footersimple">>
 
 
 :: SRS-11A {"position":"1800,400","size":"100,100"}
-<<set $passage to "SRS-11A">>
-<<include "header">>
+<<set $passage to "SRS-11A">><<audio ":all" stop>><<audio "SRS_11A" play>><<set $nextpassage to "SRS-12">>
 <main>
 DOROTHEA: That’s a shame. I suppose they call it HIS-story for a reason. Basically, right now, in our time...
 
@@ -586,8 +658,7 @@ MADELEINE: Our movement is mocked by the press, derided by our leaders. We suffe
 
 
 :: SRS-11B {"position":"1800,600","size":"100,100"}
-<<set $passage to "SRS-11B">>
-<<include "header">>
+<<set $passage to "SRS-11B">><<audio ":all" stop>><<audio "SRS_11B" play>><<set $nextpassage to "SRS-12">>
 <main>
 MADELEINE: Then you’ll know full well how we are mocked by the press, derided by our leaders. We suffer police brutality, imprisonment, and hostility from the public. Are there any movements in 2022 that face similar challenges?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
@@ -602,13 +673,11 @@ MADELEINE: Then you’ll know full well how we are mocked by the press, derided 
 
 
 :: SRS-12 {"position":"2000,400","size":"100,100"}
-<<set $passage to "SRS-12">><<include "header">>
+<<set $passage to "SRS-12">><<audio ":all" stop>><<audio "SRS_12" play>><<set $nextpassage to "SRS-13">>
 <main>
 DOROTHEA: Well we’d love to know more! What are some famous protests or movements that have happened in your time? Have they brought about change?
 
 MADELEINE: Discuss it as a group and then share your thoughts.
-
-/* TODO Audience are then guided (either in browser or physically on the board) to answer: They can do this multiple times.  */ 
 
 What is the movement called?
 
@@ -630,7 +699,7 @@ In what ways has it achieved or not achieved this?
 
 
 :: SRS-13 {"position":"2200,400","size":"100,100"}
-<<set $passage to "SRS-13">><<include "header">>
+<<set $passage to "SRS-13">><<audio ":all" stop>><<audio "SRS_13" play>><<set $nextpassage to "SRS-14">>
 <main>
 MADELEINE: How truly fascinating.
 
@@ -650,7 +719,7 @@ DOROTHEA: Museums?
 
 
 :: SRS-14 {"position":"2400,400","size":"100,100"}
-<<set $passage to "SRS-14">><<include "header">>
+<<set $passage to "SRS-14">><<audio ":all" stop>><<audio "SRS_14" play>><<set $nextpassage to "SRS-15">>
 <main>
  DOROTHEA: Really?! Oh we must see! What museums are nearby?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
@@ -660,7 +729,7 @@ DOROTHEA: Museums?
 
 
 :: SRS-15 {"position":"2600,400","size":"100,100"}
-<<set $passage to "SRS-15">><<include "header">>
+<<set $passage to "SRS-15">><<audio ":all" stop>><<audio "SRS_15" play>><<set $nextpassage to "SRS-15.5">>
 <main>
 DOROTHEA: Then you must take us there! Come along, everyone.
 
@@ -674,7 +743,6 @@ DOROTHEA: Where is everyone?
 
 MADELEINE: Coming, sister!
 
-/* Audience move off, towards the Museum of London. Enroute, as they pass Seddon House: */
 MADELEINE: You know, in 1912 there was a performing arts conservatoire near here. Guildhall school of Music and Drama. Does it still exist?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
 <<timed 5s>>
@@ -689,8 +757,7 @@ MADELEINE: You know, in 1912 there was a performing arts conservatoire near here
 
 
 :: SRS-15.5 {"position":"2800,400","size":"100,100"}
-<<set $passage to "SRS-15.5">><<set $myMap2 = setup.generateDirectionsMap({lat:51.51933470153766, long:-0.09711499026339707}, {lat:51.518047132215855, long:-0.09687095020549558})>>
-<<include "header">>
+<<set $passage to "SRS-15.5">><<set $myMap2 = setup.generateDirectionsMap({lat:51.51933470153766, long:-0.09711499026339707}, {lat:51.518047132215855, long:-0.09687095020549558})>><<audio ":all" stop>><<audio "SRS_15.5" play>><<set $nextpassage to "SRS-16">>
 <main>
 MADELEINE: You know, my sister and I do a spot of acting, we are part of the Guildhouse players... people say we’re quite good...
 
@@ -709,8 +776,7 @@ DOROTHEA: For the last time! No-one wants to see your suffragette Hamlet! I apol
 
 
 :: SRS-16 {"position":"3000,400","size":"100,100"}
-<<set $passage to "SRS-16">>
-<<include "header">>
+<<set $passage to "SRS-16">><<audio ":all" stop>><<audio "SRS_16" play>><<set $nextpassage to "SRS-17">>
 <main>
 DOROTHEA: So the Museum of London... is a roundabout?
 
@@ -733,8 +799,7 @@ MADELEINE: Yes, Mr Churchill... tell me, how is that wretch remembered in 2022?
 
 
 :: SRS-17 {"position":"3175,400","size":"100,100"}
-<<set $passage to "SRS-17A">>
-<<include "header">>
+<<set $passage to "SRS-17A">><<audio ":all" stop>><<audio "SRS_17" play>>
 <main>MADELEINE: A hero?! How can that be possible?
 
 DOROTHEA: Madeleine...
@@ -762,12 +827,11 @@ BOTH: What do you think?
 </div>
 <</timed>>
 </main>
-<<include "footer">>
+<<include "footersimple">>
 
 
 :: SRS-18A {"position":"600,1000","size":"100,100"}
-<<set $passage to "SRS-18A">>
-<<include "header">>
+<<set $passage to "SRS-18A">><<audio ":all" stop>><<audio "SRS_18A" play>><<set $nextpassage to "SRS-19A">>
 <main>
 DOROTHEA: An excellent answer.
 
@@ -785,9 +849,6 @@ DOROTHEA: That’s not exactly what I -
 
 MADELEINE: Onwards!
 
-/* Audience are guided towards Paternoster Square, stopping enroute to note street names, buildings (
-  TODO  NOTE: is it useful if every time they spot something, they press an option on the browser to hear Madeleine say: “Great find! Do we suspect they’re a hero? Or a villain?") */
-
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 
 <<timed 15s>><<button "Next">><<set $prevpass to $passage>><<goto "SRS-19A">><</button>><</timed>>
@@ -796,7 +857,8 @@ MADELEINE: Onwards!
 
 
 :: SRS-19A {"position":"800,1000","size":"100,100"}
-<<set $passage to "SRS-19A">><<set $myMap3 = setup.generateDirectionsMap({lat:51.518047132215855, long:-0.09687095020549558}, {lat:51.51385503154935, long:-0.09367685227098957})>><<include "header">>
+<<set $passage to "SRS-19A">><<set $myMap3 = setup.generateDirectionsMap({lat:51.518047132215855, long:-0.09687095020549558}, {lat:51.51385503154935, long:-0.09367685227098957})>><<audio ":all" stop>><<audio "SRS_19A" play>><<set $nextpassage to "SRS-20A">>
+
 <main>
 DOROTHEA: Madeleine, wait.
 
@@ -857,7 +919,9 @@ Shall we? Perhaps there’s more monuments we can find to prove my point...
 
 
 :: SRS-20A {"position":"1000,1000","size":"100,100"}
-<<set $passage to "SRS-20A">><<include "header">><main>
+<<set $passage to "SRS-20A">><<audio ":all" stop>><<audio "SRS_20A" play>><<set $nextpassage to "SRS-20.5a">>
+
+<main>
 MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in 1908. Can you read the plinth for me? Who is it?
 
 <div class="menu-wrapper" id="mount">
@@ -870,7 +934,7 @@ MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in
 
   <<button "Being in a Disney movie">><<replace "#feedback2">>I don’t know what you’re talking about. What is a Disney Movie?<</replace>><<timed 3s>><<replace "#feedback2">><</replace>><</timed>><</button>>
   <<button "He was Pocahontas’s lover">><<replace "#feedback2">>Ah, well I have spoken with Pocahontas, and her account is different...<</replace>><<timed 3s>><<replace "#feedback2">><</replace>><</timed>><</button>>
-  <<button "He was an explorer ">><<timed 1s>><<set $prevpass to $passage>><<goto "SRS-20Aa">><</timed>><</button>><</replace>><</button>>
+  <<button "He was an explorer ">><<timed 1s>><<set $prevpass to $passage>><<goto "SRS-20.5A">><</timed>><</button>><</replace>><</button>>
   <div id="feedback2"></div>
       <<button "Kanye West">><<replace "#feedback">>Who is that? Are you sure? Try reading again.<</replace>><<timed 3s>><<replace "#feedback">><</replace>><</timed>><</button>>
 </div><div id="feedback"></div><div id="feedback2"></div>
@@ -881,8 +945,10 @@ MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in
 <<include "footer">>
 
 
-:: SRS-20Aa {"position":"1100,1100","size":"100,100"}
-<<set $passage to "SRS-20Aa">><<include "header">><main>
+:: SRS-20.5A {"position":"1100,1100","size":"100,100"}
+<<set $passage to "SRS-20.5A">><<audio ":all" stop>><<audio "SRS_20.5A" play>><<set $nextpassage to "SRS-21A">>
+/* TODO MISSING AUDIO */
+<main>
 And more! 
 
   MADELEINE: I’ll share what I know. John Smith led a rather colourful life, fighting bravely in wars across the world before landing the job of ‘president’ of the Jamestown colony in newly ‘discovered’ Virginia. The story goes that while out exploring, John Smith was captured by the ruling Powhatan tribe. He testifies that they were about to kill him when the Chief’s daughter Pocahontas pleaded for his life. She was 11. So stories of their love are hopefully fabrications!
@@ -901,9 +967,9 @@ And more!
 
 
 :: SRS-21A {"position":"1300,1000","size":"100,100"}
-<<set $passage to "SRS-21A">><<include "header">>
+<<set $passage to "SRS-21A">><<audio ":all" stop>><<audio "SRS_21A" play>><<set $nextpassage to "SRS-22A">>
 <main>
-<div class="mount">
+<div id="mount">
   MADELEINE: Interesting...
   
   See, despite what my sister says, I believe making leaders into heroes is dangerous. It gives them the freedom to hurt people ‘for the greater good’ and never be challenged. Then we’re left with monuments like this, obscuring the full history from view.
@@ -924,7 +990,7 @@ But I do believe our time together is nearing an end. Before we say goodbye - co
 
 
 :: SRS-22A {"position":"1500,1000","size":"100,100"}
-<<set $passage to "SRS-22A">><<include "header">><<set $myMap3 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})>>
+<<set $passage to "SRS-22A">><<set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})>><<audio ":all" stop>><<audio "SRS_22A" play>><<set $nextpassage to "SRS-25">>
 <main>
  MADELEINE: Wonderful! Lead away!
 <<timed 5s>>$myMap4<</timed>>
@@ -935,7 +1001,7 @@ But I do believe our time together is nearing an end. Before we say goodbye - co
 
 
 :: SRS-18B {"position":"600,1200","size":"100,100"}
-<<set $passage to "SRS-18B ">><<include "header">><<set $myMap4 = setup.generateDirectionsMap( {lat:51.5173344699954, long:-0.09669576252319788}, {lat:51.51694056560406, long:-0.09744678101621963})>>
+<<set $passage to "SRS-18B ">><<set $myMap4 = setup.generateDirectionsMap( {lat:51.5173344699954, long:-0.09669576252319788}, {lat:51.51694056560406, long:-0.09744678101621963})>><<audio ":all" stop>><<audio "SRS_18B" play>><<set $nextpassage to "SRS-19B">>
 <main>
 MADELEINE: An excellent answer.
 
@@ -964,7 +1030,7 @@ DOROTHEA: Onwards!
 
 
 :: SRS-19B {"position":"800,1200","size":"100,100"}
-<<set $passage to "SRS-19B">><<include "header">>
+<<set $passage to "SRS-19B">><<audio ":all" stop>><<audio "SRS_19B" play>><<set $nextpassage to "SRS-20B">>
 <main>
 DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just visible through those gates. Does it exist in 2022?
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
@@ -975,7 +1041,7 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 
 
 :: SRS-20B {"position":"1000,1200","size":"100,100"}
-<<set $passage to "SRS-20B">><<include "header">><main>
+<<set $passage to "SRS-20B">><main><<audio ":all" stop>><<audio "SRS_20B" play>><<set $nextpassage to "SRS-20.5B">>
 <div id="mount">DOROTHEA: Ah, I see. What do you know about it?
 
 <div class="menu-wrapper">
@@ -987,8 +1053,8 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
    Correct, do you know anything else?
 
   <div class="menu-wrapper">
-    <<button "Yes">><<set $prevpass to $passage>><<goto "SRS-20Ba">><</button>>
-     <<button "No">><<set $prevpass to $passage>><<goto "SRS-20Ba">><</button>>
+    <<button "Yes">><<set $prevpass to $passage>><<goto "SRS-20.5B">><</button>>
+     <<button "No">><<set $prevpass to $passage>><<goto "SRS-20.5B">><</button>>
   </div>
    <</replace>>
 <</button>>  
@@ -1004,8 +1070,8 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 <<include "footer">>
 
 
-:: SRS-20Ba {"position":"1100,1300","size":"100,100"}
-<<set $passage to "SRS-20Ba">><<include "header">>
+:: SRS-20.5B {"position":"1100,1300","size":"100,100"}
+<<set $passage to "SRS-20.5B">><<audio ":all" stop>><<audio "SRS_20.5B" play>><<set $nextpassage to "SRS-21B">>
 <main><div id="mount">DOROTHEA: I shall share what I know. This park was built as a memorial. See that wall over there? It lists ordinary citizens who showed extraordinary acts of bravery, people who sacrificed their own lives to save another. It was the brainchild of painter and sculptor, George Frederic Watts, who called it ‘Heroic Self Sacrifice’.
     
     When told the origins of the park, most agree that it is a beautiful testament to ordinary people. How do you feel about it? Discuss amongst yourselves and share. I’d love to know.
@@ -1020,7 +1086,7 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
             DOROTHEA: Did things change for the better for those people as a result?
 
                 <div class="menu-wrapper">
-                  <<button "Yes">><<replace "#mount">>That’s good to hear. Here in 1912, that is less common.<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-20Ba">><</timed>><</button>>
+                  <<button "Yes">><<replace "#mount">>That’s good to hear. Here in 1912, that is less common.<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
                   <<button "No">><<replace "#mount">>Yes. It’s the same here in 1912<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
                 </div>
             <</replace>>
@@ -1033,7 +1099,7 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 
 
 :: SRS-21B {"position":"1300,1200","size":"100,100"}
-<<set $passage to "SRS-21B">><<include "header">>
+<<set $passage to "SRS-21B">><<audio ":all" stop>><<audio "SRS_21B" play>><<set $nextpassage to "SRS-22B">>
 <main> <div id="mount"></div>
 <<timed 1s>><<replace "#mount">> DOROTHEA: Celebrating the deeds of ordinary people is a great gesture. But how often does it spark a lasting change in their lives?
 
@@ -1056,7 +1122,8 @@ So I ask, should we commemorate ordinary acts of sacrifice with monuments like t
 
 
 :: SRS-22B {"position":"1500,1200","size":"100,100"}
-<<set $passage to "SRS-22B">><<include "header">><<set $myMap5 = setup.generateDirectionsMap(  {lat:51.51694056560406, long:-0.09744678101621963}, {lat:51.516146261728665, long:-0.09573724447082779})>><main>
+<<set $passage to "SRS-22B">><<set $myMap5 = setup.generateDirectionsMap(  {lat:51.51694056560406, long:-0.09744678101621963}, {lat:51.516146261728665, long:-0.09573724447082779})>><<audio ":all" stop>><<audio "SRS_22B" play>><<set $nextpassage to "SRS-23B">>
+<main>
 DOROTHEA: Oh dear. Trouble has a way of finding her - we’d better get there first!
 
 <<timed 5s>>$myMap5<</timed>>
@@ -1067,7 +1134,7 @@ DOROTHEA: Oh dear. Trouble has a way of finding her - we’d better get there fi
 
 
 :: SRS-23B {"position":"1700,1200","size":"100,100"}
-<<set $passage to "SRS-23B">><<include "header">>
+<<set $passage to "SRS-23B">><<audio ":all" stop>><<audio "SRS_23B" play>><<set $nextpassage to "SRS-25">>
 <main>
 DOROTHEA: There she is! Madeleine! What are you doing?
 
@@ -1126,7 +1193,7 @@ MADELEINE: One last stop?
 
 
 :: SRS-24B {"position":"1900,1200","size":"100,100"}
-<<set $passage to "SRS-24B">><<include "header">><<set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})>>
+<<set $passage to "SRS-24B">><<set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})>><<audio ":all" stop>><<audio "SRS_24B" play>><<set $nextpassage to "SRS-25">>
 <main>
 MADELEINE: Ooh yes please! Lead away!
 <<timed 5s>>$myMap4<</timed>>
@@ -1136,7 +1203,7 @@ MADELEINE: Ooh yes please! Lead away!
 
 
 :: SRS-25 {"position":"2100,1000","size":"100,100"}
-<<set $passage to "SRS-25">><<include "header">>
+<<set $passage to "SRS-25">><<audio ":all" stop>><<audio "SRS_25" play>><<set $nextpassage to "SRS-29">>
 <main>
 MADELEINE: Well this looks rather different from 1912. What a beast of a building!
 
@@ -1150,7 +1217,7 @@ DOROTHEA: What do you call this place?
 
 
 :: SRS-29 {"position":"2600,1000","size":"100,100"}
-<<set $passage to "SRS-29">><<include "header">>
+<<set $passage to "SRS-29">><<audio ":all" stop>><<audio "SRS_29" play>><<set $nextpassage to "SRS-30">>
 <main>
 MADELEINE: How apt. That's what we're fighting for.
 
@@ -1190,7 +1257,7 @@ DOROTHEA: We’d love to hear.
 
 
 :: SRS-30 {"position":"2800,1000","size":"100,100"}
-<<set $passage to "SRS-30">><<include "header">>
+<<set $passage to "SRS-30">><<audio ":all" stop>><<audio "SRS_30" play>><<set $nextpassage to "SRS-31">>
 <main>
 <div id="mount"></div>
 <<timed 0.5s>><<replace "#mount">>
@@ -1242,7 +1309,8 @@ FELIX: Hello again! You made it through the maze! What do you make of the Rock s
 
 
 :: SRS-31 {"position":"3000,1000","size":"100,100"}
-<<set $passage to "SRS-31">><<include "header">>
+<<set $passage to "SRS-31">><<audio ":all" stop>><<audio "SRS_31" play>><<set $nextpassage to "end">>
+/* TODO AUDIO NOT HERE YET */
 <main>
 Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for thought as we head to something completely different...
 
@@ -1253,7 +1321,7 @@ Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for
 
 
 :: end {"position":"100,700","size":"100,100"}
-<<set $passage to "19">><<set $nextpass to "">><<include "header">><<set $endMap = setup.generateDirectionsMap( {lat:51.51422339174107, long:-0.09555485421956555}, {lat:51.51422339174107, long:-0.09555485421956555})>>
+<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap( {lat:51.51422339174107, long:-0.09555485421956555}, {lat:51.51422339174107, long:-0.09555485421956555})>>
 <main>
 
 End location

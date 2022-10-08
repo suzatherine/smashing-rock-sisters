@@ -98,7 +98,7 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<!-- UUID://F9E39354-F641-4070-8B55-C312A3FDC8C2// --><tw-storydata name="Smashing Rock Sisters" startnode="4" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B55-C312A3FDC8C2" zoom="0.3" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
+	<!-- UUID://F9E39354-F641-4070-8B55-C312A3FDC8C2// --><tw-storydata name="Smashing Rock Sisters" startnode="6" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B55-C312A3FDC8C2" zoom="0.3" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 
 /* GENERICS */
 html {
@@ -245,17 +245,17 @@ button{
 }
 
 button:hover{
-	background-color:#cf1b98;
+	background-color:#ea9e25;
 	border: #fff 1px solid;
 	color: #fff;
 }
 
 a {
-  color: #f2647d;
+  color:#ea9e25;;
 }
 
 a:active {
-  background-color: #f2647d;
+  background-color: #ea9e25;;
 }
 
 a:hover {
@@ -272,17 +272,20 @@ a:hover {
 
 /*---- GENERAL STYLES ----*/
 body{
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 600;
   font-family: "Space Grotesk";
+  color:#fff;
+  /* color:#000; */
   overflow:scroll;
-  background:#000;
+  background:#188081;
   /* padding: 1.5rem */
   display:flex;
   flex-direction: column
 }
 main{
    padding: 2rem;
-   margin-block-end: 8rem
+   margin-block-end: 10rem
 }
 
 /* Header */
@@ -294,16 +297,18 @@ header{
 }
 
 
-/* Footer */
+
+/* FOOTER  */
+
 footer{
    display:flex;
   justify-content: space-between;
-  align-items: flex-end; 
+align-items: end;
   position:fixed;
   bottom: 0;
   padding: 2rem;
   width: 100%;
-  background-color: #000
+background: #188081;
 }
 
 nav{
@@ -322,20 +327,32 @@ align-items: flex-end
 }
 
 .nav-item{
-  margin-block-end: 0.5rem
+  margin-block-end: 0.5rem;
+  width:100%;
+  display:flex
 }
 
-.nav-item:last-child{
-  margin-block-end: 0
+.nav-item.replay, .nav-item.end{
+justify-content: center
+}
+.nav-item.replay, .nav-item.forward{
+justify-content: end
 }
 
-.nav-wrapper:last-child{
-display:flex;
-align-items: flex-end
+.nav-item.replay, .nav-item.back{
+justify-content: start
+}
+
+.nav-item.forward > button, 
+.nav-item.back > button{
+  font-size:2rem
+}
+footer > button:first-child,  {
+  font-size:2rem
 }
 
 .nav-item > button{
-  font-size:1rem
+ font-size: 1.3rem
 }
 
 .menu-wrapper{
@@ -372,7 +389,12 @@ width: 100%;
 }
 }
 
-/* SPECIFICS */</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
+/* SPECIFICS */
+input[type=text], textarea{
+  border: 1px solid #fff;
+min-width: 80vw;
+    max-width: 90vw;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">$('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
 // TYPEWRITER FN
 !function() {
@@ -459,45 +481,91 @@ for (let i =0 ; i < 5 ; i++){
 word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 }
   return word;
-}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;badjoke&quot; &quot;https://youhavefoundconey.net/CG/what/assets/audio/badjoke.mp3&quot;&gt;&gt;
-&lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="" position="100,225" size="100,100">&lt;header&gt;The Smashing Rock Sisters &lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="" position="100,350" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-wrapper &quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;REPLAY&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;BACK&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;nav-wrapper&quot;&gt;&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;I&#39;M LOST&quot;&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="landing" tags="" position="375,150" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+}</script><tw-passagedata pid="1" name="StoryInit" tags="" position="100,100" size="100,100">&lt;&lt;cacheaudio &quot;SRS_05&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_05.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_06&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_06.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_07&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_07.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_08&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_08.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_09&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_09.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_10&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_10.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_11A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_11B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_12&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_12.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_13&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_13.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_14&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_14.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_15.5&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_15.5.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_15&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_15.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_16&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_16.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_17&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_17.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_18A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_18A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_18B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_18B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_19A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_19A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_19B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_19B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20.5B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.5B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20.6B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.6B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20.7B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20.7B_No&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B_No.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20.7B_Yes&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B_Yes.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20A_DisneyMovie&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_DisneyMovie.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20A_Explorer&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Explorer.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20A_Jesus&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Jesus.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20A_Kanye&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Kanye.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20A_Pocahontas&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Pocahontas.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20B_Closer&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_Closer.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20B_NeverNoticed&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_NeverNoticed.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_20B_PostmansPark&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_PostmansPark.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_21.5A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21.5A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_21.5B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21.5B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_21A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_21B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_22A&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_22A.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_22B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_22B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_23B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_23B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_24B&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_24B.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_25&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_25.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_29&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_29.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;SRS_30&quot; &quot;https://www.youhavefoundconey.net/tgksnd/SRS/SRS_30.mp3&quot;&gt;&gt;
+&lt;&lt;waitforaudio&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="header" tags="" position="100,225" size="100,100">&lt;header&gt;The Smashing Rock Sisters &lt;/header&gt;</tw-passagedata><tw-passagedata pid="3" name="footer" tags="" position="100,475" size="100,100">&lt;footer&gt;
+&lt;div class=&quot;nav-item back&quot;&gt;&lt;&lt;button &quot;&lt;&quot;&gt;&gt;&lt;&lt;goto $prevpass&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
+&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+&lt;div class=&quot;nav-item forward&quot;&gt;&lt;&lt;button &quot;&gt;&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto $nextpassage&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="4" name="footersimple" tags="" position="100,353" size="100,100">&lt;footer&gt;&lt;div class=&quot;nav-item replay&quot;&gt;&lt;&lt;button &quot;Replay&quot;&gt;&gt;&lt;&lt;goto $passage&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;/div&gt;
+&lt;div class=&quot;nav-item end&quot;&gt;&lt;&lt;button &quot;Take me to the end&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;lost&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="5" name="footerend" tags="" position="99,485" size="100,100">&lt;footer&gt;
+&lt;div class=&quot;nav-item&quot;&gt;&lt;&lt;button &quot;Start again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;/div&gt;
+&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="6" name="landing" tags="" position="375,150" size="100,100">&lt;&lt;set $passage to &quot;landing&quot;&gt;&gt;
+
 &lt;main&gt;
-landing page
 
 &lt;&lt;button &quot;begin&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-05&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="lost" tags="" position="100,500" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;/main&gt;</tw-passagedata><tw-passagedata pid="7" name="lost" tags="" position="100,500" size="100,100">&lt;&lt;set $passage to &quot;lost&quot;&gt;&gt;
+
 &lt;main&gt;
-Sorry to hear that you&#39;re lost! 
 You have two options:
 
 &lt;&lt;button &quot;Begin the adventure again&quot;&gt;&gt;&lt;&lt;goto &quot;landing&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;&lt;button &quot;Take me straight to the end location!&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="SRS-05" tags="" position="600,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-05&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main&gt;
-/* Audience step through the doorway and hear the sound/see text of someone loudly singing: */
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="SRS-05" tags="" position="600,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-05&quot;&gt;&gt;&lt;main&gt;&lt;&lt;set $nextpassage to &quot;SRS-06&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_05&quot; play&gt;&gt;
 
-&lt;div id=&quot;captions&quot;&gt;&lt;&lt;type 50ms &gt;&gt;MADELEINE: And the words, the words she said... Wandered lightly o&#39;er my soul!!
- &lt;&lt;/type&gt;&gt;&lt;/div&gt;
- /* And now another voice - closer: */
-&lt;&lt;timed 10s&gt;&gt;&lt;&lt;replace &quot;#captions&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;DOROTHEA: Would you stop that infernal racket!&lt;&lt;/type&gt;&gt;
+&lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
+&lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;MADELEINE: And the words, the words she said... Wandered lightly o&#39;er my soul!!
+ &lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 10s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;DOROTHEA: Would you stop that infernal racket!&lt;&lt;/type&gt;&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
-&lt;&lt;timed 16s&gt;&gt;&lt;&lt;replace &quot;#captions&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;MADELEINE: No! Art is the highest form of protest. In my new collection-&lt;&lt;/type&gt;&gt;
+&lt;&lt;timed 16s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;MADELEINE: No! Art is the highest form of protest. In my new collection-&lt;&lt;/type&gt;&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
-&lt;&lt;timed 22s&gt;&gt;&lt;&lt;replace &quot;#captions&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;DOROTHEA: Sod your collection! I think we’ve made another connection.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
-&lt;&lt;timed 30s&gt;&gt;&lt;&lt;replace &quot;#captions&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;MADELEINE: (excited, coming closer) Really? With who?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
-&lt;&lt;timed 36s&gt;&gt;DOROTHEA: I’m not entirely sure. It looks like the future, but I’m not sure when. (To audience, as if they are far away) Greetings, comrades! We are speaking to you from the year 1912. What year is it where you are?&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 22s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;DOROTHEA: Sod your collection! I think we’ve made another connection.&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 30s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;MADELEINE: (excited, coming closer) Really? With who?&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt; 
+&lt;&lt;timed 36s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;&lt;&lt;type 50ms &gt;&gt;DOROTHEA: I’m not entirely sure. It looks like the future, but I’m not sure when. (To audience, as if they are far away) Greetings, comrades! We are speaking to you from the year 1912. What year is it where you are?
 
-/* TODO NEEDS TO APPEAR AFTER THE TEXT */
-&lt;&lt;timed 20s&gt;&gt;
-  &lt;&lt;button &quot;2022&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-06&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-&lt;&lt;/timed&gt;&gt;
+&lt;&lt;button &quot;2022&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-06&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/type&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
+
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="SRS-06" tags="" position="800,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-06&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="SRS-06" tags="" position="800,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-06&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-07&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_06&quot; play&gt;&gt;
+
 &lt;main&gt;DOROTHEA: Oh my. We’ve never reached that far!
 
 MADELEINE: You must tell us everything! Do women have equal rights everywhere now? Are we fixing the world’s problems with double the speed and efficiency of men? Who is leading the country?
@@ -506,8 +574,7 @@ MADELEINE: You must tell us everything! Do women have equal rights everywhere no
   &lt;&lt;button &quot;We have a female prime minister.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-07&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="SRS-07" tags="" position="1000,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-07&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="SRS-07" tags="" position="1000,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-07&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-08&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_07&quot; play&gt;&gt;
 &lt;main&gt;
 MADELEINE: A woman? This country voted for a woman in a general election?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
@@ -515,10 +582,13 @@ MADELEINE: A woman? This country voted for a woman in a general election?
   &lt;&lt;button &quot;There wasn’t a general election.&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-08&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="SRS-08" tags="" position="1200,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-08&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SRS-08" tags="" position="1200,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-08&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-09&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;
+&lt;&lt;audio &quot;SRS_08&quot; play&gt;&gt;
+/* TODO COULD SRS_08 &amp; SRS_09 be the same file? */
+&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_09&quot; play&gt;&gt;
 &lt;main&gt;
 MADELEINE: Then how did - oh it doesn’t matter! What’s she like? Is she respected and trusted? Has she created a nurturing, fair society?
-/* An awkward beat while Madeleine waits for an answer. Realising she won&#39;t get the one she wants, she begins to quietly groan. Dorothea steps in. */
+
 DOROTHEA: Come now, you’ve seen enough timelines to know progress rarely goes to plan. 
 Don&#39;t worry, my sister is just of the naive belief that the future is utopian.
 
@@ -530,7 +600,6 @@ MADELEINE: Then perhaps we should tell them our real ones, sister.
 
 DOROTHEA: I was about to, sister. 
 We are-
-/* Madeleine starts stamping in time, as if at a rally. */
 MADELEINE: Not afraid to break things to make our points heard! 
 
 DOROTHEA: We are-
@@ -559,16 +628,12 @@ Oh dear, you’d better come along too.
 &lt;&lt;timed 10s&gt;&gt;&lt;&lt;goto &quot;SRS-09&quot;&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="10" name="SRS-09" tags="" position="1400,400" size="100,100">&lt;&lt;set $passage to &quot;ADA-09&quot;&gt;&gt;&lt;&lt;set $myMap = setup.generateDirectionsMap({lat:51.519627714715114, long:-0.09689844770539591},{lat:51.51933470153766, long:-0.09711499026339707})&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
-&lt;main&gt;
-$myMap
-&lt;&lt;timed 6s&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SRS-09" tags="" position="1400,400" size="100,100">&lt;&lt;set $passage to &quot;ADA-09&quot;&gt;&gt;&lt;&lt;set $myMap = setup.generateDirectionsMap({lat:51.519627714715114, long:-0.09689844770539591},{lat:51.51933470153766, long:-0.09711499026339707})&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-10&quot;&gt;&gt;&lt;main&gt;
+$myMap&lt;&lt;timed 6s&gt;&gt;
   &lt;&lt;button &quot;We&#39;re here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-10&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="SRS-10" tags="" position="1600,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-10&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="SRS-10" tags="" position="1600,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-10&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_10&quot; play&gt;&gt;
 &lt;main&gt;
 MADELEINE: Welcome to the crossroads - where timelines meet and merge. It doesn’t look like much - not in 1912 at least... but in this very spot we’ve been lucky enough to make contact with agitators from the past, present and future. People who’ve made their mark on the world-
 
@@ -591,8 +656,7 @@ DOROTHEA: Do you know what the women’s suffrage movement is?
 &lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="12" name="SRS-11A" tags="" position="1800,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-11A&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footersimple&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SRS-11A" tags="" position="1800,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-11A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_11A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-12&quot;&gt;&gt;
 &lt;main&gt;
 DOROTHEA: That’s a shame. I suppose they call it HIS-story for a reason. Basically, right now, in our time...
 
@@ -615,8 +679,7 @@ MADELEINE: Our movement is mocked by the press, derided by our leaders. We suffe
 &lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="13" name="SRS-11B" tags="" position="1800,600" size="100,100">&lt;&lt;set $passage to &quot;SRS-11B&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="SRS-11B" tags="" position="1800,600" size="100,100">&lt;&lt;set $passage to &quot;SRS-11B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_11B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-12&quot;&gt;&gt;
 &lt;main&gt;
 MADELEINE: Then you’ll know full well how we are mocked by the press, derided by our leaders. We suffer police brutality, imprisonment, and hostility from the public. Are there any movements in 2022 that face similar challenges?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
@@ -627,13 +690,11 @@ MADELEINE: Then you’ll know full well how we are mocked by the press, derided 
 &lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="14" name="SRS-12" tags="" position="2000,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-12&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="SRS-12" tags="" position="2000,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-12&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_12&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-13&quot;&gt;&gt;
 &lt;main&gt;
 DOROTHEA: Well we’d love to know more! What are some famous protests or movements that have happened in your time? Have they brought about change?
 
 MADELEINE: Discuss it as a group and then share your thoughts.
-
-/* TODO Audience are then guided (either in browser or physically on the board) to answer: They can do this multiple times.  */ 
 
 What is the movement called?
 
@@ -651,7 +712,7 @@ In what ways has it achieved or not achieved this?
   &lt;&lt;button &quot;Finished!&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-13&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="SRS-13" tags="" position="2200,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-13&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="SRS-13" tags="" position="2200,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-13&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_13&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-14&quot;&gt;&gt;
 &lt;main&gt;
 MADELEINE: How truly fascinating.
 
@@ -667,13 +728,13 @@ DOROTHEA: Museums?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
 &lt;&lt;timed 5s&gt;&gt;&lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-14&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="SRS-14" tags="" position="2400,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-14&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="SRS-14" tags="" position="2400,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-14&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_14&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-15&quot;&gt;&gt;
 &lt;main&gt;
  DOROTHEA: Really?! Oh we must see! What museums are nearby?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
 &lt;&lt;timed 5s&gt;&gt;&lt;&lt;button &quot;Museum of London&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-15&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="SRS-15" tags="" position="2600,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-15&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="SRS-15" tags="" position="2600,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-15&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_15&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-15.5&quot;&gt;&gt;
 &lt;main&gt;
 DOROTHEA: Then you must take us there! Come along, everyone.
 
@@ -687,7 +748,6 @@ DOROTHEA: Where is everyone?
 
 MADELEINE: Coming, sister!
 
-/* Audience move off, towards the Museum of London. Enroute, as they pass Seddon House: */
 MADELEINE: You know, in 1912 there was a performing arts conservatoire near here. Guildhall school of Music and Drama. Does it still exist?
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
 &lt;&lt;timed 5s&gt;&gt;
@@ -698,8 +758,7 @@ MADELEINE: You know, in 1912 there was a performing arts conservatoire near here
 &lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="SRS-15.5" tags="" position="2800,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-15.5&quot;&gt;&gt;&lt;&lt;set $myMap2 = setup.generateDirectionsMap({lat:51.51933470153766, long:-0.09711499026339707}, {lat:51.518047132215855, long:-0.09687095020549558})&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="SRS-15.5" tags="" position="2800,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-15.5&quot;&gt;&gt;&lt;&lt;set $myMap2 = setup.generateDirectionsMap({lat:51.51933470153766, long:-0.09711499026339707}, {lat:51.518047132215855, long:-0.09687095020549558})&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_15.5&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-16&quot;&gt;&gt;
 &lt;main&gt;
 MADELEINE: You know, my sister and I do a spot of acting, we are part of the Guildhouse players... people say we’re quite good...
 
@@ -714,8 +773,7 @@ DOROTHEA: For the last time! No-one wants to see your suffragette Hamlet! I apol
   &lt;&lt;button &quot;We&#39;re here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-16&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="19" name="SRS-16" tags="" position="3000,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-16&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="SRS-16" tags="" position="3000,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-16&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_16&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-17&quot;&gt;&gt;
 &lt;main&gt;
 DOROTHEA: So the Museum of London... is a roundabout?
 
@@ -734,8 +792,7 @@ MADELEINE: Yes, Mr Churchill... tell me, how is that wretch remembered in 2022?
 &lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="SRS-17" tags="" position="3175,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-17A&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="SRS-17" tags="" position="3175,400" size="100,100">&lt;&lt;set $passage to &quot;SRS-17A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_17&quot; play&gt;&gt;
 &lt;main&gt;MADELEINE: A hero?! How can that be possible?
 
 DOROTHEA: Madeleine...
@@ -763,8 +820,7 @@ BOTH: What do you think?
 &lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="SRS-18A" tags="" position="600,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-18A&quot;&gt;&gt;
-&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footersimple&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="SRS-18A" tags="" position="600,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-18A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_18A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-19A&quot;&gt;&gt;
 &lt;main&gt;
 DOROTHEA: An excellent answer.
 
@@ -782,14 +838,12 @@ DOROTHEA: That’s not exactly what I -
 
 MADELEINE: Onwards!
 
-/* Audience are guided towards Paternoster Square, stopping enroute to note street names, buildings (
-  TODO  NOTE: is it useful if every time they spot something, they press an option on the browser to hear Madeleine say: “Great find! Do we suspect they’re a hero? Or a villain?&quot;) */
-
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 
 &lt;&lt;timed 15s&gt;&gt;&lt;&lt;button &quot;Next&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-19A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="22" name="SRS-19A" tags="" position="800,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-19A&quot;&gt;&gt;&lt;&lt;set $myMap3 = setup.generateDirectionsMap({lat:51.518047132215855, long:-0.09687095020549558}, {lat:51.51385503154935, long:-0.09367685227098957})&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="SRS-19A" tags="" position="800,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-19A&quot;&gt;&gt;&lt;&lt;set $myMap3 = setup.generateDirectionsMap({lat:51.518047132215855, long:-0.09687095020549558}, {lat:51.51385503154935, long:-0.09367685227098957})&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_19A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-20A&quot;&gt;&gt;
+
 &lt;main&gt;
 DOROTHEA: Madeleine, wait.
 
@@ -846,7 +900,9 @@ Shall we? Perhaps there’s more monuments we can find to prove my point...
 &lt;&lt;timed 5s&gt;&gt;$myMap3&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 15s&gt;&gt;&lt;&lt;button &quot;At the Statue&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20A&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="23" name="SRS-20A" tags="" position="1000,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-20A&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="SRS-20A" tags="" position="1000,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-20A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-20.5a&quot;&gt;&gt;
+
+&lt;main&gt;
 MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in 1908. Can you read the plinth for me? Who is it?
 
 &lt;div class=&quot;menu-wrapper&quot; id=&quot;mount&quot;&gt;
@@ -859,7 +915,7 @@ MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in
 
   &lt;&lt;button &quot;Being in a Disney movie&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;I don’t know what you’re talking about. What is a Disney Movie?&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;&lt;button &quot;He was Pocahontas’s lover&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;Ah, well I have spoken with Pocahontas, and her account is different...&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback2&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
-  &lt;&lt;button &quot;He was an explorer &quot;&gt;&gt;&lt;&lt;timed 1s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20Aa&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
+  &lt;&lt;button &quot;He was an explorer &quot;&gt;&gt;&lt;&lt;timed 1s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20.5A&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;div id=&quot;feedback2&quot;&gt;&lt;/div&gt;
       &lt;&lt;button &quot;Kanye West&quot;&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;Who is that? Are you sure? Try reading again.&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 3s&gt;&gt;&lt;&lt;replace &quot;#feedback&quot;&gt;&gt;&lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;/div&gt;&lt;div id=&quot;feedback&quot;&gt;&lt;/div&gt;&lt;div id=&quot;feedback2&quot;&gt;&lt;/div&gt;
@@ -867,7 +923,9 @@ MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="SRS-20Aa" tags="" position="1100,1100" size="100,100">&lt;&lt;set $passage to &quot;SRS-20Aa&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SRS-20.5A" tags="" position="1100,1100" size="100,100">&lt;&lt;set $passage to &quot;SRS-20.5A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20.5A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-21A&quot;&gt;&gt;
+/* TODO MISSING AUDIO */
+&lt;main&gt;
 And more! 
 
   MADELEINE: I’ll share what I know. John Smith led a rather colourful life, fighting bravely in wars across the world before landing the job of ‘president’ of the Jamestown colony in newly ‘discovered’ Virginia. The story goes that while out exploring, John Smith was captured by the ruling Powhatan tribe. He testifies that they were about to kill him when the Chief’s daughter Pocahontas pleaded for his life. She was 11. So stories of their love are hopefully fabrications!
@@ -882,9 +940,9 @@ And more!
 &lt;/div&gt;
 &lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="25" name="SRS-21A" tags="" position="1300,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-21A&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="SRS-21A" tags="" position="1300,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-21A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_21A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-22A&quot;&gt;&gt;
 &lt;main&gt;
-&lt;div class=&quot;mount&quot;&gt;
+&lt;div id=&quot;mount&quot;&gt;
   MADELEINE: Interesting...
   
   See, despite what my sister says, I believe making leaders into heroes is dangerous. It gives them the freedom to hurt people ‘for the greater good’ and never be challenged. Then we’re left with monuments like this, obscuring the full history from view.
@@ -901,14 +959,14 @@ But I do believe our time together is nearing an end. Before we say goodbye - co
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
   
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="SRS-22A" tags="" position="1500,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-22A&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;set $myMap3 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="SRS-22A" tags="" position="1500,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-22A&quot;&gt;&gt;&lt;&lt;set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_22A&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-25&quot;&gt;&gt;
 &lt;main&gt;
  MADELEINE: Wonderful! Lead away!
 &lt;&lt;timed 5s&gt;&gt;$myMap4&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 10s&gt;&gt;&lt;&lt;button &quot;I&#39;m here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-25&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
   
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="SRS-18B" tags="" position="600,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-18B &quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;set $myMap4 = setup.generateDirectionsMap( {lat:51.5173344699954, long:-0.09669576252319788}, {lat:51.51694056560406, long:-0.09744678101621963})&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="SRS-18B" tags="" position="600,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-18B &quot;&gt;&gt;&lt;&lt;set $myMap4 = setup.generateDirectionsMap( {lat:51.5173344699954, long:-0.09669576252319788}, {lat:51.51694056560406, long:-0.09744678101621963})&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_18B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-19B&quot;&gt;&gt;
 &lt;main&gt;
 MADELEINE: An excellent answer.
 
@@ -933,14 +991,14 @@ DOROTHEA: Onwards!
 &lt;&lt;timed 5s&gt;&gt;$myMap4&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 10s&gt;&gt;&lt;&lt;button &quot;We&#39;ve arrived&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-19B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="28" name="SRS-19B" tags="" position="800,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-19B&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="SRS-19B" tags="" position="800,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-19B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_19B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-20B&quot;&gt;&gt;
 &lt;main&gt;
 DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just visible through those gates. Does it exist in 2022?
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 
 &lt;&lt;timed 5s&gt;&gt;&lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="29" name="SRS-20B" tags="" position="1000,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-20B&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="SRS-20B" tags="" position="1000,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-20B&quot;&gt;&gt;&lt;main&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-20.5B&quot;&gt;&gt;
 &lt;div id=&quot;mount&quot;&gt;DOROTHEA: Ah, I see. What do you know about it?
 
 &lt;div class=&quot;menu-wrapper&quot;&gt;
@@ -952,8 +1010,8 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
    Correct, do you know anything else?
 
   &lt;div class=&quot;menu-wrapper&quot;&gt;
-    &lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20Ba&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
-     &lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20Ba&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+    &lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20.5B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
+     &lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20.5B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
   &lt;/div&gt;
    &lt;&lt;/replace&gt;&gt;
 &lt;&lt;/button&gt;&gt;  
@@ -966,7 +1024,7 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="SRS-20Ba" tags="" position="1100,1300" size="100,100">&lt;&lt;set $passage to &quot;SRS-20Ba&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="SRS-20.5B" tags="" position="1100,1300" size="100,100">&lt;&lt;set $passage to &quot;SRS-20.5B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_20.5B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-21B&quot;&gt;&gt;
 &lt;main&gt;&lt;div id=&quot;mount&quot;&gt;DOROTHEA: I shall share what I know. This park was built as a memorial. See that wall over there? It lists ordinary citizens who showed extraordinary acts of bravery, people who sacrificed their own lives to save another. It was the brainchild of painter and sculptor, George Frederic Watts, who called it ‘Heroic Self Sacrifice’.
     
     When told the origins of the park, most agree that it is a beautiful testament to ordinary people. How do you feel about it? Discuss amongst yourselves and share. I’d love to know.
@@ -981,7 +1039,7 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
             DOROTHEA: Did things change for the better for those people as a result?
 
                 &lt;div class=&quot;menu-wrapper&quot;&gt;
-                  &lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;That’s good to hear. Here in 1912, that is less common.&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-20Ba&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
+                  &lt;&lt;button &quot;Yes&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;That’s good to hear. Here in 1912, that is less common.&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
                   &lt;&lt;button &quot;No&quot;&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;Yes. It’s the same here in 1912&lt;&lt;/replace&gt;&gt;&lt;&lt;timed 4s&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;/timed&gt;&gt;&lt;&lt;/button&gt;&gt;
                 &lt;/div&gt;
             &lt;&lt;/replace&gt;&gt;
@@ -990,7 +1048,7 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
       &lt;&lt;/button&gt;&gt;
       &lt;/div&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="31" name="SRS-21B" tags="" position="1300,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="SRS-21B" tags="" position="1300,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-21B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_21B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-22B&quot;&gt;&gt;
 &lt;main&gt; &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 1s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt; DOROTHEA: Celebrating the deeds of ordinary people is a great gesture. But how often does it spark a lasting change in their lives?
 
@@ -1009,14 +1067,15 @@ So I ask, should we commemorate ordinary acts of sacrifice with monuments like t
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/button&gt;&gt;
 &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="32" name="SRS-22B" tags="" position="1500,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-22B&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;set $myMap5 = setup.generateDirectionsMap(  {lat:51.51694056560406, long:-0.09744678101621963}, {lat:51.516146261728665, long:-0.09573724447082779})&gt;&gt;&lt;main&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="SRS-22B" tags="" position="1500,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-22B&quot;&gt;&gt;&lt;&lt;set $myMap5 = setup.generateDirectionsMap(  {lat:51.51694056560406, long:-0.09744678101621963}, {lat:51.516146261728665, long:-0.09573724447082779})&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_22B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-23B&quot;&gt;&gt;
+&lt;main&gt;
 DOROTHEA: Oh dear. Trouble has a way of finding her - we’d better get there first!
 
 &lt;&lt;timed 5s&gt;&gt;$myMap5&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 10s&gt;&gt;&lt;&lt;button &quot;I&#39;m here&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-23B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
   
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="33" name="SRS-23B" tags="" position="1700,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-23B&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="SRS-23B" tags="" position="1700,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-23B&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_23B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-25&quot;&gt;&gt;
 &lt;main&gt;
 DOROTHEA: There she is! Madeleine! What are you doing?
 
@@ -1071,13 +1130,13 @@ MADELEINE: One last stop?
 /* TODO NEEDS TO CONTINUE AFTER THE TEXT */
 &lt;&lt;timed 8s&gt;&gt;&lt;&lt;button &quot;Yes, we’ll show you somewhere&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-24B&quot;&gt;&gt;&lt;&lt;/button&gt;&gt; &lt;&lt;/timed&gt;&gt;   
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="34" name="SRS-24B" tags="" position="1900,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-24B&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="SRS-24B" tags="" position="1900,1200" size="100,100">&lt;&lt;set $passage to &quot;SRS-24B&quot;&gt;&gt;&lt;&lt;set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_24B&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-25&quot;&gt;&gt;
 &lt;main&gt;
 MADELEINE: Ooh yes please! Lead away!
 &lt;&lt;timed 5s&gt;&gt;$myMap4&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 10s&gt;&gt;&lt;&lt;button &quot;We&#39;ve arrived&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-25&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="35" name="SRS-25" tags="" position="2100,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-25&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="SRS-25" tags="" position="2100,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-25&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_25&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-29&quot;&gt;&gt;
 &lt;main&gt;
 MADELEINE: Well this looks rather different from 1912. What a beast of a building!
 
@@ -1087,7 +1146,7 @@ DOROTHEA: What do you call this place?
 &lt;&lt;timed 5s&gt;&gt;&lt;&lt;button &quot;One New Change&quot;&gt;&gt;&lt;&lt;goto &quot;SRS-29&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;&lt;&lt;/timed&gt;&gt;
   
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="36" name="SRS-29" tags="" position="2600,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-29&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="SRS-29" tags="" position="2600,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-29&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_29&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-30&quot;&gt;&gt;
 &lt;main&gt;
 MADELEINE: How apt. That&#39;s what we&#39;re fighting for.
 
@@ -1123,7 +1182,7 @@ DOROTHEA: We’d love to hear.
 &lt;&lt;button &quot;Done&quot;&gt;&gt;&lt;&lt;set $prevpass to $passage&gt;&gt;&lt;&lt;goto &quot;SRS-30&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
   
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="37" name="SRS-30" tags="" position="2800,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-30&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="SRS-30" tags="" position="2800,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-30&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_30&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS-31&quot;&gt;&gt;
 &lt;main&gt;
 &lt;div id=&quot;mount&quot;&gt;&lt;/div&gt;
 &lt;&lt;timed 0.5s&gt;&gt;&lt;&lt;replace &quot;#mount&quot;&gt;&gt;
@@ -1171,14 +1230,15 @@ FELIX: Hello again! You made it through the maze! What do you make of the Rock s
   &lt;&lt;/replace&gt;&gt;&lt;&lt;/timed&gt;&gt;
   
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="38" name="SRS-31" tags="" position="3000,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-31&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="SRS-31" tags="" position="3000,1000" size="100,100">&lt;&lt;set $passage to &quot;SRS-31&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_31&quot; play&gt;&gt;&lt;&lt;set $nextpassage to &quot;end&quot;&gt;&gt;
+/* TODO AUDIO NOT HERE YET */
 &lt;main&gt;
 Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for thought as we head to something completely different...
 
 &lt;&lt;button &quot;End&quot;&gt;&gt;&lt;&lt;goto &quot;end&quot;&gt;&gt;&lt;&lt;/button&gt;&gt;
 
 &lt;/main&gt;
-&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="39" name="end" tags="" position="100,700" size="100,100">&lt;&lt;set $passage to &quot;19&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;&lt;&lt;include &quot;header&quot;&gt;&gt;&lt;&lt;set $endMap = setup.generateDirectionsMap( {lat:51.51422339174107, long:-0.09555485421956555}, {lat:51.51422339174107, long:-0.09555485421956555})&gt;&gt;
+&lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="41" name="end" tags="" position="100,700" size="100,100">&lt;&lt;set $passage to &quot;19&quot;&gt;&gt;&lt;&lt;set $nextpass to &quot;&quot;&gt;&gt;&lt;&lt;set $endMap = setup.generateDirectionsMap( {lat:51.51422339174107, long:-0.09555485421956555}, {lat:51.51422339174107, long:-0.09555485421956555})&gt;&gt;
 &lt;main&gt;
 
 End location
