@@ -1,13 +1,13 @@
 :: StoryTitle
-Smashing Rock Sisters
+Smashing Rock Sisters Caption
 
 
 :: StoryData
 {
-	"ifid": "F9E39354-F641-4070-8B55-C312A3FDC8C2",
+	"ifid": "F9E39354-F641-4070-8B55-C312A3FDC8C7",
 	"format": "SugarCube",
 	"format-version": "2.36.1",
-	"start": "SRS-19B",
+	"start": "landing",
 	"zoom": 0.3
 }
 
@@ -312,8 +312,6 @@ min-width: 80vw;
 }
 
 
-
-
 :: Story JavaScript [script]
 $('#ui-bar').remove();
 $(document.head).find('#style-ui-bar').remove();
@@ -386,9 +384,9 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin.lat},${origin.long}&zoom=17&origin=${origin.lat},${origin.long}&destination=${dest.lat},${dest.long}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=17&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
 const mount = document.getElementById("mapMount")
-console.log(iFrame)
+// console.log(iFrame)
 return iFrame
 // this.mapMount.appendChild(iFrame)
 }
@@ -409,7 +407,7 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 <<cacheaudio "SRS_05" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_05.mp3">>
 <<cacheaudio "SRS_06" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_06.mp3">>
 <<cacheaudio "SRS_07" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_07.mp3">>
-<<cacheaudio "SRS_08" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_08.mp3">>
+<<cacheaudio "SRS_08" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_08_09.mp3">>
 <<cacheaudio "SRS_09" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_09.mp3">>
 <<cacheaudio "SRS_10" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_10.mp3">>
 <<cacheaudio "SRS_11A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11A.mp3">>
@@ -459,7 +457,7 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 <header>The Smashing Rock Sisters </header>
 
 
-:: footer {"position":"100,475","size":"100,100"}
+:: footer {"position":"100,500","size":"100,100"}
 <footer>
 <div class="nav-item back"><<button "<">><<goto $prevpass>><</button>></div>
 <div class="nav-item"><<button "Replay">><<goto $passage>><</button>> </div>
@@ -467,17 +465,19 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 <div class="nav-item forward"><<button ">">><<set $prevpass to $passage>><<goto $nextpassage>><</button>></div>
 </footer>
 
-:: footersimple {"position":"100,353","size":"100,100"}
+
+:: footersimple {"position":"100,375","size":"100,100"}
 <footer><div class="nav-item replay"><<button "Replay">><<goto $passage>><</button>> </div>
 <div class="nav-item end"><<button "Take me to the end">><<set $prevpass to $passage>><<goto "lost">><</button>></div></footer>
 
 
-:: footerend {"position":"99,485","size":"100,100"}
+:: footerend {"position":"100,625","size":"100,100"}
 <footer>
 <div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
 </footer>
 
-:: landing {"position":"375,150","size":"100,100"}
+
+:: landing {"position":"375,175","size":"100,100"}
 <<set $passage to "landing">>
 
 <main>
@@ -486,7 +486,7 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 </main>
 
 
-:: lost {"position":"100,500","size":"100,100"}
+:: lost {"position":"100,775","size":"100,100"}
 <<set $passage to "lost">>
 
 <main>
@@ -499,19 +499,19 @@ You have two options:
 <<include "footer">>
 
 
-:: SRS-05 {"position":"600,400","size":"100,100"}
+:: SRS-05 {"position":"600,400","size":"100,200"}
 <<set $passage to "SRS-05">><main><<set $nextpassage to "SRS-06">><<audio ":all" stop>><<audio "SRS_05" play>>
 
 <div id="mount"></div>
-<<timed 0.5s>><<replace "#mount">><<type 50ms >>MADELEINE: And the words, the words she said... Wandered lightly o'er my soul!!
+<<timed 2s>><<replace "#mount">><<type 50ms >>MADELEINE: And the words, the words she said... Wandered lightly o'er my soul!!
  <</type>><</replace>><</timed>> 
-<<timed 10s>><<replace "#mount">><<type 50ms >>DOROTHEA: Would you stop that infernal racket!<</type>>
+<<timed 11s>><<replace "#mount">><<type 50ms >>DOROTHEA: Would you stop that infernal racket!<</type>>
 <</replace>><</timed>> 
-<<timed 16s>><<replace "#mount">><<type 50ms >>MADELEINE: No! Art is the highest form of protest. In my new collection-<</type>>
+<<timed 14s>><<replace "#mount">><<type 50ms >>M: No! Art is the highest form of protest. In my new collection-<</type>>
 <</replace>><</timed>> 
-<<timed 22s>><<replace "#mount">><<type 50ms >>DOROTHEA: Sod your collection! I think we’ve made another connection.<</type>><</replace>><</timed>> 
-<<timed 30s>><<replace "#mount">><<type 50ms >>MADELEINE: (excited, coming closer) Really? With who?<</type>><</replace>><</timed>> 
-<<timed 36s>><<replace "#mount">><<type 50ms >>DOROTHEA: I’m not entirely sure. It looks like the future, but I’m not sure when. (To audience, as if they are far away) Greetings, comrades! We are speaking to you from the year 1912. What year is it where you are?
+<<timed 19s>><<replace "#mount">><<type 50ms >>D: Sod your collection! I think we’ve made another connection.<</type>><</replace>><</timed>> 
+<<timed 23s>><<replace "#mount">><<type 50ms >>M: Really? With who?<</type>><</replace>><</timed>> 
+<<timed 25s>><<replace "#mount">><<type 50ms >>D: I’m not entirely sure. It looks like the future, but I’m not sure when.  Greetings, comrades! We are speaking to you from the year 1912. What year is it where you are?
 
 <<button "2022">><<set $prevpass to $passage>><<goto "SRS-06">><</button>><</type>><</replace>><</timed>>
 
@@ -519,168 +519,182 @@ You have two options:
 <<include "footer">>
 
 
-:: SRS-06 {"position":"800,400","size":"100,100"}
+:: SRS-06 {"position":"800,400","size":"100,200"}
 <<set $passage to "SRS-06">><<set $nextpassage to "SRS-07">><<audio ":all" stop>><<audio "SRS_06" play>>
-
-<main>DOROTHEA: Oh my. We’ve never reached that far!
-
-MADELEINE: You must tell us everything! Do women have equal rights everywhere now? Are we fixing the world’s problems with double the speed and efficiency of men? Who is leading the country?
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 10s>>
-  <<button "We have a female prime minister.">><<set $prevpass to $passage>><<goto "SRS-07">><</button>>
+<main>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 45ms>>D: Oh my! We've never reached that far!<</type>><</replace>><</timed>>    
+<<timed 2.5s>><<replace "#mount">><<type 50ms>>M: You must tell us everything. 
+Do women have equal rights everywhere now? 
+Are we fixing the world's problems, with double the speed and efficiency of men? 
+Who's leading the country?<</type>><</replace>><</timed>> 
+<<timed 13s>>  <<button "We have a female prime minister.">><<set $prevpass to $passage>><<goto "SRS-07">><</button>>
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-07 {"position":"1000,400","size":"100,100"}
+:: SRS-07 {"position":"1000,400","size":"100,200"}
 <<set $passage to "SRS-07">><<set $nextpassage to "SRS-08">><<audio ":all" stop>><<audio "SRS_07" play>>
 <main>
-MADELEINE: A woman? This country voted for a woman in a general election?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 10s>>
+<div id="mount"></div>
+<<timed 1s>><<replace "#mount">><<type 50ms>>MADELEINE: A woman! This country voted for a woman in a general election?<</type>><</replace>><</timed>> 
+<<timed 8s>>
   <<button "There wasn’t a general election.">><<set $prevpass to $passage>><<goto "SRS-08">><</button>>
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-08 {"position":"1200,400","size":"100,100"}
-<<set $passage to "SRS-08">><<set $nextpassage to "SRS-09">><<audio ":all" stop>>
-<<audio "SRS_08" play>>
-/* TODO COULD SRS_08 & SRS_09 be the same file? */
-<<audio ":all" stop>><<audio "SRS_09" play>>
+:: SRS-08 {"position":"1200,400","size":"100,200"}
+<<set $passage to "SRS-08">><<set $nextpassage to "SRS-09">>
+<<audio ":all" stop>><<audio "SRS_08" play>>
 <main>
-MADELEINE: Then how did - oh it doesn’t matter! What’s she like? Is she respected and trusted? Has she created a nurturing, fair society?
+<div id="mount"></div>
+ 
+<<timed 0s>><<replace "#mount">><<type 50ms>>M: Then how did- oh it doesn't matter? 
+What she like? 
+Is she respected and trusted? 
+Has she created a nurturing fair society? 
+Oh, no!<</type>><</replace>><</timed>>  
+<<timed 13s>><<replace "#mount">><<type 50ms>>D: Come now. 
+You've seen enough timelines to know progress rarely goes to plan. 
+Don't worry, my sister is just of the naive belief that the future is utopian.<</type>><</replace>><</timed>>  
+<<timed 23s>><<replace "#mount">><<type 50ms>>M: I don't have a choice.
+ I need to believe to keep fighting, Dot! 
 
-DOROTHEA: Come now, you’ve seen enough timelines to know progress rarely goes to plan. 
-Don't worry, my sister is just of the naive belief that the future is utopian.
+D: I told you not to call me that in company. It's not my name. 
 
-MADELEINE: I don’t have a choice. I need to believe to keep fighting, Dot.
+M: then perhaps we should tell them our real ones, sister. 
 
-DOROTHEA: I told you not to call me that in company. It’s not my name. 
+D: I was about to, sister.<</type>><</replace>><</timed>>  
+<<timed 35s>><<replace "#mount">><<type 60ms>>BOTH: We are not afraid to break things to make our points heard. 
 
-MADELEINE: Then perhaps we should tell them our real ones, sister. 
+We are called heroes, criminals, lunatics in equal measure. 
 
-DOROTHEA: I was about to, sister. 
-We are-
-MADELEINE: Not afraid to break things to make our points heard! 
+We are poets, activists, actors and news vendors.<</type>><</replace>><</timed>>   
+<<timed 49s>><<replace "#mount">><<type 50ms>>BOTH: We are fighting to make women's lives better. 
 
-DOROTHEA: We are-
+We are Dorothea and Madeleine. 
 
-MADELEINE: Called heroes, criminals, lunatics in equal measure... 
+The Smashing Rock Sisters!!!<</type>><</replace>><</timed>>   
+<<timed 62s>><<replace "#mount">><<type 50ms>>D: I'm fairly certain they're still none the wiser Madeleine. 
 
-DOROTHEA: We are-
+M: Then let's show them. Follow me everyone!<</type>><</replace>><</timed>>   
+<<timed 68s>><<replace "#mount">><<type 50ms>>D: Madeleine, we still have preparations to do for next week's rally. 
 
-MADELEINE: Poets, activists, actors, and news vendors! 
+Madeleine, wait! Oh dear - you better come along too.<</type>><</replace>><</timed>> 
 
-DOROTHEA:  We ARE-
-
-MADELEINE: Fighting to make women’s lives better! 
-
-DOROTHEA: WE. ARE:
-
-MADELEINE: Dorothea and Madeleine, The Smashing Rock Sisters! Madeleine starts cheering and clapping. Dorothea does not join in. 
-
-DOROTHEA: I’m fairly certain they’re still none the wiser, Madeleine. 
-
-MADELEINE: Then let’s show them! Follow me, everyone!
-
-DOROTHEA: Madeleine! We still have preparations to do for next week’s rally! Madeleine, WAIT! 
-Oh dear, you’d better come along too.
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 10s>><<goto "SRS-09">>
+<<timed 80s>><<goto "SRS-09">>
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-09 {"position":"1400,400","size":"100,100"}
-<<set $passage to "ADA-09">><<set $myMap = setup.generateDirectionsMap({lat:51.519627714715114, long:-0.09689844770539591},{lat:51.51933470153766, long:-0.09711499026339707})>><<set $nextpassage to "SRS-10">><main>
-$myMap<<timed 6s>>
+:: SRS-09 {"position":"1400,400","size":"100,200"}
+<<set $passage to "ADA-09">><<audio ":all" stop>><<set $map1 = setup.generateDirectionsMap([51.519707217504944, -0.09682733713119183], [51.51915260913521, -0.09708884214995328])>><<set $nextpassage to "SRS-10">><main>
+$map1<<timed 6s>>
   <<button "We're here">><<set $prevpass to $passage>><<goto "SRS-10">><</button>>
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-10 {"position":"1600,400","size":"100,100"}
-<<set $passage to "SRS-10">><<audio ":all" stop>><<audio "SRS_10" play>>
+:: SRS-10 {"position":"1600,400","size":"100,200"}
+<<set $passage to "SRS-10">><<audio ":all" stop>><<audio "SRS_10" play>><<set $nextpassage to "SRS-11B">>
 <main>
-MADELEINE: Welcome to the crossroads - where timelines meet and merge. It doesn’t look like much - not in 1912 at least... but in this very spot we’ve been lucky enough to make contact with agitators from the past, present and future. People who’ve made their mark on the world-
+<div id="mount"></div>
+  
+<<timed 6s>><<replace "#mount">><<type 52ms>>M: Welcome to the crossroads. 
+Where timelines meet and merge. 
+It doesn't look like much, not in 1912, at least, but in this very spot, we've been lucky enough to make contact with agitators from the past, present and future.<</type>><</replace>><</timed>>    
+<<timed 21s>><<replace "#mount">><<type 50ms>>M: People who've made their mark on the world, and on this city;
+Karl Marx, 
+Boudicca, 
+Altheia Jones-LeCointe
+We've talked with them, learned from them.<</type>><</replace>><</timed>>    
+<<timed 31s>><<replace "#mount">><<type 50ms>>M: And what we've understood is that despite our many differences, we all want to make things better. 
 
-DOROTHEA: And on this city. Karl Marx-
+D: And we're not afraid to ruffle feathers while we're doing it! 
+It's how we got out nickname, The Smashing Rock Sisters.<</type>><</replace>><</timed>>    
+<<timed 44s>><<replace "#mount">><<type 55ms>>M: Because in the fight for women's suffrage, we've learned that Deeds, not words, get things done. 
 
-MADELEINE: Boudicca... DOROTHEA: Altheia Jones-LeCointe...
+D: Do you know what the women's suffrage movement is?
 
-MADELEINE: We’ve talked with them, learned from them, and what we’ve understood is that despite our many differences, we all want to make things better.
-
-DOROTHEA: And we’re not afraid to ruffle feathers while doing it. It’s how we got our nickname, the Smashing Rock sisters.
-
-MADELEINE: Because in the fight for women’s suffrage, we’ve learned that deeds, not words, get things done.
-
-DOROTHEA: Do you know what the women’s suffrage movement is?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>>
 <div class="menu-wrapper">
   <<button "No, we’d like to know more.">><<set $prevpass to $passage>><<goto "SRS-11A">><</button>>
   <<button "Yes, we know what the women’s suffrage movement is">><<set $prevpass to $passage>><<goto "SRS-11B">><</button>>
 </div>
+<</type>><</replace>><</timed>> <<timed 54s>>
+
 <</timed>>
 </main>
-<<include "footersimple">>
+<<include "footer">>
 
 
-:: SRS-11A {"position":"1800,400","size":"100,100"}
+:: SRS-11A {"position":"1800,380","size":"100,200"}
 <<set $passage to "SRS-11A">><<audio ":all" stop>><<audio "SRS_11A" play>><<set $nextpassage to "SRS-12">>
 <main>
-DOROTHEA: That’s a shame. I suppose they call it HIS-story for a reason. Basically, right now, in our time...
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 55ms>>D: That's a shame. 
+I suppose they call it HIStory for a reason. 
+Basically, right now in our timeline - 1912 Britain - only men over the age of 21, who own a property are allowed to vote.<</type>><</replace>><</timed>> 
+<<timed 13s>><<replace "#mount">><<type 50ms>>M: Excluding the poorest men in society from having a voice. 
 
-MADELEINE: 1912 Britain.
+D: And excluding all women. Many of us won't accept that. 
+In particular, a woman called Emmeline Pankhurst.<</type>><</replace>><</timed>>    
+<<timed 23s>><<replace "#mount">><<type 55ms>>D: In 1903, she started the British Women's Social and Political Union. 
+The WSPU for short. 
+Madeleine and I joined in 1908. And we haven't looked back.<</type>><</replace>><</timed>>   
+<<timed 35s>><<replace "#mount">><<type 57ms>>M: See, the WSPU engage in direct action and civil disobedience. 
+We take pride in being disruptive and defiant. 
 
-DOROTHEA: Only men over the age of 21 who own a property, are allowed to vote. MADELEINE: Excluding the poorest men in society from having a voice...
+D: We won't rest until women have the vote.<</type>><</replace>><</timed>>    
+<<timed 47s>><<replace "#mount">><<type 50ms>>M: Our movement is mocked by the press. Derided by our leaders. 
+We suffer police brutality, imprisonment and hostility from the public. 
+Are there any movements in 2022 that face similar challenges?
 
-DOROTHEA: And excluding ALL women. Many of us won’t accept that - in particular a woman called Emmeline Pankhurst. In 1903 she started the British Women's Social and Political Union (the WSPU for short). Madeleine and I joined in 1908, and we haven’t looked back.
-
-MADELEINE: See the WSPU engage in direct action and civil disobedience. We take pride in being disruptive and defiant.
-
-DOROTHEA: We won’t rest till women have the vote.
-
-MADELEINE: Our movement is mocked by the press, derided by our leaders. We suffer police brutality, imprisonment, and hostility from the public. Are there any movements in 2022 that face similar challenges?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>>
 <div class="menu-wrapper">
   <<button "Yes">><<set $prevpass to $passage>><<goto "SRS-12">><</button>>
   <<button "No">><<set $prevpass to $passage>><<goto "SRS-12">><</button>>
-</div>
+</div><</type>><</replace>><</timed>> <<timed 57s>>
+
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-11B {"position":"1800,600","size":"100,100"}
+:: SRS-11B {"position":"1800,600","size":"100,200"}
 <<set $passage to "SRS-11B">><<audio ":all" stop>><<audio "SRS_11B" play>><<set $nextpassage to "SRS-12">>
 <main>
-MADELEINE: Then you’ll know full well how we are mocked by the press, derided by our leaders. We suffer police brutality, imprisonment, and hostility from the public. Are there any movements in 2022 that face similar challenges?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>>
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 57ms>>M: Then you'll know full well how we're mocked by the press, derided by our leaders. 
+We suffer police brutality, imprisonment, and hostility from the public. 
+Are there any movements in 2022 that face similar challenges?
+
 <div class="menu-wrapper">
   <<button "Yes">><<set $prevpass to $passage>><<goto "SRS-12">><</button>>
   <<button "No">><<set $prevpass to $passage>><<goto "SRS-12">><</button>>
-</div>
+</div><</type>><</replace>><</timed>> 
+<<timed 16s>>
+
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-12 {"position":"2000,400","size":"100,100"}
+:: SRS-12 {"position":"2000,400","size":"100,200"}
 <<set $passage to "SRS-12">><<audio ":all" stop>><<audio "SRS_12" play>><<set $nextpassage to "SRS-13">>
 <main>
-DOROTHEA: Well we’d love to know more! What are some famous protests or movements that have happened in your time? Have they brought about change?
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>> D: Well we'd love to know more! 
+What are some famous protests or movements that have happened in your time? 
+Have they brought about change? 
 
-MADELEINE: Discuss it as a group and then share your thoughts.
+M: Discuss it as a group and then share your thoughts.<</type>><</replace>><</timed>> 
 
-What is the movement called?
+<<timed 15s>><<replace "#mount">>What is the movement called?
 
 <<textarea "$movement"" Write your answer here">>
 
@@ -692,247 +706,266 @@ In what ways has it achieved or not achieved this?
 
 <<textarea "$sucess"" Write your answer here">>
 
-<<timed 6s>>
   <<button "Finished!">><<set $prevpass to $passage>><<goto "SRS-13">><</button>>
-<</timed>>
+<</replace>><</timed>> 
 </main>
 <<include "footer">>
 
 
-:: SRS-13 {"position":"2200,400","size":"100,100"}
+:: SRS-13 {"position":"2200,400","size":"100,200"}
 <<set $passage to "SRS-13">><<audio ":all" stop>><<audio "SRS_13" play>><<set $nextpassage to "SRS-14">>
 <main>
-MADELEINE: How truly fascinating.
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>M: How truly fascinating. 
 
-DOROTHEA: Like I said, progress is never predictable.
+D: Like I said, progress is never predictable. 
 
-MADELEINE: It seems there are many ways to protest. And many questions about whether protests achieve what they set out to.
+M: It seems there are many ways to protest, and many questions about whether protests achieve what they set out to.<</type>><</replace>><</timed>>    
+<<timed 12s>><<replace "#mount">><<type 50ms>>D: Perhaps it's in how a protest is remembered? 
 
-DOROTHEA: Perhaps it’s in how a protest is remembered?
+M: How are suffragettes remembered in 2022? 
+Are we in history books? 
+Works of art? 
+Museums?
 
-MADELEINE: Yes - how are suffragettes remembered in 2022? Are we in history books? Works of art?
+<<timed 24s>><<button "Yes">><<set $prevpass to $passage>><<goto "SRS-14">><</button>><</timed>><</type>><</replace>><</timed>> 
 
-DOROTHEA: Museums?
+
 /* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>><<button "Yes">><<set $prevpass to $passage>><<goto "SRS-14">><</button>><</timed>>
+
 </main>
 <<include "footer">>
 
 
-:: SRS-14 {"position":"2400,400","size":"100,100"}
+:: SRS-14 {"position":"2380,400","size":"100,200"}
 <<set $passage to "SRS-14">><<audio ":all" stop>><<audio "SRS_14" play>><<set $nextpassage to "SRS-15">>
 <main>
- DOROTHEA: Really?! Oh we must see! What museums are nearby?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<type 50ms>> DOROTHEA: Really?! Oh we must see! What museums are nearby? <</type>>
 <<timed 5s>><<button "Museum of London">><<set $prevpass to $passage>><<goto "SRS-15">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-15 {"position":"2600,400","size":"100,100"}
+:: SRS-15 {"position":"2600,400","size":"100,200"}
 <<set $passage to "SRS-15">><<audio ":all" stop>><<audio "SRS_15" play>><<set $nextpassage to "SRS-15.5">>
 <main>
-DOROTHEA: Then you must take us there! Come along, everyone.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>D: Then you must take us there. Come along everyone. 
 
-MADELEINE: You know, I am not convinced that you’re the well-behaved citizens you pertain to be. I see protest brewing in all of you...
+M: You know, I am not convinced that you're the well behaved citizens you pertain to be. 
+I see protest brewing in all of you.<</type>><</replace>><</timed>>    
+<<timed 12s>><<replace "#mount">><<type 50ms>>D: Madeleine!!! 
 
-DOROTHEA: Madeleine!
+M: Here's a challenge for you all. 
+As we make our way, think of a time you protested and brought about change. It can be tiny.<</type>><</replace>><</timed>>    
+<<timed 22s>><<replace "#mount">><<type 50ms>>M: You told your parents you will no longer eat brussels sprouts? 
+You saw someone being mistreated and told the bullies to stop? 
+Share your stories with someone next to you. 
+You might be surprised to find how much protesting you do.<</type>><</replace>><</timed>>    
+<<timed 37s>><<replace "#mount">><<type 50ms>>D: Where is everyone? 
 
-MADELEINE:  Here’s a challenge for you all. As we make our way, think of a time you protested and brought about change. It can be tiny. You told your parents you will no longer eat Brussel sprouts. You saw someone being mistreated and told the bullies to stop. Share your stories with someone next to you. You might be surprised to find how much protesting you do.
+M: Coming, sister!<</type>><</replace>><</timed>>    
+<<timed 43s>><<replace "#mount">><<type 50ms>>M: You know, in 1912 there was a performing arts conservatoire near here. 
+Guildhall School of Music and Drama. 
+Does it still exist?
 
-DOROTHEA: Where is everyone?
-
-MADELEINE: Coming, sister!
-
-MADELEINE: You know, in 1912 there was a performing arts conservatoire near here. Guildhall school of Music and Drama. Does it still exist?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>>
 <div class="menu-wrapper">
   <<button "Yes">><<set $prevpass to $passage>><<goto "SRS-15.5">><</button>>
   <<button "No">><<set $prevpass to $passage>><<goto "SRS-15.5">><</button>>
     <<button "We don't know">><<set $prevpass to $passage>><<goto "SRS-15.5">><</button>>
-</div>
+</div><</type>><</replace>><</timed>> 
+<<timed 53s>>
+
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-15.5 {"position":"2800,400","size":"100,100"}
-<<set $passage to "SRS-15.5">><<set $myMap2 = setup.generateDirectionsMap({lat:51.51933470153766, long:-0.09711499026339707}, {lat:51.518047132215855, long:-0.09687095020549558})>><<audio ":all" stop>><<audio "SRS_15.5" play>><<set $nextpassage to "SRS-16">>
+:: SRS-15.5 {"position":"2800,403.3333333333333","size":"100,200"}
+<<set $passage to "SRS-15.5">><<set $map2 = setup.generateDirectionsMap( [51.51915260913521, -0.09708884214995328], [51.51764040797752, -0.09678321471717571])>><<audio ":all" stop>><<audio "SRS_15.5" play>><<set $nextpassage to "SRS-16">>
 <main>
-MADELEINE: You know, my sister and I do a spot of acting, we are part of the Guildhouse players... people say we’re quite good...
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>M: You know, my sister and I do a spot of acting. 
+We are part of the Guild House Players. 
+People say we're quite good! 
 
-DOROTHEA: Madeleine...
+D: Madeleine! 
 
-MADELEINE: Especially me. Would you like to see a-
+M: Especially me! Would you like to see it?<</type>><</replace>><</timed>>   
+<<timed 11s>><<replace "#mount">><<type 50ms>>D: For the last time, no one wants to see your suffragette Hamlet! 
+I apologize for my sister. 
+Where did you say this museum was?<</type>><</replace>><</timed>> 
 
-DOROTHEA: For the last time! No-one wants to see your suffragette Hamlet! I apologise for my sister. Where did you say this museum was?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>>$myMap2<</timed>>
-<<timed 10s>>
-  <<button "We're here">><<set $prevpass to $passage>><<goto "SRS-16">><</button>>
+
+<<timed 21s>><<replace "#mount">>$map2
+  <<button "We're here">><<set $prevpass to $passage>><<goto "SRS-16">><</button>><</replace>>
 <</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-16 {"position":"3000,400","size":"100,100"}
+:: SRS-16 {"position":"3000,400","size":"100,200"}
 <<set $passage to "SRS-16">><<audio ":all" stop>><<audio "SRS_16" play>><<set $nextpassage to "SRS-17">>
 <main>
-DOROTHEA: So the Museum of London... is a roundabout?
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 53ms>>D: So the Museum of London is a roundabout? 
 
-MADELEINE: Come now, we know appearances can be deceiving. Take our current Home Secretary. Unassuming enough, but a devilish liar lurks just beneath the surface-
+M: Come, now, we know appearances can be deceiving. 
+Take our current Home Secretary - unassuming enough, but a devilish liar looks just beneath the surface.<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 50ms>>D: Stay calm Madeleine! 
+She gets rather angry when she thinks of Mr. Winston Churchill. 
 
-DOROTHEA: Stay calm Madeleine (to audience) she gets rather angry when she thinks of Mr. Winston Churchill.
+M: Yes, Mr. Churchill. Tell me how is that wretch remembered in 2022?
 
-MADELEINE: Yes, Mr Churchill... tell me, how is that wretch remembered in 2022?
-
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-<<timed 5s>>
 <div class="menu-wrapper">
   <<button "He’s considered a national hero.">><<set $prevpass to $passage>><<goto "SRS-17">><</button>>
   <<button "He’s considered a national hero with some controversial opinions. ">><<set $prevpass to $passage>><<goto "SRS-17">><</button>>
     <<button "He’s considered a hero to some and a villain to others.">><<set $prevpass to $passage>><<goto "SRS-17">><</button>>
-</div>
-<</timed>>
+</div><</type>><</replace>><</timed>> 
+
+
+
 </main>
 <<include "footer">>
 
 
-:: SRS-17 {"position":"3175,400","size":"100,100"}
-<<set $passage to "SRS-17A">><<audio ":all" stop>><<audio "SRS_17" play>>
-<main>MADELEINE: A hero?! How can that be possible?
+:: SRS-17 {"position":"3175,400","size":"100,200"}
+<<set $passage to "SRS-17">><<audio ":all" stop>><<audio "SRS_17" play>>
+<main>
+<div id="mount"></div>  
+<<timed 0s>><<replace "#mount">><<type 50ms>>M: A hero? 
+How can that be possible? 
 
-DOROTHEA: Madeleine...
+D: Madeleine! 
 
-MADELEINE: When the government went back on its word on granting us the vote, women of all backgrounds united to protest. Men also gathered. To attack us. The police did nothing. In fact, they joined in. The attacks were brutal, sometimes sexual. The day was dubbed “Black Friday”. And our home secretary Mr Churchill said:
+M: When the government went back on its word granting us the vote, women of all backgrounds united to protest. 
+Men also gathered - to attack us.<</type>><</replace>><</timed>>    
+<<timed 12s>><<replace "#mount">><<type 50ms>>M: The police did nothing. In fact they joined in. 
+The attacks were brutal, sometimes sexual. 
+The day was dubbed Black Friday.<</type>><</replace>><</timed>>    
+<<timed 23s>><<replace "#mount">><<type 50ms>>And our Home Secretary, Mr. Churchill said, 
 
-DOROTHEA: Need we relive this?
+//need we relive this? Whatever injuries and indignities the women suffered were the outcome of their invitation to all and sundry to assemble and make common cause against the government.//<</type>><</replace>><</timed>>    
+<<timed 39s>><<replace "#mount">><<type 50ms>>//"Their sympathizers included undesirable and reckless persons, quite capable of indulging in gross conduct and for their presence in Parliament Square. The women were themselves responsible."//<</type>><</replace>><</timed>>   
+<<timed 52s>><<replace "#mount">><<type 50ms>>D: I know it hurts sister, but at least we won. 
+Look, in 2022, a women is leading Britain. 
+We may be the villains now, but in their time, perhaps we're heroes.<</type>><</replace>><</timed>>   
+<<timed 61s>><<replace "#mount">><<type 57ms>>M: What good is that title when I know who I'm sharing it with? 
+What is a hero? 
 
-MADELEINE: “Whatever injuries and indignities the women suffered, were the outcome of their invitation to all and sundry to assemble and make common cause against the Government. Their sympathisers included undesirable and reckless persons, quite capable of indulging in gross conduct, and for their presence in Parliament Square the women were themselves responsible.”
+D: I believe it's a leader who changes the lives of many for the better. Like Emmeline Pankhurst.<</type>><</replace>><</timed>>   
+<<timed 74s>><<replace "#mount">><<type 50ms>>D: Well, I think it's ordinary people who sacrifice everything for a greater cause. 
+Like all the women we fight with, not like Mr. Winston Churchill. 
 
-DOROTHEA: I know it hurts, sister, but at least we won. Look, in 2022 a woman is leading Britain. We may be villains now but in their time, perhaps we’re heroes.
+D: What do you think?
 
-MADELEINE: What good is that title when I know who I’m sharing it with? What is a hero? DOROTHEA: I believe it’s a leader who changes the lives of many for the better. Like Emmeline
-Pankhurst.
-
-MADELEINE: Well, I think it’s ordinary people who sacrifice everything for a greater cause. Like all the women we fight with. Not like Mr Winston Churchill.
-
-BOTH: What do you think?
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
-
-<<timed 5s>>
 <div class="menu-wrapper">
   <<button "A hero is a leader who changes the lives of many for the better.">><<set $prevpass to $passage>><<goto "SRS-18A">><</button>>
   <<button "A hero is an ordinary person who sacrifices everything for a greater cause.">><<set $prevpass to $passage>><<goto "SRS-18B">><</button>>
-</div>
-<</timed>>
+</div><</type>><</replace>><</timed>> 
 </main>
 <<include "footersimple">>
 
 
-:: SRS-18A {"position":"600,1000","size":"100,100"}
+:: SRS-18A {"position":"600,980","size":"100,200"}
 <<set $passage to "SRS-18A">><<audio ":all" stop>><<audio "SRS_18A" play>><<set $nextpassage to "SRS-19A">>
 <main>
-DOROTHEA: An excellent answer.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 48ms>>D: An excellent answer! 
 
-MADELEINE: Though I’d like to challenge it, if I may.
+M: Though, I'd like to challenge it if I may. 
 
-DOROTHEA: I thought you might - go ahead.
+D: I thought you might. Go ahead.<</type>><</replace>><</timed>>    
+<<timed 6s>><<replace "#mount">><<type 55ms>>M: It's just this city is filled with monuments. 
+Every corner contains tributes to influential leaders in history. 
+But are they all heroes? 
 
-MADELEINE: It’s just, this city is filled with monuments - every corner contains tributes to influential leaders in history. But are they all heroes?
+D: Well-<</type>><</replace>><</timed>>    
+<<timed 17s>><<replace "#mount">><<type 60ms>>M: Let us take note as we walk, street names, buildings, plaques, statues. 
+Who are they commemorating? 
+What did that person stand for? 
 
-DOROTHEA: Well-
+D: That's not exactly what I- 
 
-MADELEINE: Let us take note as we walk - street names, buildings, plaques, statues - who are they commemorating? What did that person stand for? 
-
-DOROTHEA: That’s not exactly what I - 
-
-MADELEINE: Onwards!
-
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-
-<<timed 15s>><<button "Next">><<set $prevpass to $passage>><<goto "SRS-19A">><</button>><</timed>>
+M: ONWARDS!<</type>><</replace>><</timed>> <<timed 27s>><<button "Next">><<set $prevpass to $passage>><<goto "SRS-19A">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-19A {"position":"800,1000","size":"100,100"}
-<<set $passage to "SRS-19A">><<set $myMap3 = setup.generateDirectionsMap({lat:51.518047132215855, long:-0.09687095020549558}, {lat:51.51385503154935, long:-0.09367685227098957})>><<audio ":all" stop>><<audio "SRS_19A" play>><<set $nextpassage to "SRS-20A">>
-
+:: SRS-19A {"position":"800,980","size":"100,200"}
+<<set $passage to "SRS-19A">><<set $map3 = setup.generateDirectionsMap( [51.51764040797752, -0.09678321471717571], [51.513871793201886, -0.09392795952129669])>><<audio ":all" stop>><<audio "SRS_19A" play>><<set $nextpassage to "SRS-20A">>
 <main>
-DOROTHEA: Madeleine, wait.
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 48ms>>D: Madeleine! Wait! 
 
-MADELEINE: What is it?
+M: What is it? 
 
-DOROTHEA: It’s him.
+D: It's him! 
 
-MADELEINE: Who?
+M: Who? 
 
-DOROTHEA: Him, that Godforsaken Alderman.
+D: him! 
 
-MADELEINE: No! Oh heavens, it is. Hide, everyone!
+M: That God forsaken Alderman!<</type>><</replace>><</timed>>  
+<<timed 6s>><<replace "#mount">><<type 60ms>>M: No. Oh heavens, it is! Hide, everyone. The man is truly vile - treats us like a joke. 
 
-MADELEINE: The man is truly vile. Treats us like a joke.
+D: You see, we were recently charged with smashing windows at Mansion House, alongside our comrades Grace and Fanny Peace.<</type>><</replace>><</timed>>  
+<<timed 24s>><<replace "#mount">><<type 50ms>>M: With just cause! 
 
-DOROTHEA: You see, we were recently charged with smashing windows at Mansion House, alongside our comrades Grace and Fanny Pease.
+All our campaigning to get the Conciliatory Bill passed, allowing some women the vote, and now it's being stalled by our Prime Minister.<</type>><</replace>><</timed>>  
+<<timed 35s>><<replace "#mount">><<type 50ms>>D: Breaking those Windows was not a decision we took lightly. 
+It was a warning. At the hearing. I spoke for the defense - 
 
-MADELEINE: With just cause! All our campaigning to get the Conciliatory bill passed, allowing (some) women the vote. And now it is being stalled by our Prime Minister!
+M: so our message would be heard, but they could not, would not take us seriously.<</type>><</replace>><</timed>>   
+<<timed 48s>><<replace "#mount">><<type 50ms>>M: It went something like
 
-DOROTHEA: Breaking those windows was not a decision we took lightly. It was a warning. At the hearing, I spoke for the defence.
+D: "//this thing is not done as wanton damage. We have done it as a protest against being deprived of the vote!//"<</type>><</replace>><</timed>>   
+<<timed 56s>><<replace "#mount">><<type 50ms>>ALDERMAN: "//But it was wanton damage, whatever you may call it. Are you Londoners?//" 
 
-MADELEINE: So our message would be heard. But they could not, would not take us seriously. It went something like:
+D: "//No, we've come up from Essex//" 
 
-DOROTHEA: “This thing is not done as wanton damage – we have done it as a protest against being deprived of the vote.”
+ALDERMAN: "//for this little prank?//" 
 
-MADELEINE: “But it was wanton damage, whatever you may call it. Are you Londoners?”
+D: "//No to do our duty. Stop laughing! We are not a joke.//"<</type>><</replace>><</timed>>   
+<<timed 73s>><<replace "#mount">><<type 50ms>>D: The verdict was that we were either criminals, or lunatics. 
+We were sentenced to two months in prison with hard labor.<</type>><</replace>><</timed>>   
+<<timed 80s>><<replace "#mount">><<type 50ms>>M: We suffered. But we were lucky. There was some who did not make it. 
 
-DOROTHEA: “No, we have come up from Essex.”
+D: I don't want to think about that, Madeleine. 
 
-MADELEINE: “For this little... prank.”
-As the alderman, Madeleine laughs uproariously. It echoes. Dorothea grits her teeth.
+M: It's part of our story, the women we lost- 
 
-DOROTHEA: “No, to do our duty.”
+D: we should not have had to lose them.<</type>><</replace>><</timed>>   
+<<timed 96s>><<replace "#mount">><<type 50ms>>D: I'm sorry. Perhaps I need a moment to collect myself. Please do carry on. 
 
-DOROTHEA: Stop laughing! We are not a joke! Madeleine stops. Dorothea, to audience:
+M: Are you sure you'll be all right? 
 
-DOROTHEA: The verdict was that we were ‘either criminals or lunatics’. We were sentenced to two months in prison with hard labour.
-
-MADELEINE: We suffered. But we were lucky. There were some who did not make it- DOROTHEA: I don’t want to think about that, Madeleine.
-
-MADELEINE: It’s part of our story! The women we lost-
-
-DOROTHEA: We should not have had to lose them! A beat, then.
-
-DOROTHEA: I am sorry. Perhaps I need a moment to collect myself. Please do carry on.
-
-MADELEINE: Are you sure you’ll be alright?
-
-DOROTHEA: I’m sure. I will catch up with you shortly.
-
-MADELEINE: Alright... 
-Shall we? Perhaps there’s more monuments we can find to prove my point...
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>>$myMap3<</timed>>
-<<timed 15s>><<button "At the Statue">><<set $prevpass to $passage>><<goto "SRS-20A">><</button>><</timed>>
+D: I'm sure. I'll catch up with you shortly.<</type>><</replace>><</timed>>   
+<<timed 105s>><<replace "#mount">><<type 50ms>>M: All right. Shall we? Perhaps there's more monuments we can find to prove my point.<</type>><</replace>><</timed>> 
+<<timed 115s>><<replace "#mount">>$map3
+<<button "At the Statue">><<set $prevpass to $passage>><<goto "SRS-20A">><</button>><</replace>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-20A {"position":"1000,1000","size":"100,100"}
+:: SRS-20A {"position":"1000,980","size":"100,200"}
 <<set $passage to "SRS-20A">><<audio ":all" stop>><<audio "SRS_20A" play>><<set $nextpassage to "SRS-20.5a">>
 <main>
 <div id="feedback"></div><div id="feedback2"></div>
 <div id="mount"></div>
 <<timed 0.5s>><<replace "#mount">><<type 50ms>>
-MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in 1908. Can you read the plinth for me? Who is it?<</type>><</replace>><</timed>>
+M: Wait, stop. What is that figure there? We don’t have that statue in 1908. Can you read the plinth for me? Who is it?<</type>><</replace>><</timed>>
 
 <<timed 14s>><<replace "#mount">><div class="menu-wrapper">
 <<button "Jesus">><<audio ":all" stop>><<audio "SRS_20A_Jesus" play>><<replace "#feedback">>Don’t be silly! Try again!<</replace>>
   <<timed 3s>><<replace "#feedback">><</replace>><</timed>><</button>>
 
 <<button "Captain John Smith">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20A_JohnSmith" play>><<timed 0.5s>><<replace "#mount">><<type 50ms>>
-    MADELEINE: Ohhh, the legendary captain! What is he famous for in your time?  <</type>><</replace>><</timed>>
+    M: Ohhh, the legendary captain! What is he famous for in your time?  <</type>><</replace>><</timed>>
 <<timed 5s>><<replace "#mount">><<type 50ms>>
     <<button "Being in a Disney movie">><<replace "#feedback2">><<audio ":all" stop>><<audio "SRS_20A_DisneyMovie" play>>I don’t know what you’re talking about. What is a Disney Movie?<</replace>><<timed 5s>><<replace "#feedback2">><</replace>><</timed>><</button>>
 
@@ -950,44 +983,60 @@ MADELEINE: Wait, stop. What is that figure there? We don’t have that statue in
 <<include "footer">>
 
 
-:: SRS-20.5A {"position":"1100,1100","size":"100,100"}
+:: SRS-20.5A {"position":"1120,1080","size":"100,200"}
 <<set $passage to "SRS-20.5A">><<audio ":all" stop>><<audio "SRS_20A_Explorer" play>><<set $nextpassage to "SRS-21A">>
 
 <main>
-  MADELEINE: And more! 
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 51ms>>M: And more! 
+I'll share what I know. 
 
-I’ll share what I know. John Smith led a rather colourful life, fighting bravely in wars across the world before landing the job of ‘president’ of the Jamestown colony in newly ‘discovered’ Virginia. The story goes that while out exploring, John Smith was captured by the ruling Powhatan tribe. He testifies that they were about to kill him when the Chief’s daughter Pocahontas pleaded for his life. She was 11. So stories of their love are hopefully fabrications!
-  John Smith was instrumental in mapping out the region and helping the settlers survive their new environment. He was generally considered better than other colonists, trading with the local Powhatan community. Some accounts state good relations with the tribe. But others talk of him waging attacks on natives for refusing to give up their limited winter food stock without at least some payment. Captain John Smith ordered the burning of their villages, imprisoned and beat native people, and forced them into labour. He was considered a national hero in his time - but how do you see him now? Hero or villain?
+John Smith led a rather colorful life fighting bravely in wars across the world, before landing the job of President of the Jamestown Colony in newly discovered Virginia.<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 53ms>>The story goes that while out exploring John Smith was captured by the ruling Powhatan tribe. 
 
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>>
+He testified that they were about to kill him, when the Chiefs daughter, Pocahontas, pleaded for his life. 
+
+She was 11 so stories of their love are hopefully fabrications.<</type>><</replace>><</timed>>    
+<<timed 33s>><<replace "#mount">><<type 50ms>>John Smith was instrumental in mapping out the region and helping the settlers survive their new environment. 
+
+He was generally considered better than other colonists, trading with the local Powhatan community.<</type>><</replace>><</timed>>    
+<<timed 45s>><<replace "#mount">><<type 50ms>>Some accounts state good relations with the tribe, but others talk of him waging attacks on natives for refusing to give up their limited winter food stock without at least some payment.<</type>><</replace>><</timed>>    
+<<timed 57s>><<replace "#mount">><<type 55ms>>Captain John Smith ordered the burning of their villages, imprisoned and beat native people and forced them into labor. 
+
+He was considered a national hero in his time. But how do you see him now? Hero or Villain?
+
 <div class="menu-wrapper">
   <<button "Hero">><<set $prevpass to $passage>><<goto "SRS-21A">><</button>>
   <<button "Villain">><<set $prevpass to $passage>><<goto "SRS-21A">><</button>>
   <<button "A bit of both">><<set $prevpass to $passage>><<goto "SRS-21A">><</button>>
-</div>
-<</timed>>
+</div><</type>><</replace>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-21A {"position":"1300,1000","size":"100,100"}
+:: SRS-21A {"position":"1300,980","size":"100,200"}
 <<set $passage to "SRS-21A">><<audio ":all" stop>><<audio "SRS_21A" play>><<set $nextpassage to "SRS-22A">>
 <main>
-<div id="mount"></div>
-  <<timed 0.5s>><<replace "#mount">>MADELEINE: Interesting...
-  
-  See, despite what my sister says, I believe making leaders into heroes is dangerous. It gives them the freedom to hurt people ‘for the greater good’ and never be challenged. Then we’re left with monuments like this, obscuring the full history from view.
-  
-  So what do we do? Tear the monuments down? Ignore them? Teach the truth about them?
-  If you had a say, what would you do with this statue? Let your imagination run free. Discuss it together and share your answer - I’d love to hear!
-  
+<div id="mount"></div>  
+<<timed 0s>><<replace "#mount">><<type 50ms>>M: Interesting. 
+See, despite what my sister says, I believe making leaders into heroes is dangerous. 
+It gives them the freedom to hurt people - for the greater good - and never be challenged.<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 50ms>>Then we're left with monuments like this, obscuring the full history from view. 
+So what do we do? 
+Tear the monuments down? 
+Ignore them? 
+Teach the truth about them?<</type>><</replace>><</timed>>    
+<<timed 29s>><<replace "#mount">><<type 50ms>>If you had a say, what would you do with this statue? 
+Let your imagination run free. Discuss it together and share your answer. I'd love to hear.<</type>>  
   <<textarea "$ideas"" Write your answer here">>
 
-<<button "Done">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_21.5A" play>>MADELEINE: Ha, I knew you had some imagination - we’ll make suffragettes of you yet!
-But I do believe our time together is nearing an end. Before we say goodbye - could you help me find my sister? Trouble has a way of finding her - I’d like to get there first! Any ideas of where we could look?
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 15s>><<button "We have an idea!">><<set $prevpass to $passage>><<goto "SRS-22A">><</button>><</timed>>
+<<button "Done">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_21.5A" play>>
+<<timed 1s>><<replace "#mount">><<type 50ms>>M: I knew you had some imagination. We'll make suffragettes of you yet. But I do believe our time together is nearing an end.<</type>><</replace>><</timed>>  
+<<timed 9s>><<replace "#mount">><<type 50ms>>Before we say goodbye, could you help me find my sister? Trouble has a way of finding her. I'd like to get there first. Any ideas of where we could look?
+
+<<button "We have an idea!">><<set $prevpass to $passage>><<goto "SRS-22A">><</button>><</type>><</replace>><</timed>> 
+
 <</replace>><</button>>
 <</replace>><</timed>>
   
@@ -995,62 +1044,66 @@ But I do believe our time together is nearing an end. Before we say goodbye - co
 <<include "footer">>
 
 
-:: SRS-22A {"position":"1500,1000","size":"100,100"}
-<<set $passage to "SRS-22A">><<set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})>><<audio ":all" stop>><<audio "SRS_22A" play>><<set $nextpassage to "SRS-25">>
+:: SRS-22A {"position":"1500,980","size":"100,200"}
+<<set $passage to "SRS-22A">><<set $map4 = setup.generateDirectionsMap([51.5138651163771, -0.09385285766597401], [51.51397805028873, -0.09547767139276227])>><<audio ":all" stop>><<audio "SRS_22A" play>><<set $nextpassage to "SRS-25">>
 <main>
- MADELEINE: Wonderful! Lead away!
-<<timed 5s>>$myMap4<</timed>>
+<<type 50ms>> M: Wonderful! Lead the way! <</type>>
+<<timed 5s>>$map4<</timed>>
 <<timed 10s>><<button "I'm here">><<set $prevpass to $passage>><<goto "SRS-25">><</button>><</timed>>
   
 </main>
 <<include "footer">>
 
 
-:: SRS-18B {"position":"600,1200","size":"100,100"}
-<<set $passage to "SRS-18B ">><<set $myMap4 = setup.generateDirectionsMap( {lat:51.5173344699954, long:-0.09669576252319788}, {lat:51.51694056560406, long:-0.09744678101621963})>><<audio ":all" stop>><<audio "SRS_18B" play>><<set $nextpassage to "SRS-19B">>
+:: SRS-18B {"position":"600,1200","size":"100,200"}
+<<set $passage to "SRS-18B">><<set $map5 = setup.generateDirectionsMap([51.51764040797752, -0.09678321471717571], [])>><<audio ":all" stop>><<audio "SRS_18B" play>><<set $nextpassage to "SRS-19B">>
 <main>
-MADELEINE: An excellent answer.
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 48ms>>M: An excellent answer. 
 
-DOROTHEA: Though I’d like to challenge it, if I may. 
+D: Though, I'd like to challenge it if I may? 
 
-MADELEINE: You may try, but it is futile because I am ri-
+M: You may try but it is futile because I am right.<</type>><</replace>><</timed>>   
+<<timed 8s>><<replace "#mount">><<type 50ms>>D: Yes, it is us, the people who change the world, but every movement needs a great leader, and how they unify us, empower us inspire faith, that's what makes them a hero.<</type>><</replace>><</timed>>   
+<<timed 20s>><<replace "#mount">><<type 53ms>>M: I'm not sure I- 
 
-DOROTHEA: Yes, it is us, the people, who change the world. But every movement needs a great leader. And how they unify us, empower us, inspire faith, that’s what makes them a hero.
+D: That is why we choose to commemorate leaders with monuments. 
+We want to remember our heroes. 
+Because once they're forgotten, so is their power. 
+Ordinary people are the first to be forgotten.<</type>><</replace>><</timed>>    
+<<timed 33s>><<replace "#mount">><<type 55ms>>M: Well, now you're just being- 
 
-MADELEINE: I’m not sure I -
+D: Let us take note as we walk! Street names, buildings, plaques, statues, who are they honoring? What did those people do? 
+Probably all leaders of some sort. 
 
-DOROTHEA: That is why we choose to commemorate leaders with monuments. We want to remember our heroes. Because once they’re forgotten, so is their power. Ordinary people are the first to be forgotten.
+M: Or villains- 
 
-MADELEINE: Well, now you’re just being-
-
-DOROTHEA: Let us take note as we walk - street names, buildings, plaques, statues - who are they honouring? What did those people do? Probably all leaders, of some sort. 
-
-MADELEINE: Or villai-
-
-DOROTHEA: Onwards!
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>>$myMap4<</timed>>
-<<timed 10s>><<button "We've arrived">><<set $prevpass to $passage>><<goto "SRS-19B">><</button>><</timed>>
+D: ONWARDS!<</type>><</replace>><</timed>> 
+<<timed 50s>><<replace "#mount">>$map5
+<<button "We've arrived">><<set $prevpass to $passage>><<goto "SRS-19B">><</button>><</replace>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-19B {"position":"800,1200","size":"100,100"}
+:: SRS-19B {"position":"800,1200","size":"100,200"}
 <<set $passage to "SRS-19B">><<audio ":all" stop>><<audio "SRS_19B" play>><<set $nextpassage to "SRS-20B">>
 <main>
-DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just visible through those gates. Does it exist in 2022?
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
+<div id="mount"></div>
+<<timed 0s>><<replace "#mount">><<type 50ms>>D: Wait! We nearly missed it. My apologies! 
 
-<<timed 5s>><<button "Yes">><<set $prevpass to $passage>><<goto "SRS-20B">><</button>><</timed>>
+In 1912 there is a park just visible through those gates. 
+
+Does it exist in 2022?<</type>><</replace>><</timed>> 
+<<timed 10s>><<button "Yes">><<set $prevpass to $passage>><<goto "SRS-20B">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-20B {"position":"1000,1200","size":"100,100"}
+:: SRS-20B {"position":"1000,1200","size":"100,200"}
 <<set $passage to "SRS-20B">><main><<audio ":all" stop>><<audio "SRS_20B" play>><<set $nextpassage to "SRS-20.5B">>
 <div id="feedback"></div>
 <div id="mount"></div>
-<<timed 0.5s>><<replace "#mount">><<type 50ms>>DOROTHEA: Ah, I see. What do you know about it?<</type>><</replace>><</timed>>
+<<timed 0.5s>><<replace "#mount">><<type 50ms>>D: Ah, I see. What do you know about it?<</type>><</replace>><</timed>>
 <<timed 6s>><<replace "#mount">><<type 50ms>>
 <div class="menu-wrapper">
 <<button "It was in the movie Closer">><<replace "#feedback">><<audio ":all" stop>><<audio "SRS_20B_Closer" play>>I don’t know what you’re talking about. Closer to what?<</replace>>
@@ -1075,180 +1128,182 @@ DOROTHEA: Wait! We nearly missed it, my apologies. In 1912, there is a park just
 <<include "footer">>
 
 
-:: SRS-20.5B {"position":"1100,1300","size":"100,100"}
+:: SRS-20.5B {"position":"1120,1300","size":"100,200"}
 <<set $passage to "SRS-20.5B">><<audio ":all" stop>><<audio "SRS_20.5B" play>><<set $nextpassage to "SRS-21B">>
-<main><div id="mount">DOROTHEA: I shall share what I know. This park was built as a memorial. See that wall over there? It lists ordinary citizens who showed extraordinary acts of bravery, people who sacrificed their own lives to save another. It was the brainchild of painter and sculptor, George Frederic Watts, who called it ‘Heroic Self Sacrifice’.
-    
-    When told the origins of the park, most agree that it is a beautiful testament to ordinary people. How do you feel about it? Discuss amongst yourselves and share. I’d love to know.
+<main>
+<div id="mount"></div>  
+<<timed 0s>><<replace "#mount">><<type 50ms>>D: I shall share what I know. 
 
+This park was built as a memorial. See that wall over there? 
+
+It lists ordinary citizens who showed extraordinary acts of bravery, people who sacrificed their own lives to save another.<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 50ms>>It was the brainchild of painter and sculptor George Frederick Watts, who called it 'Heroic Self Sacrifice'. 
+
+When told the origins of the park most agree that is beautiful testament to ordinary people.<</type>><</replace>><</timed>>    
+<<timed 28s>><<replace "#mount">><<type 50ms>>How do you feel about it? Discuss amongst yourselves and share I'd love to know.<</type>>
     <<textarea "$park"" Write your answer here">>
     <<button "Done">>
-      <<replace "#mount">> <<audio ":all" stop>><<audio "SRS_20.6B" play>> DOROTHEA: I see. What examples are there in your time of ordinary people being applauded as heroes?
+      <<replace "#mount">> <<audio ":all" stop>><<audio "SRS_20.6B" play>> <<type 50ms>>I see. What examples are there in your time of ordinary people being applauded as heroes?<</type>>
 
         <<textarea "$heros"" Write your answer here">>
         <<button "Done">>
             <<replace "#mount">><<audio ":all" stop>><<audio "SRS_20.7B" play>> 
-            DOROTHEA: Did things change for the better for those people as a result?
+           <<type 50ms>> Did things change for the better for those people as a result? <</type>>
 
                 <div class="menu-wrapper">
-                  <<button "Yes">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20.7B_Yes" play>> That’s good to hear. Here in 1912, that is less common.<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
-                  <<button "No">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20.7B_No" play>> Yes. It’s the same here in 1912.<</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
+                  <<button "Yes">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20.7B_Yes" play>> <<type 50ms>>That’s good to hear. Here in 1912, that is less common.<</type>><</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
+                  <<button "No">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_20.7B_No" play>> <<type 50ms>>Yes. It’s the same here in 1912.<</type>><</replace>><<timed 4s>><<set $prevpass to $passage>><<goto "SRS-21B">><</timed>><</button>>
                 </div>
             <</replace>>
         <</button>>
       <</replace>>
-      <</button>>
-      </div>
+      <</button>><</replace>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-21B {"position":"1300,1200","size":"100,100"}
+:: SRS-21B {"position":"1300,1200","size":"100,200"}
 <<set $passage to "SRS-21B">><<audio ":all" stop>><<audio "SRS_21B" play>><<set $nextpassage to "SRS-22B">>
 <main> <div id="mount"></div>
-<<timed 0.5s>><<replace "#mount">> DOROTHEA: Celebrating the deeds of ordinary people is a great gesture. But how often does it spark a lasting change in their lives?
-
-This park was built in 1900. Class divides in this country were (and still are) enormous. There are women in our movement who are expected to work dangerous, exhausting jobs in factories, care for their children and keep their husbands happy by being impeccable housewives. If they are arrested, they risk losing everything. But still they come. To every march.
-
-There are also women in our movement who live in grand houses and are expected to do little more than dress prettily for balls and make a good marriage. If they are arrested, there is always someone to pay their bail (albeit reluctantly) and take them back home to relative comfort. Yes, both women make sacrifices. Yes, they are both heroic. But they are part of a bigger battle for change. A single act of sacrifice - well that is easily missed, just like the names on that wall. A thousand women led into battle by a powerful leader - that is not so easily forgot.
-
-So I ask, should we commemorate ordinary acts of sacrifice with monuments like this? Or should we fight for a world where the sacrifices are not needed? What do you think? Let your imagination run free. Discuss it together and share your answer - I’d love to hear!
   
+<<timed 0s>><<replace "#mount">><<type 50ms>>D:Celebrating the deeds of ordinary people is a great gesture. But how often does it spark a lasting change in their lives?<</type>><</replace>><</timed>>    
+<<timed 8s>><<replace "#mount">><<type 50ms>>This park was built in 1900. Class divides in this country were, and still are, enormous.<</type>><</replace>><</timed>>    
+<<timed 14s>><<replace "#mount">><<type 50ms>>There are women in our movement who are expected to work dangerous, exhausting jobs in factories, care for their children, and keeping their husbands happy by being impeccable housewives.<</type>><</replace>><</timed>>    
+<<timed 26s>><<replace "#mount">><<type 50ms>>If they are arrested, they risk losing everything. But still they come to every March.<</type>><</replace>><</timed>>    
+<<timed 33s>><<replace "#mount">><<type 50ms>>There are also women in our movement who live in grand houses, and are expected to do little more than dress prettily for balls and make a good marriage.<</type>><</replace>><</timed>>    
+<<timed 43s>><<replace "#mount">><<type 50ms>>If they are arrested, there is always someone to pay their bail, albeit reluctantly, and take them back home to relative comfort. Yes, both women make sacrifices. Yes, they are both heroic, but they are part of a bigger battle for a change.<</type>><</replace>><</timed>>    
+<<timed 61s>><<replace "#mount">><<type 50ms>>A single act of sacrifice. Well that is easily missed. Just like the names on that wall. 1000 women led into battle by a powerful leader. That is not so easily forgot.<</type>><</replace>><</timed>>    
+<<timed 74s>><<replace "#mount">><<type 50ms>>So I ask, should we commemorate ordinary acts of sacrifice with monuments like this? Or should we fight for a world where the sacrifices are not needed? What do you think?<</type>><</replace>><</timed>>    
+<<timed 85s>><<replace "#mount">><<type 50ms>>Let your imagination run free. Discuss it together and share your answer. I'd love to hear.<</type>>
   <<textarea "$monuments"" Write your answer here">>
 
 
-<<button "Done">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_21.5B" play>>Thank-you so much for your ideas. Perhaps we can discuss them as we continue. 
+<<button "Done">><<replace "#mount">><<audio ":all" stop>><<audio "SRS_21.5B" play>><<type 50ms>>Thank-you so much for your ideas. Perhaps we can discuss them as we continue. 
 
-Now where on Earth is my sister? Have you seen her?
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 5s>><<button "Not recently">><<set $prevpass to $passage>><<goto "SRS-22B">><</button>><</timed>>
+Now where on Earth is my sister? Have you seen her?<</type>>
+
+<<timed 10s>><<button "Not recently">><<set $prevpass to $passage>><<goto "SRS-22B">><</button>><</timed>>
 <</replace>><</button>>
 <</replace>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-22B {"position":"1500,1200","size":"100,100"}
-<<set $passage to "SRS-22B">><<set $myMap5 = setup.generateDirectionsMap(  {lat:51.51694056560406, long:-0.09744678101621963}, {lat:51.516146261728665, long:-0.09573724447082779})>><<audio ":all" stop>><<audio "SRS_22B" play>><<set $nextpassage to "SRS-23B">>
+:: SRS-22B {"position":"1500,1200","size":"100,200"}
+<<set $passage to "SRS-22B">><<set $map6 = setup.generateDirectionsMap([51.516335424839625, -0.09669512565940248],[51.51612656993761, -0.09572869732776987])>><<audio ":all" stop>><<audio "SRS_22B" play>><<set $nextpassage to "SRS-23B">>
 <main>
-DOROTHEA: Oh dear. Trouble has a way of finding her - we’d better get there first!
-
-<<timed 5s>>$myMap5<</timed>>
+<<type 50ms>>D: Oh dear. Trouble has a way of finding her - we’d better get there first!<</type>>
+<<timed 5s>>$map6<</timed>>
 <<timed 10s>><<button "I'm here">><<set $prevpass to $passage>><<goto "SRS-23B">><</button>><</timed>>
   
 </main>
 <<include "footer">>
 
 
-:: SRS-23B {"position":"1700,1200","size":"100,100"}
+:: SRS-23B {"position":"1700,1200","size":"100,200"}
 <<set $passage to "SRS-23B">><<audio ":all" stop>><<audio "SRS_23B" play>><<set $nextpassage to "SRS-25">>
 <main>
-DOROTHEA: There she is! Madeleine! What are you doing?
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 50ms>>D: There she is! MADELEINE! What are you doing?
 
-MADELEINE: Shhhh! I don’t want him to see me!
+M: Shhh, I don't want him to see me!
 
-DOROTHEA: Who?
+D: Who?  
 
-MADELEINE: That Godforsaken Alderman.
+M: That God forsaken Alderman.  
+ 
+D: Good grief. There he is. Hide, everyone!<</type>><</replace>><</timed>>   
+<<timed 13.5s>><<replace "#mount">><<type 45ms>>D: You see, we were recently charged with smashing windows at Mansion House, alongside our comrades Grace and Fanny Peace.<</type>><</replace>><</timed>>   
+<<timed 20s>><<replace "#mount">><<type 50ms>>M: With just cause! 
+All our campaigning to get the Conciliatory Bill passed, allowing some women the vote, and now it's being stalled by our Prime Minister.<</type>><</replace>><</timed>>   
+<<timed 31s>><<replace "#mount">><<type 50ms>>D: Breaking those windows was not a decision we took lightly. It was a warning. 
+At the hearing. I spoke for the defense.   
 
-DOROTHEA: Good grief, there he is. Hide, everyone!
+M: So our message would be heard, but they could not, would not, take us seriously. It went something like:<</type>><</replace>><</timed>>   
+<<timed 47s>><<replace "#mount">><<type 50ms>>D: //"This thing is not done as wanton damage. We have done it as a protest against being deprived of the vote."//  
+ALDERMAN: //"But it was wanton damage, whatever you may call it. Are you Londoners?"//  
+D: //"No, we've come up from Essex!"//  
+ALDERMAN: //"For this little prank?!?"//
+D: //"No to do our duty! Stop laughing! We are not a joke!"// 
+<</type>><</replace>><</timed>>
+<<timed 70.5s>><<replace "#mount">><<type 45ms>> D: The verdict was that we were either criminals or lunatics. We were sentenced to two months in prison with hard labor.<</type>><</replace>><</timed>>  
+<<timed 77s>><<replace "#mount">><<type 50ms>>M: We suffered. But we were lucky. There was some who did not make it. 
 
-MADELEINE: I was putting up posters for our next march. If he sees me-
+D: I don't want to think about that, Madeleine 
 
-DOROTHEA: (to audience) You see, we were recently charged with smashing windows at Mansion House, alongside our comrades Grace and Fanny Pease.
+M: It's part of our story. The women we lost -
+ 
+D: We should not have had to lose them.
 
-MADELEINE: With just cause! All our campaigning to get the Conciliatory bill passed, allowing (some) women the vote. And now it is being stalled by our Prime Minister.
+M: Are you all right?<</type>><</replace>><</timed>>   
+<<timed 94s>><<replace "#mount">><<type 50ms>>D: I apologize. Sometimes the weight of it!
 
-DOROTHEA: Breaking those windows was not a decision we took lightly. It was a warning. At the hearing, I spoke for the defence.
+M: I think perhaps our time with you is coming to an end.
 
-MADELEINE: So our message would be heard. But they could not, would not take us seriously. It went something like:
+D: Yes! We have lots to do in 1912! As I'm sure you do in 2022!
 
-DOROTHEA: “This thing is not done as wanton damage – we have done it as a protest against being deprived of the vote.”
+M: One last stop.<</type>><</replace>><</timed>> 
 
-MADELEINE (as The Alderman): “But it was wanton damage, whatever you may call it. Are you Londoners?”
-
-DOROTHEA: “No, we have come up from Essex.”
-
-MADELEINE (as The Alderman): “For this little prank.”
-
-DOROTHEA: “No, to do our duty.”
-
-DOROTHEA: Stop laughing! We are not a joke!
-
-DOROTHEA: The verdict was that we were ‘either criminals or lunatics’. We were sentenced to two months in prison with hard labour.
-
-MADELEINE: We suffered. But we were lucky. There were some who did not make it- DOROTHEA: I don’t want to think about that, Madeleine.
-
-MADELEINE: It’s part of our story! The women we lost-
-
-DOROTHEA: We should not have had to lose them!
-
-MADELEINE: Are you alright?
-
-DOROTHEA: Yes. 
-I apologise, sometimes the weight of it... 
-
-MADELEINE:  I think perhaps our time with you is coming to an end... 
-
-DOROTHEA: Yes. We have lots to do in 1912, as I’m sure you do in 2022. 
-
-MADELEINE: One last stop?
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-<<timed 8s>><<button "Yes, we’ll show you somewhere">><<set $prevpass to $passage>><<goto "SRS-24B">><</button>> <</timed>>   
+<<timed 113s>><<button "Yes, we’ll show you somewhere">><<set $prevpass to $passage>><<goto "SRS-24B">><</button>> <</timed>>   
 </main>
 <<include "footer">>
 
 
-:: SRS-24B {"position":"1900,1200","size":"100,100"}
-<<set $passage to "SRS-24B">><<set $myMap4 = setup.generateDirectionsMap( {lat:51.51385503154935, long:-0.09367685227098957}, {lat:51.51417083454951,long:-0.09559112707341})>><<audio ":all" stop>><<audio "SRS_24B" play>><<set $nextpassage to "SRS-25">>
+:: SRS-24B {"position":"1900,1200","size":"100,200"}
+<<set $passage to "SRS-24B">><<set $map7 = setup.generateDirectionsMap([51.51612656993761, -0.09572869732776987], [51.51397805028873, -0.09547767139276227])>><<audio ":all" stop>><<audio "SRS_24B" play>><<set $nextpassage to "SRS-25">>
 <main>
-MADELEINE: Ooh yes please! Lead away!
-<<timed 5s>>$myMap4<</timed>>
+<<type 50ms>>M: Ooh yes please! Lead away!<</type>>
+<<timed 5s>>$map7<</timed>>
 <<timed 10s>><<button "We've arrived">><<set $prevpass to $passage>><<goto "SRS-25">><</button>><</timed>>
 </main>
 <<include "footer">>
 
 
-:: SRS-25 {"position":"2100,1000","size":"100,100"}
+:: SRS-25 {"position":"2100,1000","size":"100,200"}
 <<set $passage to "SRS-25">><<audio ":all" stop>><<audio "SRS_25" play>><<set $nextpassage to "SRS-29">>
 <main>
-MADELEINE: Well this looks rather different from 1912. What a beast of a building!
+<<type 50ms>> M: Well this looks rather different from 1912. What a beast of a building!
 
-DOROTHEA: What do you call this place?
-/* TODO NEEDS TO CONTINUE AFTER THE TEXT */
-
-<<timed 5s>><<button "One New Change">><<goto "SRS-29">><</button>><</timed>>
+D: What do you call this place?<</type>>
+<<timed 8s>><<button "One New Change">><<goto "SRS-29">><</button>><</timed>>
   
 </main>
 <<include "footer">>
 
 
-:: SRS-29 {"position":"2600,1000","size":"100,100"}
+:: SRS-29 {"position":"2600,1000","size":"100,200"}
 <<set $passage to "SRS-29">><<audio ":all" stop>><<audio "SRS_29" play>><<set $nextpassage to "SRS-30">>
 <main>
-MADELEINE: How apt. That's what we're fighting for.
+<div id="mount"></div>
+  
+<<timed 0s>><<replace "#mount">><<type 48ms>>M: How apt. That's what we're fighting for.
 
-DOROTHEA: And we won't stop. My sister has been imprisoned twice this year. In July, it was for protecting Emmeline Pankhust. As she was led from the dock, she said:
+D: And we won't stop. 
+My sister has been imprisoned twice this year. 
+In July, it was for protecting Emmeline Pankhurst. <</type>><</replace>><</timed>>   
+<<timed 10s>><<replace "#mount">><<type 50ms>>D: As she was led from the dock, she said, 
 
-MADELEINE: "We shall keep no peace until it is peace with honour. How long are we to be the tools of this tyranny? I am not going to keep any peace at any time.”
+"//We shall keep no peace until it is peace with honor. How long are we to be the tools of this tyranny? I am not going to keep any peace at any time..."<</type>><</replace>><</timed>>   
+<<timed 24s>><<replace "#mount">><<type 50ms>>D: Not until we have that one new change. 
+But what do you think? 
 
-DOROTHEA: Not until we have that one new change. But what do you think? 
+M: Is it wrong of us to smash windows, damage public property? Disrupt people's days? Should we ask to be heard in a more measured way?<</type>><</replace>><</timed>>   
+<<timed 38s>><<replace "#mount">><<type 50ms>>D: We've learned that it's a privilege to protest and not fear for your life, livelihood or the safety of your family. Not everyone has what we do. 
 
-MADELEINE: Is it wrong of us to smash windows, damage public property, disrupt people’s days? Should we ask to be heard in a more... measured way?
+M:A comfortable home. Parents who support our cause.<</type>><</replace>><</timed>>   
+<<timed 51s>><<replace "#mount">><<type 50ms>>D: If you lived here in 1912, what would you make of our methods? 
 
-DOROTHEA: We’ve learned that it’s a privilege to protest and not fear for your life, livelihood, or the safety of your family. Not everyone has what we do.
+M: What do you make of similar methods being used by different activists now?
 
-MADELEINE: A comfortable home, parents who support our cause-
+D: Are we heroes or villains?<</type>><</replace>><</timed>>  
+<<timed 63s>><<replace "#mount">><<type 50ms>>D: You decide.
 
-DOROTHEA: If you lived here in 1912, what would you make of our methods? MADELEINE: What do you make of similar methods being used by different activists now? DOROTHEA: Are we heroes... or villains?
+M: We'd love to hear.
 
-BOTH: You Decide.
+D: Discuss it together and share your answer with us.<</type>><</replace>><</timed>> 
+<<timed 75s>><<replace "#mount">><<type 50ms>>
 
-MADELEINE: Discuss it together and share your answer with us.
-
-DOROTHEA: We’d love to hear.
-
-/* TODO NEEDS TO APPEAR AFTER THE TEXT */
   I think the suffragettes were heroes because:
   
     <<textarea "$heroes"" Write your answer here">>
@@ -1258,49 +1313,46 @@ DOROTHEA: We’d love to hear.
     <<textarea "$notheroes"" Write your answer here">>
 
 <<button "Done">><<set $prevpass to $passage>><<goto "SRS-30">><</button>>
+<</type>><</replace>><</timed>> 
   
 </main>
 <<include "footer">>
 
 
-:: SRS-30 {"position":"2800,1000","size":"100,100"}
+:: SRS-30 {"position":"2800,1000","size":"100,200"}
 <<set $passage to "SRS-30">><<audio ":all" stop>><<audio "SRS_30" play>><<set $nextpassage to "SRS-31">>
 <main>
 <div id="mount"></div>
-<<timed 0.5s>><<replace "#mount">>
-DOROTHEA: Thank-you for all these thoughts and ideas. We really appreciate them, and we hope they’ve given you something too.
+  
+<<timed 0s>><<replace "#mount">><<type 42ms>>D: Thank you for all these thoughts and ideas. 
+We really appreciate them. And we hope they've given you something too.<</type>><</replace>><</timed>>   
+<<timed 6s>><<replace "#mount">><<type 60ms>>M: Before we go. I'd like to share a poem with you, one of my own! 
 
-MADELEINE: Before we go, I’d like to share a poem with you, one of my own. 
+D: Oh Dear Lord! 
 
-DOROTHEA: Oh dear Lord...
+M: it's about meeting your hero. How life can never be the same after that.<</type>><</replace>><</timed>>    
+<<timed 23s>><<replace "#mount">><<type 60ms>>M: And the words, the words, she said, wandered lightly o'er my soul. 
+But they left a track of flame. 
+Left the white fire burning there. 
+So I rose and followed her. 
+So I set my face for freedom.<</type>><</replace>><</timed>>    
+<<timed 43s>><<replace "#mount">><<type 58ms>>M: O I dared and I will dare. 
+I am fearless, who of old, in the flickering of the firelight, hid my face, and was afraid.<</type>><</replace>><</timed>>   
+<<timed 62s>><<replace "#mount">><<type 48ms>>D: That was actually rather beautiful.<</type>><</replace>><</timed>>   
+<<timed 66s>><<replace "#mount">><<type 53ms>>M: I'd like to leave you with this task. 
+Look out for the heroes in your life. However you define them. 
+They may be right under your nose. And they may inspire you in ways you didn't think possible.<</type>><</replace>><</timed>>   
+<<timed 81s>><<replace "#mount">><<type 52ms>>D: Very true sister. Perhaps they'll inspire you to act the next time you see something unjust. 
 
-MADELEINE: It’s about meeting your hero, how life can never the same after that:
+M: Inspire you to stop being quiet. Stop being meek.<</type>><</replace>><</timed>>   
+<<timed 92s>><<replace "#mount">><<type 50ms>>BOTH: Help you find your voice and your right to speak.
+ So goodbye. 
+And thanks for everything. 
+Onwards, with deeds, not words. Let's win!<</type>><</replace>><</timed>> 
 
-MADELEINE: 
-“And the words, the words she said Wandered lightly o'er my soul,
-But they left a track of flame,
-Left the white fire burning there.
-So I rose and followed her,
-So I set my face for Freedom. O! I dared and I will dare –
-I am fearless! who of old
-In the flickering of the firelight – Hid my face and was afraid.”
 
-DOROTHEA:  That was actually... rather beautiful.
 
-MADELEINE: I’d like to leave you with this task: Look out for the heroes in your life. However you define them. They may be right under your nose. And they may inspire you in ways you didn’t think possible.
-
-DOROTHEA: Very true, sister. Perhaps they’ll inspire you to act, the next time you see something unjust...
-
-MADELEINE: Inspire you to stop being quiet, stop being meek... 
-
-BOTH: Help you find your voice and your right to speak! 
-
-DOROTHEA: So goodbye, and thanks for everything...
-
-BOTH: Onwards, with deeds not words, let’s win!
-<</replace>><</timed>>
-
-<<timed 10s>><<replace "#mount">>
+<<timed 105s>><<replace "#mount">>
 FELIX: Hello again! You made it through the maze! What do you make of the Rock sisters?
 
  <div class="menu-wrapper">
@@ -1315,11 +1367,11 @@ FELIX: Hello again! You made it through the maze! What do you make of the Rock s
 <<include "footer">>
 
 
-:: SRS-31 {"position":"3000,1000","size":"100,100"}
+:: SRS-31 {"position":"3000,1000","size":"100,200"}
 <<set $passage to "SRS-31">><<audio ":all" stop>><<audio "SRS_31" play>><<set $nextpassage to "end">>
 /* TODO AUDIO NOT HERE YET */
 <main>
-Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for thought as we head to something completely different...
+<<type 50ms>>Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for thought as we head to something completely different...<</type>>
 
 <<button "End">><<goto "end">><</button>>
 
@@ -1327,8 +1379,8 @@ Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for
 <<include "footer">>
 
 
-:: end {"position":"100,700","size":"100,100"}
-<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap( {lat:51.51422339174107, long:-0.09555485421956555}, {lat:51.51422339174107, long:-0.09555485421956555})>>
+:: end {"position":"100,1000","size":"100,100"}
+<<set $passage to "19">><<set $nextpass to "">><<set $endMap = setup.generateDirectionsMap([51.51397805028873, -0.09547767139276227], [51.51397805028873, -0.09547767139276227])>>
 <main>End location
 
 $endMap
