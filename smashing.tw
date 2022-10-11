@@ -249,7 +249,7 @@ align-items: flex-end
 }
 
 .nav-item.replay, .nav-item.end{
-justify-content: center
+justify-content: right
 }
 .nav-item.replay, .nav-item.forward{
 justify-content: end
@@ -326,9 +326,12 @@ width: 100%;
 }
 
 .adventure-wrapper{
-  border: solid 1px white;
-  padding: 10px;
-  border-radius: 5px
+border: solid 1px white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .adv-item{
@@ -338,7 +341,8 @@ display: flex;
 }
 
 .adventure-title{
-  margin-block-end:0
+  margin-block-end:0;
+  text-align:center
 }
 
 .glowing {
@@ -359,6 +363,18 @@ display: flex;
   }
 }
 
+@media screen and (min-width: 450px) {
+.choices{
+  display:flex;
+  justify-content: space-between;
+  
+}
+
+.adventure-wrapper{
+  padding: 2rem
+}
+
+}
 
 /* SPECIFICS */
 input[type=text], textarea{
@@ -550,6 +566,12 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 <div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div>
 </footer>
 
+:: footerlost {"position":"100,600","size":"100,100"}
+<footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
+
+:: footerkey
+<footer><div class="nav-item replay"><<button "Key">><<goto "SRS-33">><</button>> </div>
+<div class="nav-item end"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "SRS-33adventures">><</button>></div></footer>
 
 :: landing {"position":"375,175","size":"100,100"}
 <<set $passage to "landing">><<audio ":all" stop>>
@@ -570,7 +592,7 @@ You have two options:
 
 <<button "Take me straight to the end location!">><<goto "end">><</button>>
 </main>
-<<include "footer">>
+<<include "footerlost">>
 
 :: SRS-01 {"position":"449,226","size":"100,100"}
 <<set $passage to "SRS-01">><<set $nextpassage to "SRS-02B">>
@@ -1569,9 +1591,9 @@ Onwards, with deeds, not words. Let's win!<</type>><</replace>><</timed>>
 FELIX: Hello again! You made it through the maze! What do you make of the Rock sisters?
 
  <div class="menu-wrapper">
-    <<button "They’re bonkers!">><<goto "SRS-31">><</button>>
-    <<button "They’re brilliant!">><<goto "SRS-31">><</button>>
-     <<button "They’re a bit of both.">><<goto "SRS-31">><</button>>
+    <<button "They’re bonkers!">><<set $prevpass to $passage>><<goto "SRS-31">><</button>>
+    <<button "They’re brilliant!">><<<set $prevpass to $passage>><goto "SRS-31">><</button>>
+     <<button "They’re a bit of both.">><<set $prevpass to $passage>><<goto "SRS-31">><</button>>
  </div>
   
   <</replace>><</timed>>
@@ -1587,11 +1609,19 @@ FELIX: Hello again! You made it through the maze! What do you make of the Rock s
 <main>
 <<type 50ms>>Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for thought as we head to something completely different...<</type>>
 
-<<button "End">><<goto "SRS-32">><</button>>
+<<button "End">><<set $prevpass to $passage>><<goto "SRS-32">><</button>>
 
 </main>
 <<include "footer">>
 
+
+:: end {"position":"520,2113","size":"100,100"}
+<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.51397805028873, -0.09547767139276227], [51.51397805028873, -0.09547767139276227])>><main>
+<h2>End Location</h2>
+$map
+<<button "More Info">><<set $prevpass to $passage>><<goto "SRS-32">><</button>>
+</main>
+<<include "footerlost">>
 
 
 
@@ -1604,7 +1634,7 @@ You’re by One New Change, the shopping centre. Go inside, and make your way up
 
 Look for the dancers in headphones, at the far end of the rooftop! 
 
-Show the steward this <<button "key">><<goto "SRS-33">><</button>> on your phone and you'll get a pair of headphones too.
+Show the steward this <<button "key">><<set $prevpass to $passage>><<goto "SRS-33">><</button>> on your phone and you'll get a pair of headphones too.
 
 </main>
 <<include "footer">>
@@ -1613,17 +1643,20 @@ Show the steward this <<button "key">><<goto "SRS-33">><</button>> on your phone
 <<set $passage to "SRS-33">><<set $nextpassage to "EI_23A">>/* <<audio ":all" stop>><<audio "SRS_33" play>> */<main>
 <div class="key-wrapper glowing"><img src="./assets/keys-34.png"></div>
 
-
-
-Start a new adventure...
-
-<div class="adventure-wrapper"><h2 class="adventure-title">Animals in the City </h2><div class="adv-item"><div>Family Focused
-3 min walk away</div><<button "Show Map">><<goto "SRS_34A">><</button>></div></div>
-
-<div class="adventure-wrapper"><h2 class="adventure-title">The Future Gondolier </h2><div class="adv-item"><div>Family Focused
-4 min walk away</div><<button "Show Map">><<goto "SRS_34A">><</button>></div></div>
-
 </main>
+<<include "footerkey">>
+
+::  SRS-33adventures {"position":"520,2113","size":"100,100"}
+<<set $passage to "SRS-33adventures">><<set $nextpassage to "SRS_34A">><<audio ":all" stop>><main><h3>Start a new adventure...</h3>
+<div class="choices">
+<div class="adventure-wrapper"><h3>Animals in the City </h3><div class="adv-item"><div>Family Focused
+3 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "SRS_34A">><</button>></div></div>
+
+<div class="adventure-wrapper"><h3>The Future Gondolier </h3><div class="adv-item"><div>Family Focused
+4 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "SRS_34A">><</button>></div></div>
+</div>
+</main>
+<<include "footerkey">>
 
 :: SRS_34A {"position":"520,2113","size":"100,100"}
 <<set $passage to "SRS_34A">><<set $map = setup.generateDirectionsMap([51.51397805028873, -0.09547767139276227], [51.51204089721224, -0.09085841779191389])>><main>
@@ -1631,7 +1664,7 @@ Start a new adventure...
 $map
 
 </main>
-<<include "footerend">>
+<<include "footerlost">>
 
 :: EI-23B {"position":"520,2113","size":"100,100"}
 <<set $passage to "EI-23B">><<set $map = setup.generateDirectionsMap([51.51397805028873, -0.09547767139276227], [51.51221299705639, -0.09830573558176264])>>/* <<audio ":all" stop>><<audio "EI_21" play>> */<main>
@@ -1639,6 +1672,6 @@ $map
 $map
 
 </main>
-<<include "footerend">>
+<<include "footerlost">>
 
 
