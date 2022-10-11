@@ -242,6 +242,10 @@ align-items: flex-start
 align-items: flex-end
 }
 
+.nav-wrapper.end > .nav-item{
+justify-content: flex-end;
+}
+
 .nav-item{
   margin-block-end: 0.5rem;
   width:100%;
@@ -298,6 +302,9 @@ width: 100%;
     margin-bottom: 2rem
     }
 
+.small > .map{
+  height: 35vh;
+}
 
 .directions-card {
     display: none!important
@@ -569,9 +576,13 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 :: footerlost {"position":"100,600","size":"100,100"}
 <footer><div class="nav-wrapper "><div class="nav-item"><<button "Back">><<goto $prevpass>><</button>></div></div></footer>
 
+
+
 :: footerkey
-<footer><div class="nav-item replay"><<button "Key">><<goto "SRS-33">><</button>> </div>
-<div class="nav-item end"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "SRS-33adventures">><</button>></div></footer>
+<footer><div class="nav-wrapper"><div class="nav-item"><<button "<">><<goto $prevpass>><</button>></div><div class="nav-item"><<button "Start again">><<goto "landing">><</button>></div></div><div class="nav-wrapper end"><div class="nav-item"><<button "Key">><<set $prevpass to $passage>><<goto "SRS-33">><</button>> </div><div class="nav-item"><<button "Try another adventure">><<set $prevpass to $passage>><<goto "SRS-33adventures">><</button>></div></div></footer>
+
+
+
 
 :: landing {"position":"375,175","size":"100,100"}
 <<set $passage to "landing">><<audio ":all" stop>>
@@ -614,6 +625,7 @@ If you follow them all the way along their adventure, I’ll be there to meet yo
 
 What kind of amazing experience? Well, it’s a surprise. Otherwise this wouldn’t be an adventure.
 
+Now are you playing this adventure solo or with a group?
  
 <div class="menu-wrapper">
   <<button "Solo">><<set $prevpass to $passage>><<goto "SRS-02A">><</button>>
@@ -767,7 +779,7 @@ M: Then let's show them. Follow me everyone!<</type>><</replace>><</timed>>
 
 Madeleine, wait! Oh dear - you better come along too.<</type>><</replace>><</timed>> 
 
-<<timed 80s>><<goto "SRS-09map">>
+<<timed 80s>><<set $prevpass to $passage>><<goto "SRS-09map">>
 <</timed>>
 </main>
 <<include "footer">>
@@ -912,10 +924,7 @@ Are we in history books?
 Works of art? 
 Museums?
 
-<<timed 24s>><<button "Yes">><<set $prevpass to $passage>><<goto "SRS-14">><</button>><</timed>><</type>><</replace>><</timed>> 
-
-
-/* TODO NEEDS TO SHOW AFTER THE TEXT */
+<<timed 20s>><<button "Yes">><<set $prevpass to $passage>><<goto "SRS-14">><</button>><</timed>><</type>><</replace>><</timed>> 
 
 </main>
 <<include "footer">>
@@ -931,10 +940,12 @@ Museums?
 
 
 :: SRS-15 {"position":"2600,400","size":"100,200"}
-<<set $passage to "SRS-15">><<audio ":all" stop>><<audio "SRS_15" play>><<set $nextpassage to "SRS-15.5">>
-<main>
+<<set $passage to "SRS-15">><<audio ":all" stop>><<audio "SRS_15" play>><<set $nextpassage to "SRS-15.5">><<set $map2 = setup.generateDirectionsMap( [51.519707217504944, -0.09682733713119183], [51.518032193254655, -0.09680730578229244])>><main><div class="small">$map2</div>//Head out to Aldersgate and make a left. Head down to the roundabout. //
+
 <div id="mount"></div>
-  
+
+
+ 
 <<timed 0s>><<replace "#mount">><<type 50ms>>D: Then you must take us there. Come along everyone. 
 
 M: You know, I am not convinced that you're the well behaved citizens you pertain to be. 
@@ -991,6 +1002,7 @@ Where did you say this museum was?
 :: SRS-15.5map {"position":"2800,403.3333333333333","size":"100,200"}
 <<set $passage to "SRS-15.5map">><<set $map2 = setup.generateDirectionsMap( [51.519707217504944, -0.09682733713119183], [51.518032193254655, -0.09680730578229244])>><<audio ":all" stop>><<set $nextpassage to "SRS-16">>
 <main>
+Head out to Aldersgate and make a left. Head down to the roundabout.
 $map2
   <<button "We're here">><<set $prevpass to $passage>><<goto "SRS-16">><</button>>
 </main>
@@ -1024,7 +1036,7 @@ M: Yes, Mr. Churchill. Tell me how is that wretch remembered in 2022?
 
 
 :: SRS-17 {"position":"3175,400","size":"100,200"}
-<<set $passage to "SRS-17">><<audio ":all" stop>><<audio "SRS_17" play>><<set $nextpassage to "SRS-18B">>
+<<set $passage to "SRS-17">><<audio ":all" stop>><<audio "SRS_17" play>><<set $nextpassage to "SRS-18A">>
 <main>
 <div id="mount"></div>  
 <<timed 0s>><<replace "#mount">><<type 50ms>>M: A hero? 
@@ -1039,7 +1051,7 @@ The attacks were brutal, sometimes sexual.
 The day was dubbed Black Friday.<</type>><</replace>><</timed>>    
 <<timed 23s>><<replace "#mount">><<type 50ms>>And our Home Secretary, Mr. Churchill said, 
 
-//need we relive this? Whatever injuries and indignities the women suffered were the outcome of their invitation to all and sundry to assemble and make common cause against the government.//<</type>><</replace>><</timed>>    
+D: Need we relive this? Whatever injuries and indignities the women suffered were the outcome of their invitation to all and sundry to assemble and make common cause against the government.<</type>><</replace>><</timed>>    
 <<timed 39s>><<replace "#mount">><<type 50ms>>//"Their sympathizers included undesirable and reckless persons, quite capable of indulging in gross conduct and for their presence in Parliament Square. The women were themselves responsible."//<</type>><</replace>><</timed>>   
 <<timed 52s>><<replace "#mount">><<type 50ms>>D: I know it hurts sister, but at least we won. 
 Look, in 2022, a women is leading Britain. 
@@ -1062,7 +1074,7 @@ D: What do you think?
 
 
 :: SRS-18A {"position":"600,980","size":"100,200"}
-<<set $passage to "SRS-18A">><<audio ":all" stop>><<audio "SRS_18A" play>><<set $nextpassage to "SRS-19A">>
+<<set $passage to "SRS-18A">><<audio ":all" stop>><<audio "SRS_18A" play>><<set $nextpassage to "SRS-18Amap">>
 <main>
 <div id="mount"></div>
   
@@ -1088,15 +1100,15 @@ M: ONWARDS!<</type>><</replace>><</timed>> <<timed 27s>><<button "Next">><<set $
 
 :: SRS-18Amap {"position":"800,980","size":"100,200"}
 <<set $passage to "SRS-18Amap">><<set $map2a = setup.generateDirectionsMap( [51.518032193254655, -0.09680730578229244], [51.51476691340881, -0.09917535237703935])>><<audio ":all" stop>><<set $nextpassage to "SRS-19A">>
-<main>
-Head around the museum and head down St Martin’s La Grand.
+<main>Head around the museum and head down St Martin’s Le-Grand.
 When you get to the intersection, cross over towards St. Paul Tube Station entrance, with all the coffee shops. 
 Just the other side of the tube station, you’ll see Paternoster Row. 
 This opens up to a square with statues.
+<<button "We're here">><<set $prevpass to $passage>><<goto "SRS-19A">><</button>>
 
 $map2a
 
-<<button "At the Statue">><<set $prevpass to $passage>><<goto "SRS-20A">><</button>>
+
 </main>
 <<include "footer">>
 
@@ -1129,11 +1141,11 @@ M: so our message would be heard, but they could not, would not take us seriousl
 <<timed 48s>><<replace "#mount">><<type 50ms>>M: It went something like
 
 D: "//this thing is not done as wanton damage. We have done it as a protest against being deprived of the vote!//"<</type>><</replace>><</timed>>   
-<<timed 56s>><<replace "#mount">><<type 50ms>>ALDERMAN: "//But it was wanton damage, whatever you may call it. Are you Londoners?//" 
+<<timed 56s>><<replace "#mount">><<type 50ms>>M as ALDERMAN: "//But it was wanton damage, whatever you may call it. Are you Londoners?//" 
 
 D: "//No, we've come up from Essex//" 
 
-ALDERMAN: "//for this little prank?//" 
+M as ALDERMAN: "//for this little prank?//" 
 
 D: "//No to do our duty. Stop laughing! We are not a joke.//"<</type>><</replace>><</timed>>   
 <<timed 73s>><<replace "#mount">><<type 50ms>>D: The verdict was that we were either criminals, or lunatics. 
@@ -1171,7 +1183,7 @@ $map3
 
 
 :: SRS-20A {"position":"1000,980","size":"100,200"}
-<<set $passage to "SRS-20A">><<audio ":all" stop>><<audio "SRS_20A" play>><<set $nextpassage to "SRS-20.5a">>
+<<set $passage to "SRS-20A">><<audio ":all" stop>><<audio "SRS_20A" play>><<set $nextpassage to "SRS-20.5A">>
 <main>
 <div id="feedback"></div><div id="feedback2"></div>
 <div id="mount"></div>
@@ -1234,7 +1246,7 @@ He was considered a national hero in his time. But how do you see him now? Hero 
 
 
 :: SRS-21A {"position":"1300,980","size":"100,200"}
-<<set $passage to "SRS-21A">><<audio ":all" stop>><<audio "SRS_21A" play>><<set $nextpassage to "SRS-22A">>
+<<set $passage to "SRS-21A">><<audio ":all" stop>><<audio "SRS_21A" play>><<set $nextpassage to "SRS-22Amap">>
 <main>
 <div id="mount"></div>  
 <<timed 0s>><<replace "#mount">><<type 50ms>>M: Interesting. 
@@ -1263,8 +1275,8 @@ Let your imagination run free. Discuss it together and share your answer. I'd lo
 
 
 :: SRS-22Amap {"position":"1500,980","size":"100,200"}
-<<set $passage to "SRS-22A">><<set $map4 = setup.generateDirectionsMap([51.5138651163771, -0.09385285766597401], [51.514130472176085, -0.09492998904217628])>><<audio ":all" stop>><<audio "SRS_22A" play>><<set $nextpassage to "SRS-25">>
-<main><div id="mount"></mount>
+<<set $passage to "SRS-22Amap">><<set $map4 = setup.generateDirectionsMap([51.5138651163771, -0.09385285766597401], [51.514130472176085, -0.09492998904217628])>><<audio ":all" stop>><<audio "SRS_22A" play>><<set $nextpassage to "SRS-25">>
+<main><div id="mount"></div>
 <<timed 0s>><<replace "#mount">><<type 50ms>> M: Wonderful! Lead the way! <</type>><</replace>><</timed>>
 
 <<timed 5s>>Back out to Cheapside and just one road back what way you came, Take a left on to Bread Street, stop just after the H&M in the alcove <</timed>>
@@ -1427,7 +1439,10 @@ Now where on Earth is my sister? Have you seen her?<</type>>
 :: SRS-22B {"position":"1500,1200","size":"100,200"}
 <<set $passage to "SRS-22B">><<set $map6 = setup.generateDirectionsMap([51.51683124968552, -0.09701346048737912],[51.516174402853316, -0.095917329918825])>><<audio ":all" stop>><<audio "SRS_22B" play>><<set $nextpassage to "SRS-23B">>
 <main>
-<<type 50ms>>D: Oh dear. Trouble has a way of finding her - we’d better get there first!<</type>>
+<<timed 0.5s>><<replace "#mount">><<type 50ms>>D: Oh dear. Trouble has a way of finding her - we’d better get there first!<</type>><</replace>><</timed>>
+<<timed 5s>><<replace "#mount">><<type 50ms>>Head out of the park the way you came in. Take a right as you exit and continue down St
+Martin’s La Grand. Cross the street safely and lake a left on to Gresham St. At the next corner you will
+see a Church.<</type>><</replace>><</timed>>
 <<timed 5s>>$map6<</timed>>
 <<timed 10s>><<button "I'm here">><<set $prevpass to $passage>><<goto "SRS-23B">><</button>><</timed>>
   
@@ -1457,9 +1472,9 @@ At the hearing. I spoke for the defense.
 
 M: So our message would be heard, but they could not, would not, take us seriously. It went something like:<</type>><</replace>><</timed>>   
 <<timed 47s>><<replace "#mount">><<type 50ms>>D: //"This thing is not done as wanton damage. We have done it as a protest against being deprived of the vote."//  
-ALDERMAN: //"But it was wanton damage, whatever you may call it. Are you Londoners?"//  
+M as ALDERMAN: //"But it was wanton damage, whatever you may call it. Are you Londoners?"//  
 D: //"No, we've come up from Essex!"//  
-ALDERMAN: //"For this little prank?!?"//
+M as ALDERMAN: //"For this little prank?!?"//
 D: //"No to do our duty! Stop laughing! We are not a joke!"// 
 <</type>><</replace>><</timed>>
 <<timed 70.5s>><<replace "#mount">><<type 45ms>> D: The verdict was that we were either criminals or lunatics. We were sentenced to two months in prison with hard labor.<</type>><</replace>><</timed>>  
@@ -1487,8 +1502,10 @@ M: One last stop.<</type>><</replace>><</timed>>
 
 :: SRS-24B {"position":"1900,1200","size":"100,200"}
 <<set $passage to "SRS-24B">><<set $map7 = setup.generateDirectionsMap([51.516174402853316, -0.095917329918825], [51.51407387300043, -0.09547655789915731])>><<audio ":all" stop>><<audio "SRS_24B" play>><<set $nextpassage to "SRS-25">>
-<main>
-<<type 50ms>>M: Ooh yes please! Lead away!<</type>>
+<main><div id="mount"></div>
+
+<<timed 0.5s>><<replace "#mount">><<type 50ms>>M: Ooh yes please! Lead away!<</type>><</replace>><</timed>>
+<<timed 4s>><<replace "#mount">>Head down Foster Ln. When you come to the main road (Cheapside). Safely cross over and take a Left. Continue until you get to Bread Street. Take right and stop just after the H&M in the alcove.<</replace>><</timed>>
 <<timed 5s>>$map7<</timed>>
 <<timed 10s>><<button "We've arrived">><<set $prevpass to $passage>><<goto "SRS-25">><</button>><</timed>>
 </main>
@@ -1603,20 +1620,20 @@ FELIX: Hello again! You made it through the maze! What do you make of the Rock s
 
 
 :: SRS-31 {"position":"3000,1000","size":"100,200"}
-<<set $passage to "SRS-31">><<set $nextpassage to "SRS-32">>
+<<set $passage to "SRS-31">><<set $nextpassage to "SRS-32">><<audio ":all" stop>>
 /* <<audio ":all" stop>><<audio "SRS_31" play>> */
 /* TODO AUDIO NOT HERE YET */
 <main>
 <<type 50ms>>Yes, I can see that! Well I hope you enjoyed the experience regardless. Food for thought as we head to something completely different...<</type>>
 
-<<button "End">><<set $prevpass to $passage>><<goto "SRS-32">><</button>>
+<<button "Next">><<set $prevpass to $passage>><<goto "SRS-32">><</button>>
 
 </main>
 <<include "footer">>
 
 
 :: end {"position":"520,2113","size":"100,100"}
-<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.51397805028873, -0.09547767139276227], [51.51397805028873, -0.09547767139276227])>><main>
+<<set $passage to "UMC_25B">><<audio ":all" stop>><<set $map = setup.generateDirectionsMap([51.519707217504944, -0.09682733713119183], [51.51397805028873, -0.09547767139276227])>><main>
 <h2>End Location</h2>
 $map
 <<button "More Info">><<set $prevpass to $passage>><<goto "SRS-32">><</button>>
@@ -1641,6 +1658,8 @@ Show the steward this <<button "key">><<set $prevpass to $passage>><<goto "SRS-3
 
 :: SRS-33 {"position":"520,2113","size":"100,100"}
 <<set $passage to "SRS-33">><<set $nextpassage to "EI_23A">>/* <<audio ":all" stop>><<audio "SRS_33" play>> */<main>
+
+
 <div class="key-wrapper glowing"><img src="./assets/keys-34.png"></div>
 
 </main>
@@ -1653,7 +1672,7 @@ Show the steward this <<button "key">><<set $prevpass to $passage>><<goto "SRS-3
 3 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "SRS_34A">><</button>></div></div>
 
 <div class="adventure-wrapper"><h3>The Future Gondolier </h3><div class="adv-item"><div>Family Focused
-4 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "SRS_34A">><</button>></div></div>
+4 min walk away</div><<button "Show Map">><<set $prevpass to $passage>><<goto "SRS_34B">><</button>></div></div>
 </div>
 </main>
 <<include "footerkey">>
@@ -1664,14 +1683,14 @@ Show the steward this <<button "key">><<set $prevpass to $passage>><<goto "SRS-3
 $map
 
 </main>
-<<include "footerlost">>
+<<include "footerkey">>
 
-:: EI-23B {"position":"520,2113","size":"100,100"}
-<<set $passage to "EI-23B">><<set $map = setup.generateDirectionsMap([51.51397805028873, -0.09547767139276227], [51.51221299705639, -0.09830573558176264])>>/* <<audio ":all" stop>><<audio "EI_21" play>> */<main>
+:: SRS_34B {"position":"520,2113","size":"100,100"}
+<<set $passage to "SRS_34B">><<set $map = setup.generateDirectionsMap([51.51397805028873, -0.09547767139276227], [51.51221299705639, -0.09830573558176264])>>/* <<audio ":all" stop>><<audio "EI_21" play>> */<main>
 <h2>The Future Gondolier</h2>
 $map
 
 </main>
-<<include "footerlost">>
+<<include "footerkey">>
 
 
