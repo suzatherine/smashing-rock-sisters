@@ -18,7 +18,7 @@ Smashing Rock Sisters Caption
 
 @font-face {
   font-family: "Big John";
-  src: url("/assets/fonts/bigjohn.otf") format("opentype");
+  src: url("./assets/fonts/bigjohn.otf") format("opentype");
 }
 
 
