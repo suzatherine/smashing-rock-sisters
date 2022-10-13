@@ -294,9 +294,8 @@ margin-block-end: 10px
 }
 
 h2{
-font-family: 'Archivo Black', sans-serif;
+/* font-family: 'Archivo Black', sans-serif; */
   font-size: 2.5rem
-  
 }
 
 /* MAP */
@@ -513,52 +512,61 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "SRS_05" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_05.mp3">>
-<<cacheaudio "SRS_06" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_06.mp3">>
-<<cacheaudio "SRS_07" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_07.mp3">>
-<<cacheaudio "SRS_08" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_08_09.mp3">>
-<<cacheaudio "SRS_09" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_09.mp3">>
-<<cacheaudio "SRS_10" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_10.mp3">>
-<<cacheaudio "SRS_11A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11A.mp3">>
-<<cacheaudio "SRS_11B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11B.mp3">>
-<<cacheaudio "SRS_12" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_12.mp3">>
-<<cacheaudio "SRS_13" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_13.mp3">>
-<<cacheaudio "SRS_14" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_14.mp3">>
-<<cacheaudio "SRS_15.5" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_15.5.mp3">>
-<<cacheaudio "SRS_15" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_15.mp3">>
-<<cacheaudio "SRS_16" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_16.mp3">>
-<<cacheaudio "SRS_17" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_17.mp3">>
-<<cacheaudio "SRS_18A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_18A.mp3">>
-<<cacheaudio "SRS_18B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_18B.mp3">>
-<<cacheaudio "SRS_19A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_19A.mp3">>
-<<cacheaudio "SRS_19B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_19B.mp3">>
-<<cacheaudio "SRS_20.5B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.5B.mp3">>
-<<cacheaudio "SRS_20.6B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.6B.mp3">>
-<<cacheaudio "SRS_20.7B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B.mp3">>
-<<cacheaudio "SRS_20.7B_No" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B_No.mp3">>
-<<cacheaudio "SRS_20.7B_Yes" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B_Yes.mp3">>
-<<cacheaudio "SRS_20A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A.mp3">>
-<<cacheaudio "SRS_20A_DisneyMovie" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_DisneyMovie.mp3">>
-<<cacheaudio "SRS_20A_Explorer" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Explorer.mp3">>
-<<cacheaudio "SRS_20A_JohnSmith" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_JohnSmith.mp3">>
-<<cacheaudio "SRS_20A_Jesus" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Jesus.mp3">>
-<<cacheaudio "SRS_20A_Kanye" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Kanye.mp3">>
-<<cacheaudio "SRS_20A_Pocahontas" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Pocahontas.mp3">>
-<<cacheaudio "SRS_20B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B.mp3">>
-<<cacheaudio "SRS_20B_Closer" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_Closer.mp3">>
-<<cacheaudio "SRS_20B_NeverNoticed" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_NeverNoticed.mp3">>
-<<cacheaudio "SRS_20B_PostmansPark" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_PostmansPark.mp3">>
-<<cacheaudio "SRS_21.5A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21.5A.mp3">>
-<<cacheaudio "SRS_21.5B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21.5B.mp3">>
-<<cacheaudio "SRS_21A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21A.mp3">>
-<<cacheaudio "SRS_21B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21B.mp3">>
-<<cacheaudio "SRS_22A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_22A.mp3">>
-<<cacheaudio "SRS_22B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_22B.mp3">>
-<<cacheaudio "SRS_23B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_23B.mp3">>
-<<cacheaudio "SRS_24B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_24B.mp3">>
-<<cacheaudio "SRS_25" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_25.mp3">>
-<<cacheaudio "SRS_29" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_29.mp3">>
-<<cacheaudio "SRS_30" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_30.mp3">>
+<<cacheaudio "SRS_01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_01.mp3">>
+<<cacheaudio "SRS_04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS-04.mp3">>
+<<cacheaudio "SRS_05" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_05.mp3">>
+<<cacheaudio "SRS_06" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_06.mp3">>
+<<cacheaudio "SRS_07" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_07.mp3">>
+<<cacheaudio "SRS_08" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_08_09.mp3">>
+<<cacheaudio "SRS_09" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_09.mp3">>
+<<cacheaudio "SRS_10" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_10.mp3">>
+<<cacheaudio "SRS_11A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_11A.mp3">>
+<<cacheaudio "SRS_11B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_11B.mp3">>
+<<cacheaudio "SRS_12" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_12.mp3">>
+<<cacheaudio "SRS_13" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_13.mp3">>
+<<cacheaudio "SRS_14" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_14.mp3">>
+<<cacheaudio "SRS_15.5" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_15.5.mp3">>
+<<cacheaudio "SRS_15" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_15.mp3">>
+<<cacheaudio "SRS_16" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_16.mp3">>
+<<cacheaudio "SRS_17" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_17.mp3">>
+<<cacheaudio "SRS_18A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_18A.mp3">>
+<<cacheaudio "SRS_18B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_18B.mp3">>
+<<cacheaudio "SRS_19A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_19A.mp3">>
+<<cacheaudio "SRS_19B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_19B.mp3">>
+<<cacheaudio "SRS_20.5B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.5B.mp3">>
+<<cacheaudio "SRS_20.6B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.6B.mp3">>
+<<cacheaudio "SRS_20.7B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.7B.mp3">>
+<<cacheaudio "SRS_20.7B_No" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.7B_No.mp3">>
+<<cacheaudio "SRS_20.7B_Yes" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.7B_Yes.mp3">>
+<<cacheaudio "SRS_20A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A.mp3">>
+<<cacheaudio "SRS_20A_DisneyMovie" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_DisneyMovie.mp3">>
+<<cacheaudio "SRS_20A_Explorer" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_Explorer.mp3">>
+<<cacheaudio "SRS_20A_JohnSmith" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_JohnSmith.mp3">>
+<<cacheaudio "SRS_20A_Jesus" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_Jesus.mp3">>
+<<cacheaudio "SRS_20A_Kanye" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_Kanye.mp3">>
+<<cacheaudio "SRS_20A_Pocahontas" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_Pocahontas.mp3">>
+<<cacheaudio "SRS_20B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20B.mp3">>
+<<cacheaudio "SRS_20B_Closer" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20B_Closer.mp3">>
+<<cacheaudio "SRS_20B_NeverNoticed" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20B_NeverNoticed.mp3">>
+<<cacheaudio "SRS_20B_PostmansPark" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20B_PostmansPark.mp3">>
+<<cacheaudio "SRS_21.5A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_21.5A.mp3">>
+<<cacheaudio "SRS_21.5B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_21.5B.mp3">>
+<<cacheaudio "SRS_21A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_21A.mp3">>
+<<cacheaudio "SRS_21B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_21B.mp3">>
+<<cacheaudio "SRS_22A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_22A.mp3">>
+<<cacheaudio "SRS_22B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_22B.mp3">>
+<<cacheaudio "SRS_23B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_23B.mp3">>
+<<cacheaudio "SRS_24B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_24B.mp3">>
+<<cacheaudio "SRS_25" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_25.mp3">>
+<<cacheaudio "SRS_29" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_29.mp3">>
+<<cacheaudio "SRS_30" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_30.mp3">>
+<<cacheaudio "SRS_31" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_31.mp3">>
+<<cacheaudio "SRS_32" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_32.mp3">>
+<<cacheaudio "adventurerefer" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_adventurerefer.mp3">>
+<<cacheaudio "perfectgroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_perfectgroup.mp3">>
+<<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3">>
+
+
 <<waitforaudio>>
 
 
@@ -598,8 +606,8 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 
 :: landing {"position":"375,175","size":"100,100"}
 <<set $passage to "landing">><<audio ":all" stop>>
-
 <main>
+<h2>The Smashing Rock Sisters </h2>
 
 <<button "begin">><<set $prevpass to $passage>><<goto "SRS-01">><</button>>
 </main>
@@ -619,23 +627,38 @@ You have two options:
 
 :: SRS-01 {"position":"449,226","size":"100,100"}
 <<set $passage to "SRS-01">><<set $nextpassage to "SRS-02B">>
-/* <<audio ":all" stop>><<audio "SRS-01" play>> */
+<<audio ":all" stop>><<audio "SRS_01" play>>
 <main>
 <div id="mount"></div> 
-Felix, keeper of the Maze, and small dragon, here at your service.
+<<timed 2s>><<replace "#mount">>
+  Felix, keeper of the Maze, and small dragon, here at your service.
+  <</replace>>
+<</timed>>
+  <<timed 8s>><<replace "#mount">>
+  I'm opening up the City to you, a City you've never experienced before, and its secrets too. 
+  
+  For the City is full of treasure. 
+  <</replace>>
+<</timed>>
+  <<timed 16s>><<replace "#mount">> Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+  <</replace>>
+<</timed>>
 
+<<timed 24s>><<replace "#mount">>You're now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I've been alive. 
+ <</replace>>
+<</timed>>
 
-I’m opening up the City to you, a City you’ve never experienced before, and its secrets too. For the City is full of treasure. Not the kind of treasure that glitters in candlelight, but something more precious: stories, and the people who carry them. 
+<<timed 38s>><<replace "#mount">>You've opened up door #5 into the maze of adventures. 
 
-You’re now in Dragontime. Past present and future happening all at once. Two thousand years of messy, pulsing, fiery history since the Romans first called their new home Londinium. Almost as long as I’ve been alive. 
- 
-You’ve opened up door #8 into the maze of adventures. 
+You'll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+ <</replace>>
+<</timed>>
 
-You’ll be led presently through the streets of the City by a guide from one of its many pasts or possible futures.
+<<timed 47s>><<replace "#mount">>If you follow them all the way along their adventure, I'll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
+ <</replace>>
+<</timed>>
 
-If you follow them all the way along their adventure, I’ll be there to meet you near another door, opening into an amazing experience for you, hidden in one of the secret gems of the City.
-
-What kind of amazing experience? Well, it’s a surprise. Otherwise this wouldn’t be an adventure.
+<<timed 57s>><<replace "#mount">>What kind of amazing experience? Well, it's a surprise. Otherwise this wouldn't be an adventure.
 
 Now are you playing this adventure solo or with a group?
  
@@ -643,12 +666,15 @@ Now are you playing this adventure solo or with a group?
   <<button "Solo">><<set $prevpass to $passage>><<goto "SRS-02A">><</button>>
   
   <<button "Group">><<set $prevpass to $passage>><<goto "SRS-02B">><</button>></div>
+
+   <</replace>>
+<</timed>>
 </main>
 <<include "footer">>
 
 :: SRS-02A {"position":"448,476","size":"100,100"}
 <<set $passage to "SRS-02A">><<set $nextpassage to "SRS-03">>
-/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<<audio ":all" stop>><<audio "adventurerefer" play>>
 <main>
 <div id="mount"></div> 
 The adventure may sometimes refer to a group of people but don’t worry, you by yourself are plenty for a group.
@@ -659,7 +685,7 @@ The adventure may sometimes refer to a group of people but don’t worry, you by
 
 :: SRS-02B {"position":"448,476","size":"100,100"}
 <<set $passage to "SRS-02B">><<set $nextpassage to "SRS-03">>
-/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<<audio ":all" stop>><<audio "perfectgroup" play>>
 <main>
 <div id="mount"></div> 
  This is perfect for a group! If you’re playing on separate devices try to press your buttons at the same time to stay in sync.  
@@ -672,7 +698,7 @@ The adventure may sometimes refer to a group of people but don’t worry, you by
 
 :: SRS-03 {"position":"448,476","size":"100,100"}
 <<set $passage to "SRS-03.1">><<set $nextpassage to "SRS-04">>
-/* <<audio ":all" stop>><<audio "EI_02A" play>> */
+<<audio ":all" stop>><<audio "03" play>>
 <main>
 <div id="mount"></div> 
 You can always use the arrows or the replay button if you need to hear or read anything again. 
@@ -690,13 +716,14 @@ Are you ready?
 <<include "footer">>
 
 :: SRS-04 {"position":"448,476","size":"100,100"}
-<<set $passage to "SRS-04">><<set $nextpassage to "SRS-05">><<audio ":all" stop>><main>
+<<set $passage to "SRS-04">><<set $nextpassage to "SRS-05">><<audio ":all" stop>><<audio "SRS_04" play>>
+<main>
 Ah wow! Do you hear that singing? 
 
 Sounds like we’re connecting with Madeleine and Dorothea, better known in 1912 as The Rock Sisters. 
 
 They’ll be here to guide you. Don’t let them get you into too much trouble.
-(a magical transition sound)
+
 
 <<timed 8s>><<set $prevpass to $passage>><<goto "SRS-05">><</timed>>
 
@@ -1656,7 +1683,7 @@ $map
 
 :: SRS-32 {"position":"520,2113","size":"100,100"}
 <<set $passage to "SRS-32">><<set $nextpassage to "SRS-33">>
-/* <<audio ":all" stop>><<audio "SRS_32" play>> */
+<<audio ":all" stop>><<audio "SRS_32" play>>
 <main>
 <div id="mount"></div>
 You’re by One New Change, the shopping centre. Go inside, and make your way up to the rooftop. You might like to take the lift you’ll find in the middle of the centre. Let me know when you’re on the rooftop.
@@ -1669,7 +1696,8 @@ Show the steward this <<button "key">><<set $prevpass to $passage>><<goto "SRS-3
 <<include "footer">>
 
 :: SRS-33 {"position":"520,2113","size":"100,100"}
-<<set $passage to "SRS-33">><<set $nextpassage to "EI_23A">>/* <<audio ":all" stop>><<audio "SRS_33" play>> */<main>
+<<set $passage to "SRS-33">><<set $nextpassage to "EI_23A">>
+<main>
 
 
 <div class="key-wrapper glowing"><img src="./assets/OneNewChange.png"></div>
