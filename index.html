@@ -101,6 +101,12 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	<!-- UUID://F9E39354-F641-4070-8B55-C312A3FDC8C7// --><tw-storydata name="Smashing Rock Sisters Caption" startnode="8" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="F9E39354-F641-4070-8B55-C312A3FDC8C7" zoom="0.3" format="SugarCube" format-version="2.36.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+@font-face {
+  font-family: "Big John";
+  src: url("/assets/fonts/bigjohn.otf") format("opentype");
+}
+
+
 /* GENERICS */
 html {
   box-sizing: border-box;
@@ -434,6 +440,12 @@ display: flex;
 
 .adventure-title{
   margin-block-end:0;
+  text-align:center
+}
+
+.endpoint {
+  font-family: "Big John";
+  font-size:3rem;
   text-align:center
 }
 
@@ -1528,8 +1540,9 @@ Show the steward this &lt;&lt;button &quot;key&quot;&gt;&gt;&lt;&lt;set $prevpas
 &lt;&lt;include &quot;footer&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="54" name="SRS-33" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;SRS-33&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;EI_23A&quot;&gt;&gt;/* &lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;&lt;audio &quot;SRS_33&quot; play&gt;&gt; */&lt;main&gt;
 
 
-&lt;div class=&quot;key-wrapper glowing&quot;&gt;&lt;img src=&quot;./assets/keys-34.png&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;key-wrapper glowing&quot;&gt;&lt;img src=&quot;./assets/OneNewChange.png&quot;&gt;&lt;/div&gt;
 
+&lt;h2 class=&quot;endpoint&quot;&gt;ONE NEW CHANGE&lt;/h2&gt;
 &lt;/main&gt;
 &lt;&lt;include &quot;footerkey&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="55" name="SRS-33adventures" tags="" position="520,2113" size="100,100">&lt;&lt;set $passage to &quot;SRS-33adventures&quot;&gt;&gt;&lt;&lt;set $nextpassage to &quot;SRS_34A&quot;&gt;&gt;&lt;&lt;audio &quot;:all&quot; stop&gt;&gt;&lt;main&gt;&lt;h3&gt;Start a new adventure...&lt;/h3&gt;
 &lt;div class=&quot;choices&quot;&gt;
