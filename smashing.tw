@@ -508,7 +508,7 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=17&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=17&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&mode=walking`)
 const mount = document.getElementById("mapMount")
 // console.log(iFrame)
 return iFrame
@@ -523,7 +523,7 @@ iFrame.classList.add("map")
 iFrame.setAttribute("loading", "lazy")
 iFrame.setAttribute("referrerpolicy", "no-referrer-when-downgrade")
 // iFrame.setAttribute("allowfullscreen")
-iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyBDRwRTMpSybNcmgkYVX1yZ0YmBbNhs9qU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
+iFrame.setAttribute("src", `https://www.google.com/maps/embed/v1/directions?key=AIzaSyCSbMwR1cUMfnIAh0Pxi0F1N16kvDGZXGU&center=${origin[0]},${origin[1]}&zoom=18&origin=${origin[0]},${origin[1]}&destination=${dest[0]},${dest[1]}&waypoints=${wayp}&mode=walking`)
 const mount = document.getElementById("mapMount")
 // console.log(iFrame)
 return iFrame
@@ -546,59 +546,59 @@ word += alphabet[Math.round((alphabet.length-1)*Math.random())];
 
 
 :: StoryInit {"position":"100,100","size":"100,100"}
-<<cacheaudio "SRS_01" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_01.mp3">>
-<<cacheaudio "SRS_04" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS-04.mp3">>
-<<cacheaudio "SRS_05" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_05.mp3">>
-<<cacheaudio "SRS_06" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_06.mp3">>
-<<cacheaudio "SRS_07" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_07.mp3">>
-<<cacheaudio "SRS_08" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_08_09.mp3">>
-<<cacheaudio "SRS_09" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_09.mp3">>
-<<cacheaudio "SRS_10" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_10.mp3">>
-<<cacheaudio "SRS_11A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_11A.mp3">>
-<<cacheaudio "SRS_11B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_11B.mp3">>
-<<cacheaudio "SRS_12" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_12.mp3">>
-<<cacheaudio "SRS_13" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_13.mp3">>
-<<cacheaudio "SRS_14" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_14.mp3">>
-<<cacheaudio "SRS_15.5" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_15.5.mp3">>
-<<cacheaudio "SRS_15" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_15.mp3">>
-<<cacheaudio "SRS_16" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_16.mp3">>
-<<cacheaudio "SRS_17" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_17.mp3">>
-<<cacheaudio "SRS_18A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_18A.mp3">>
-<<cacheaudio "SRS_18B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_18B.mp3">>
-<<cacheaudio "SRS_19A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_19A.mp3">>
-<<cacheaudio "SRS_19B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_19B.mp3">>
-<<cacheaudio "SRS_20.5B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.5B.mp3">>
-<<cacheaudio "SRS_20.6B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.6B.mp3">>
-<<cacheaudio "SRS_20.7B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.7B.mp3">>
-<<cacheaudio "SRS_20.7B_No" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.7B_No.mp3">>
-<<cacheaudio "SRS_20.7B_Yes" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20.7B_Yes.mp3">>
-<<cacheaudio "SRS_20A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A.mp3">>
-<<cacheaudio "SRS_20A_DisneyMovie" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_DisneyMovie.mp3">>
-<<cacheaudio "SRS_20A_Explorer" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_Explorer.mp3">>
-<<cacheaudio "SRS_20A_JohnSmith" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_JohnSmith.mp3">>
-<<cacheaudio "SRS_20A_Jesus" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_Jesus.mp3">>
-<<cacheaudio "SRS_20A_Kanye" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_Kanye.mp3">>
-<<cacheaudio "SRS_20A_Pocahontas" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20A_Pocahontas.mp3">>
-<<cacheaudio "SRS_20B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20B.mp3">>
-<<cacheaudio "SRS_20B_Closer" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20B_Closer.mp3">>
-<<cacheaudio "SRS_20B_NeverNoticed" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20B_NeverNoticed.mp3">>
-<<cacheaudio "SRS_20B_PostmansPark" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_20B_PostmansPark.mp3">>
-<<cacheaudio "SRS_21.5A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_21.5A.mp3">>
-<<cacheaudio "SRS_21.5B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_21.5B.mp3">>
-<<cacheaudio "SRS_21A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_21A.mp3">>
-<<cacheaudio "SRS_21B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_21B.mp3">>
-<<cacheaudio "SRS_22A" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_22A.mp3">>
-<<cacheaudio "SRS_22B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_22B.mp3">>
-<<cacheaudio "SRS_23B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_23B.mp3">>
-<<cacheaudio "SRS_24B" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_24B.mp3">>
-<<cacheaudio "SRS_25" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_25.mp3">>
-<<cacheaudio "SRS_29" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_29.mp3">>
-<<cacheaudio "SRS_30" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS_30.mp3">>
-<<cacheaudio "SRS_31" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS-31.mp3">>
-<<cacheaudio "SRS_32" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/SRS/SRS-32.mp3">>
-<<cacheaudio "adventurerefer" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_adventurerefer.mp3">>
-<<cacheaudio "perfectgroup" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_02_perfectgroup.mp3">>
-<<cacheaudio "03" "https://magic.fra1.cdn.digitaloceanspaces.com/tgksnd/felix/XX_03.mp3">>
+<<cacheaudio "SRS_01" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_01.mp3">>
+<<cacheaudio "SRS_04" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS-04.mp3">>
+<<cacheaudio "SRS_05" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_05.mp3">>
+<<cacheaudio "SRS_06" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_06.mp3">>
+<<cacheaudio "SRS_07" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_07.mp3">>
+<<cacheaudio "SRS_08" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_08_09.mp3">>
+<<cacheaudio "SRS_09" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_09.mp3">>
+<<cacheaudio "SRS_10" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_10.mp3">>
+<<cacheaudio "SRS_11A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11A.mp3">>
+<<cacheaudio "SRS_11B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_11B.mp3">>
+<<cacheaudio "SRS_12" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_12.mp3">>
+<<cacheaudio "SRS_13" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_13.mp3">>
+<<cacheaudio "SRS_14" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_14.mp3">>
+<<cacheaudio "SRS_15.5" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_15.5.mp3">>
+<<cacheaudio "SRS_15" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_15.mp3">>
+<<cacheaudio "SRS_16" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_16.mp3">>
+<<cacheaudio "SRS_17" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_17.mp3">>
+<<cacheaudio "SRS_18A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_18A.mp3">>
+<<cacheaudio "SRS_18B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_18B.mp3">>
+<<cacheaudio "SRS_19A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_19A.mp3">>
+<<cacheaudio "SRS_19B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_19B.mp3">>
+<<cacheaudio "SRS_20.5B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.5B.mp3">>
+<<cacheaudio "SRS_20.6B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.6B.mp3">>
+<<cacheaudio "SRS_20.7B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B.mp3">>
+<<cacheaudio "SRS_20.7B_No" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B_No.mp3">>
+<<cacheaudio "SRS_20.7B_Yes" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20.7B_Yes.mp3">>
+<<cacheaudio "SRS_20A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A.mp3">>
+<<cacheaudio "SRS_20A_DisneyMovie" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_DisneyMovie.mp3">>
+<<cacheaudio "SRS_20A_Explorer" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Explorer.mp3">>
+<<cacheaudio "SRS_20A_JohnSmith" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_JohnSmith.mp3">>
+<<cacheaudio "SRS_20A_Jesus" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Jesus.mp3">>
+<<cacheaudio "SRS_20A_Kanye" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Kanye.mp3">>
+<<cacheaudio "SRS_20A_Pocahontas" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20A_Pocahontas.mp3">>
+<<cacheaudio "SRS_20B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B.mp3">>
+<<cacheaudio "SRS_20B_Closer" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_Closer.mp3">>
+<<cacheaudio "SRS_20B_NeverNoticed" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_NeverNoticed.mp3">>
+<<cacheaudio "SRS_20B_PostmansPark" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_20B_PostmansPark.mp3">>
+<<cacheaudio "SRS_21.5A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21.5A.mp3">>
+<<cacheaudio "SRS_21.5B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21.5B.mp3">>
+<<cacheaudio "SRS_21A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21A.mp3">>
+<<cacheaudio "SRS_21B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_21B.mp3">>
+<<cacheaudio "SRS_22A" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_22A.mp3">>
+<<cacheaudio "SRS_22B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_22B.mp3">>
+<<cacheaudio "SRS_23B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_23B.mp3">>
+<<cacheaudio "SRS_24B" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_24B.mp3">>
+<<cacheaudio "SRS_25" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_25.mp3">>
+<<cacheaudio "SRS_29" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_29.mp3">>
+<<cacheaudio "SRS_30" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS_30.mp3">>
+<<cacheaudio "SRS_31" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS-31.mp3">>
+<<cacheaudio "SRS_32" "https://www.youhavefoundconey.net/tgksnd/SRS/SRS-32.mp3">>
+<<cacheaudio "adventurerefer" "https://www.youhavefoundconey.net/tgksnd/felix/XX_02_adventurerefer.mp3">>
+<<cacheaudio "perfectgroup" "https://www.youhavefoundconey.net/tgksnd/felix/XX_02_perfectgroup.mp3">>
+<<cacheaudio "03" "https://www.youhavefoundconey.net/tgksnd/felix/XX_03.mp3">>
 
 
 <<waitforaudio>>
